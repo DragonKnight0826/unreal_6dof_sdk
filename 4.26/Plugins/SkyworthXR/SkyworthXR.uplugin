@@ -1,0 +1,57 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "0.1.0",
+	"FriendlyName": "Skyworth XR",
+	"Description": "Support for Skyworth headsets and controllers",
+	"Category": "Virtual Reality",
+	"CreatedBy": "Skyworth",
+	"CreatedByURL": "https://www.skyworthxr.com/",
+	"DocsURL": "https://www.skyworthxr.com/sdk.html",
+	"MarketplaceURL": "",
+	"SupportURL": "https://www.skyworthxr.com/sdk.html",
+	"EngineVersion": "4.26.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"SupportedTargetPlatforms": [
+		"Win32",
+		"Win64",
+		"Android"
+	],
+	"Modules": [
+		{
+			"Name": "SkyworthHMD",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit",
+			"WhitelistPlatforms": [
+				"Win32",
+				"Win64",
+				"Android"
+			]
+		},
+		{
+			"Name": "SkyworthInput",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Win32",
+				"Android"
+			]
+		},
+		{
+			"Name": "SkyworthEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ProceduralMeshComponent",
+			"Enabled": true
+		}
+	]
+}

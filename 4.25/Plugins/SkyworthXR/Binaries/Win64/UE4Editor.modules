@@ -1,0 +1,9 @@
+{
+	"BuildId": "13144385",
+	"Modules": 
+	{
+		"SkyworthEditor": "UE4Editor-SkyworthEditor.dll",
+		"SkyworthHMD": "UE4Editor-SkyworthHMD.dll",
+		"SkyworthInput": "UE4Editor-SkyworthInput.dll"
+	}
+}

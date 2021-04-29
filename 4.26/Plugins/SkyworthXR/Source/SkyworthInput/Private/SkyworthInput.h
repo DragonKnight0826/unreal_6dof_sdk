@@ -29,13 +29,13 @@ DEFINE_LOG_CATEGORY_STATIC(LogOcInput, Log, All);
 /** Controller axis mappings. */
 #define DOT_45DEG		0.7071f
 
-namespace AndroidControllerKeyNames
-{
-	const FGamepadKeyNames::Type AndroidMenu("Android_Menu");
-	const FGamepadKeyNames::Type AndroidBack("Android_Back");
-	const FGamepadKeyNames::Type AndroidVolumeUp("Android_Volume_Up");
-	const FGamepadKeyNames::Type AndroidVolumeDown("Android_Volume_Down");
-}
+//namespace AndroidControllerKeyNames
+//{
+//	const FGamepadKeyNames::Type AndroidMenu("Android_Menu");
+//	const FGamepadKeyNames::Type AndroidBack("Android_Back");
+//	const FGamepadKeyNames::Type AndroidVolumeUp("Android_Volume_Up");
+//	const FGamepadKeyNames::Type AndroidVolumeDown("Android_Volume_Down");
+//}
 
 namespace SkyworthInput
 {
@@ -118,6 +118,8 @@ private:
 	FSkyworthRemoteControllerState Remote;
 
 	FSkyworthTouchpadState Touchpad;
+
+	FSkyworthHeadDeviceState HeadDevice;
 
 	/** Threshold for treating trigger pulls as button presses, from 0.0 to 1.0 */
 	static float TriggerThreshold;

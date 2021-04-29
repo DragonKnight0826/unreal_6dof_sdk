@@ -103,6 +103,9 @@ void USkyworthVRPointerInputComponent::BeginPlay()
 		PlayerController->InputComponent->BindAction("EditorTouchTrigger", EInputEvent::IE_Pressed, this, &USkyworthVRPointerInputComponent::ClickButtonPressed);
 		PlayerController->InputComponent->BindAction("EditorTouchTrigger", EInputEvent::IE_Released, this, &USkyworthVRPointerInputComponent::ClickButtonReleased);
 	}
+
+	PlayerController->InputComponent->BindKey(SkyworthInput::FSkyworthKey::SkyworthHead_Enter, EInputEvent::IE_Pressed, this, &USkyworthVRPointerInputComponent::ClickButtonPressed);
+	PlayerController->InputComponent->BindKey(SkyworthInput::FSkyworthKey::SkyworthHead_Enter, EInputEvent::IE_Released, this, &USkyworthVRPointerInputComponent::ClickButtonReleased);
 }
 
 bool USkyworthVRPointerInputComponent::GetControllerConnected() 
@@ -147,26 +150,26 @@ void USkyworthVRPointerInputComponent::TickComponent(float DeltaTime, ELevelTick
 		UE_LOG(LogSkyworthVRPointerInput, Warning, TEXT("Pointer must be set for SkyworthVRPointerInputComponent to function"));
 		return;
 	}
-#if GOOGLEVRCONTROLLER_SUPPORTED_ANDROID_PLATFORMS
-	ovrpBool ClickState;
-	if (OVRP_SUCCESS(FSkyworthHMDModule::GetPluginWrapper().GetKeyStatue(&ClickState)))
-	{
-		ClickCurrentState = ClickState;
-	}
-	if (!ClickPreState && ClickCurrentState)
-	{
-		//ClickButtonDown
-		UE_LOG(LogSkyworthVRPointerInput, Log, TEXT("Click state Down"));
-		ClickButtonPressed();
-	}
-	if (ClickPreState && !ClickCurrentState) 
-	{
-		UE_LOG(LogSkyworthVRPointerInput, Log, TEXT("Click state Up"));
-		//ClickButtonUp
-		ClickButtonReleased();
-	}
-	ClickPreState = ClickCurrentState;
-#endif
+//#if GOOGLEVRCONTROLLER_SUPPORTED_ANDROID_PLATFORMS
+//	ovrpBool ClickState;
+//	if (OVRP_SUCCESS(FSkyworthHMDModule::GetPluginWrapper().GetKeyStatue(&ClickState)))
+//	{
+//		ClickCurrentState = ClickState;
+//	}
+//	if (!ClickPreState && ClickCurrentState)
+//	{
+//		//ClickButtonDown
+//		UE_LOG(LogSkyworthVRPointerInput, Log, TEXT("Click state Down"));
+//		ClickButtonPressed();
+//	}
+//	if (ClickPreState && !ClickCurrentState) 
+//	{
+//		UE_LOG(LogSkyworthVRPointerInput, Log, TEXT("Click state Up"));
+//		//ClickButtonUp
+//		ClickButtonReleased();
+//	}
+//	ClickPreState = ClickCurrentState;
+//#endif
 	AActor* PreviousHitActor = GetHitActor();
 	UPrimitiveComponent* PreviousHitComponent = GetHitComponent();
 

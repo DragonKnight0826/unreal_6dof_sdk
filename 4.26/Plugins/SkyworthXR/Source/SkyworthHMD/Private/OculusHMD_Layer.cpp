@@ -23,6 +23,11 @@
 namespace SkyworthHMD
 {
 
+#if ENGINE_MINOR_VERSION > 25
+#define TexFlag ETextureCreateFlags
+#else
+#define TexFlag uint32
+#endif
 //-------------------------------------------------------------------------------------------------
 // FOvrpLayer
 //-------------------------------------------------------------------------------------------------
@@ -556,8 +561,8 @@ void FLayer::Initialize_RenderThread(const FSettings* Settings, FCustomPresent* 
 				ResourceType = RRT_Texture2D;
 			}
 
-			ETextureCreateFlags ColorTexCreateFlags = TexCreate_ShaderResource | TexCreate_RenderTargetable | (bNeedsTexSrgbCreate ? TexCreate_SRGB : TexCreate_None);
-			ETextureCreateFlags DepthTexCreateFlags = TexCreate_ShaderResource | TexCreate_DepthStencilTargetable;
+			TexFlag ColorTexCreateFlags = TexCreate_ShaderResource | TexCreate_RenderTargetable | (bNeedsTexSrgbCreate ? TexCreate_SRGB : TexCreate_None);
+			TexFlag DepthTexCreateFlags = TexCreate_ShaderResource | TexCreate_DepthStencilTargetable;
 
 			if (Desc.Texture.IsValid())
 			{

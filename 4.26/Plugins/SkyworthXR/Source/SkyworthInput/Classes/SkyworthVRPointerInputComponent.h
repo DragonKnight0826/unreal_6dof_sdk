@@ -152,8 +152,8 @@ private:
 
 	AActor* PendingClickActor;
 	UPrimitiveComponent* PendingClickComponent;
-	bool ClickPreState;
-	bool ClickCurrentState;
+	/*bool ClickPreState;
+	bool ClickCurrentState;*/
 	bool preIsOritationValid;
 public:
 	//多播一个参数的委托

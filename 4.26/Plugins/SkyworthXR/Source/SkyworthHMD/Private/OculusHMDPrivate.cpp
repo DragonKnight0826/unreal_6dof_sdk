@@ -3,10 +3,16 @@
 #include "OculusHMDPrivate.h"
 #include "RHICommandList.h"
 #include "RenderingThread.h"
+#include "../Launch/Resources/Version.h"
 
 namespace SkyworthHMD
 {
 
+#if ENGINE_MINOR_VERSION > 25
+#define SvrThreadedRendering GIsThreadedRendering
+#else
+#define SvrThreadedRendering GRenderingThread
+#endif
 //-------------------------------------------------------------------------------------------------
 // Utility functions
 //-------------------------------------------------------------------------------------------------
@@ -26,10 +32,13 @@ bool InGameThread()
 
 bool InRenderThread()
 {
-	if (GIsThreadedRendering && !GIsRenderingThreadSuspended.Load(EMemoryOrder::Relaxed))
+	if (SvrThreadedRendering && !GIsRenderingThreadSuspended.Load(EMemoryOrder::Relaxed))
 	{
-		
+#if ENGINE_MINOR_VERSION > 25
 		return IsInActualRenderingThread();
+#else
+		return FPlatformTLS::GetCurrentThreadId() == GRenderingThread->GetThreadID();
+#endif
 	}
 	else
 	{
@@ -40,16 +49,27 @@ bool InRenderThread()
 
 bool InRHIThread()
 {
-	if (GIsThreadedRendering && !GIsRenderingThreadSuspended.Load(EMemoryOrder::Relaxed))
+	if (SvrThreadedRendering && !GIsRenderingThreadSuspended.Load(EMemoryOrder::Relaxed))
 	{
+#if ENGINE_MINOR_VERSION > 25
 		if (IsRHIThreadRunning())
+#else
+		if (GRHIThreadId)
+#endif
 		{
+#if ENGINE_MINOR_VERSION > 25
 			if (IsInRHIThread())
+#else
+			if (FPlatformTLS::GetCurrentThreadId() == GRHIThreadId)
+#endif
 			{
 				return true;
 			}
-			
+#if ENGINE_MINOR_VERSION > 25
 			if (IsInActualRenderingThread())
+#else
+			if (FPlatformTLS::GetCurrentThreadId() == GRenderingThread->GetThreadID())
+#endif
 			{
 				return GetImmediateCommandList_ForRenderCommand().Bypass();
 			}
@@ -58,7 +78,11 @@ bool InRHIThread()
 		}
 		else
 		{
+#if ENGINE_MINOR_VERSION > 25
 			return IsInActualRenderingThread();
+#else
+				return FPlatformTLS::GetCurrentThreadId() == GRenderingThread->GetThreadID();
+#endif
 		}
 	}
 	else

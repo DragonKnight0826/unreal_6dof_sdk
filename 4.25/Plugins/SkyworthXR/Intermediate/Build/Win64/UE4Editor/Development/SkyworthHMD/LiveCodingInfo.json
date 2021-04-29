@@ -1,0 +1,36 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.SkyworthHMD.cpp.obj": [
+			"OculusAssetManager.cpp.obj",
+			"OculusFunctionLibrary.cpp.obj",
+			"OculusHMD.cpp.obj",
+			"OculusHMD_ConsoleCommands.cpp.obj",
+			"OculusHMD_CustomPresent.cpp.obj",
+			"OculusHMD_CustomPresent_D3D11.cpp.obj",
+			"OculusHMD_CustomPresent_D3D12.cpp.obj",
+			"OculusHMD_CustomPresent_OpenGL.cpp.obj",
+			"OculusHMD_CustomPresent_Vulkan.cpp.obj",
+			"OculusHMD_DynamicResolutionState.cpp.obj",
+			"OculusHMD_GameFrame.cpp.obj",
+			"OculusHMD_Layer.cpp.obj",
+			"OculusHMD_Settings.cpp.obj",
+			"OculusHMD_SpectatorScreenController.cpp.obj",
+			"OculusHMD_Splash.cpp.obj",
+			"OculusHMD_VulkanExtensions.cpp.obj",
+			"OculusHMDModule.cpp.obj",
+			"OculusHMDPrivate.cpp.obj",
+			"SkyworthHMDRuntimeSettings.cpp.obj",
+			"SkyworthPluginWrapper.cpp.obj",
+			"SkyworthSceneCaptureCubemap.cpp.obj",
+			"Trace.cpp.obj"
+		],
+		"Module.SkyworthHMD.gen.cpp.obj": [
+			"SkyworthFunctionLibrary.gen.cpp.obj",
+			"SkyworthHMD.init.gen.cpp.obj",
+			"SkyworthHMDRuntimeSettings.gen.cpp.obj",
+			"SkyworthHMDTypes.gen.cpp.obj",
+			"SkyworthSceneCaptureCubemap.gen.cpp.obj"
+		]
+	}
+}

@@ -165,7 +165,7 @@ void FCustomPresent::UpdateMirrorTexture_RenderThread()
 
 			UE_LOG(LogHMD, Log, TEXT("Allocated a new mirror texture (size %d x %d)"), Width, Height);
 
-			ETextureCreateFlags TexCreateFlags = TexCreate_ShaderResource | TexCreate_RenderTargetable;
+			TexFlag TexCreateFlags = TexCreate_ShaderResource | TexCreate_RenderTargetable;
 
 			MirrorTextureRHI = CreateTexture_RenderThread(Width, Height, GetDefaultPixelFormat(), FClearValueBinding::None, 1, 1, 1, RRT_Texture2D, TextureHandle, TexCreateFlags)->GetTexture2D();
 		}
@@ -279,7 +279,7 @@ int FCustomPresent::GetSystemRecommendedMSAALevel() const
 }
 
 
-FXRSwapChainPtr FCustomPresent::CreateSwapChain_RenderThread(uint32 InSizeX, uint32 InSizeY, EPixelFormat InFormat, FClearValueBinding InBinding, uint32 InNumMips, uint32 InNumSamples, uint32 InNumSamplesTileMem, ERHIResourceType InResourceType, const TArray<ovrpTextureHandle>& InTextures, ETextureCreateFlags InTexCreateFlags)
+FXRSwapChainPtr FCustomPresent::CreateSwapChain_RenderThread(uint32 InSizeX, uint32 InSizeY, EPixelFormat InFormat, FClearValueBinding InBinding, uint32 InNumMips, uint32 InNumSamples, uint32 InNumSamplesTileMem, ERHIResourceType InResourceType, const TArray<ovrpTextureHandle>& InTextures, TexFlag InTexCreateFlags)
 {
 	CheckInRenderThread();
 
@@ -353,7 +353,11 @@ void FCustomPresent::CopyTexture_RenderThread(FRHICommandListImmediate& RHICmdLi
 #endif
 
 	FRHITexture* SrcTextureRHI = SrcTexture;
+#if ENGINE_MINOR_VERSION > 25
 	RHICmdList.Transition(FRHITransitionInfo(SrcTextureRHI, ERHIAccess::Unknown, ERHIAccess::SRVGraphics));
+#else
+	RHICmdList.TransitionResources(EResourceTransitionAccess::EReadable, &SrcTextureRHI, 1);
+#endif
 	FGraphicsPipelineStateInitializer GraphicsPSOInit;
 
 	if (bAlphaPremultiply)

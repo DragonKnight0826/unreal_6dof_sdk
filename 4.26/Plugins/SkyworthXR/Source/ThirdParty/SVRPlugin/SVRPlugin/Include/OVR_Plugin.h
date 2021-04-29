@@ -639,7 +639,7 @@ OVRP_EXPORT ovrpResult ovrp_SetUserDefinedSettings(UserDefinedSettings settings)
 /**
  * 获得头盔确认键的状态,true是按下，false释放
  * */
-OVRP_EXPORT ovrpResult ovrp_GetKeyStatue(ovrpBool* down);
+OVRP_EXPORT ovrpResult ovrp_GetKeyStatue(int* down);
 #ifdef __cplusplus
 }
 #endif

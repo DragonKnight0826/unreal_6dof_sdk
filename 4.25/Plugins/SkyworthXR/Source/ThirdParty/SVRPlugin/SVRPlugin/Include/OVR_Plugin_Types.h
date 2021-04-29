@@ -107,6 +107,16 @@ typedef enum {
 #define OVRP_SUCCESS(result) ((result) >= 0)
 #define OVRP_FAILURE(result) ((result) < 0)
 
+///Skyworth Head set Buttons
+typedef enum {
+    svrNone = 0,
+    svrBack = (1 << 0),
+    svrEnter = (1 << 1),
+    svrHome = (1 << 2),
+    svrVolumeUp = (1 << 3),
+    svrVolumeDown = (1 << 4)
+} SvrHeadButtonFlags;
+
 /// Initialization flags
 typedef enum {
   /// Start GearVR battery and volume receivers
@@ -293,6 +303,7 @@ typedef enum {
   ovrpButton_None = 0,
   ovrpButton_A = 0x00000001,
   ovrpButton_B = 0x00000002,
+  ovrpButton_Trigger = 0x00000004,
   ovrpButton_X = 0x00000100,
   ovrpButton_Y = 0x00000200,
   ovrpButton_Up = 0x00010000,

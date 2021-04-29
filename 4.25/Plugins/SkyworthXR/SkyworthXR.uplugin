@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "0.1.0",
+	"Version": 2,
+	"VersionName": "0.1.1",
 	"FriendlyName": "Skyworth XR",
 	"Description": "Support for Skyworth headsets and controllers",
 	"Category": "Virtual Reality",
@@ -12,6 +12,8 @@
 	"SupportURL": "https://www.skyworthxr.com/sdk.html",
 	"EngineVersion": "4.25.0",
 	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
 	"Installed": true,
 	"SupportedTargetPlatforms": [
 		"Win32",

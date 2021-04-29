@@ -84,10 +84,12 @@ namespace SkyworthHMD
 		{
 		return OculusSystemName;
 	}
+	#if ENGINE_MINOR_VERSION > 25
 	int32 FSkyworthHMD::GetXRSystemFlags() const
 	{
 		return EXRSystemFlags::IsHeadMounted;
 	}
+	#endif
 
 	FString FSkyworthHMD::GetVersionString() const
 	{
@@ -1489,7 +1491,7 @@ namespace SkyworthHMD
 	}
 
 
-	bool FSkyworthHMD::AllocateRenderTargetTexture(uint32 Index, uint32 SizeX, uint32 SizeY, uint8 Format, uint32 NumMips, ETextureCreateFlags InTexFlags, ETextureCreateFlags InTargetableTextureFlags, FTexture2DRHIRef& OutTargetableTexture, FTexture2DRHIRef& OutShaderResourceTexture, uint32 NumSamples)
+	bool FSkyworthHMD::AllocateRenderTargetTexture(uint32 Index, uint32 SizeX, uint32 SizeY, uint8 Format, uint32 NumMips, TexFlag InTexFlags, TexFlag InTargetableTextureFlags, FTexture2DRHIRef& OutTargetableTexture, FTexture2DRHIRef& OutShaderResourceTexture, uint32 NumSamples)
 	{
 		// Only called when RenderThread is suspended.  Both of these checks should pass.
 		CheckInGameThread();
@@ -1512,7 +1514,7 @@ namespace SkyworthHMD
 	}
 
 
-	bool FSkyworthHMD::AllocateDepthTexture(uint32 Index, uint32 SizeX, uint32 SizeY, uint8 Format, uint32 NumMips, ETextureCreateFlags FlagsIn, ETextureCreateFlags TargetableTextureFlags, FTexture2DRHIRef& OutTargetableTexture, FTexture2DRHIRef& OutShaderResourceTexture, uint32 NumSamples)
+	bool FSkyworthHMD::AllocateDepthTexture(uint32 Index, uint32 SizeX, uint32 SizeY, uint8 Format, uint32 NumMips, TexFlag FlagsIn, TexFlag TargetableTextureFlags, FTexture2DRHIRef& OutTargetableTexture, FTexture2DRHIRef& OutShaderResourceTexture, uint32 NumSamples)
 	{
 		CheckInRenderThread();
 
@@ -1543,7 +1545,7 @@ namespace SkyworthHMD
 		return false;
 	}
 
-	bool FSkyworthHMD::AllocateFoveationTexture(uint32 Index, uint32 RenderSizeX, uint32 RenderSizeY, uint8 Format, uint32 NumMips, ETextureCreateFlags InTexFlags, ETextureCreateFlags InTargetableTextureFlags, FTexture2DRHIRef& OutTexture, FIntPoint& OutTextureSize)
+	bool FSkyworthHMD::AllocateFoveationTexture(uint32 Index, uint32 RenderSizeX, uint32 RenderSizeY, uint8 Format, uint32 NumMips, TexFlag InTexFlags, TexFlag InTargetableTextureFlags, FTexture2DRHIRef& OutTexture, FIntPoint& OutTextureSize)
 	{
 		CheckInRenderThread();
 

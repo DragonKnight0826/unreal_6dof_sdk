@@ -11,6 +11,7 @@
 #include "RendererInterface.h"
 #include "IStereoLayers.h"
 #include "XRRenderBridge.h"
+#include "../Launch/Resources/Version.h"
 
 #if PLATFORM_WINDOWS
 #include "Windows/WindowsHWrapper.h"
@@ -27,7 +28,11 @@ DECLARE_FLOAT_COUNTER_STAT(TEXT("ErrorTimewarp"), STAT_ErrorTimewarp, STATGROUP_
 
 namespace SkyworthHMD
 {
-
+#if ENGINE_MINOR_VERSION > 25
+#define TexFlag ETextureCreateFlags
+#else
+#define TexFlag uint32
+#endif
 //-------------------------------------------------------------------------------------------------
 // FCustomPresent
 //-------------------------------------------------------------------------------------------------
@@ -65,8 +70,8 @@ public:
 	virtual int GetSystemRecommendedMSAALevel() const;
 	virtual int GetLayerFlags() const { return 0; }
 
-	virtual FTextureRHIRef CreateTexture_RenderThread(uint32 InSizeX, uint32 InSizeY, EPixelFormat InFormat, FClearValueBinding InBinding, uint32 InNumMips, uint32 InNumSamples, uint32 InNumSamplesTileMem, ERHIResourceType InResourceType, ovrpTextureHandle InTexture, uint32 TexCreateFlags) = 0;
-	FXRSwapChainPtr CreateSwapChain_RenderThread(uint32 InSizeX, uint32 InSizeY, EPixelFormat InFormat, FClearValueBinding InBinding, uint32 InNumMips, uint32 InNumSamples, uint32 InNumSamplesTileMem, ERHIResourceType InResourceType, const TArray<ovrpTextureHandle>& InTextures, uint32 InTexCreateFlags);
+	virtual FTextureRHIRef CreateTexture_RenderThread(uint32 InSizeX, uint32 InSizeY, EPixelFormat InFormat, FClearValueBinding InBinding, uint32 InNumMips, uint32 InNumSamples, uint32 InNumSamplesTileMem, ERHIResourceType InResourceType, ovrpTextureHandle InTexture, TexFlag TexCreateFlags) = 0;
+	FXRSwapChainPtr CreateSwapChain_RenderThread(uint32 InSizeX, uint32 InSizeY, EPixelFormat InFormat, FClearValueBinding InBinding, uint32 InNumMips, uint32 InNumSamples, uint32 InNumSamplesTileMem, ERHIResourceType InResourceType, const TArray<ovrpTextureHandle>& InTextures, TexFlag InTexCreateFlags);
 	void CopyTexture_RenderThread(FRHICommandListImmediate& RHICmdList, FRHITexture* DstTexture, FRHITexture* SrcTexture, FIntRect DstRect = FIntRect(), FIntRect SrcRect = FIntRect(), bool bAlphaPremultiply = false, bool bNoAlphaWrite = false, bool bInvertY = true, bool sRGBSource = false) const;
 	virtual void SubmitGPUFrameTime(float GPUFrameTime) { }
 

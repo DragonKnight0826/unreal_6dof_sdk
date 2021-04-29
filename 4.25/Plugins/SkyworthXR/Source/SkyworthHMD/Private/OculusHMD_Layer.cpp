@@ -23,6 +23,11 @@
 namespace SkyworthHMD
 {
 
+#if ENGINE_MINOR_VERSION > 25
+#define TexFlag ETextureCreateFlags
+#else
+#define TexFlag uint32
+#endif
 //-------------------------------------------------------------------------------------------------
 // FOvrpLayer
 //-------------------------------------------------------------------------------------------------
@@ -556,8 +561,8 @@ void FLayer::Initialize_RenderThread(const FSettings* Settings, FCustomPresent* 
 				ResourceType = RRT_Texture2D;
 			}
 
-			uint32 ColorTexCreateFlags = TexCreate_ShaderResource | TexCreate_RenderTargetable | (bNeedsTexSrgbCreate ? TexCreate_SRGB : 0);
-			uint32 DepthTexCreateFlags = TexCreate_ShaderResource | TexCreate_DepthStencilTargetable;
+			TexFlag ColorTexCreateFlags = TexCreate_ShaderResource | TexCreate_RenderTargetable | (bNeedsTexSrgbCreate ? TexCreate_SRGB : TexCreate_None);
+			TexFlag DepthTexCreateFlags = TexCreate_ShaderResource | TexCreate_DepthStencilTargetable;
 
 			if (Desc.Texture.IsValid())
 			{
@@ -577,7 +582,7 @@ void FLayer::Initialize_RenderThread(const FSettings* Settings, FCustomPresent* 
 			}
 			if (bValidFoveationTextures)
 			{
-				FoveationSwapChain = CustomPresent->CreateSwapChain_RenderThread(FoveationTextureSize.w, FoveationTextureSize.h, PF_R8G8, FClearValueBinding::White, 1, 1, 1, ResourceType, FoveationTextures, 0);
+				FoveationSwapChain = CustomPresent->CreateSwapChain_RenderThread(FoveationTextureSize.w, FoveationTextureSize.h, PF_R8G8, FClearValueBinding::White, 1, 1, 1, ResourceType, FoveationTextures, TexCreate_None);
 			}
 			else
 			{

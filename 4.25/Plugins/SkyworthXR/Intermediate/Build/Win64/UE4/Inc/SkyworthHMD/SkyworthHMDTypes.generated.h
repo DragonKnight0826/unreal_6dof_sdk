@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SKYWORTHHMD_SkyworthHMDTypes_generated_h
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthHMDTypes_h_16_GENERATED_BODY \
+#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthHMDTypes_h_16_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSkyworthSplashDesc_Statics; \
 	SKYWORTHHMD_API static class UScriptStruct* StaticStruct();
 
@@ -21,7 +21,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> SKYWORTHHMD_API UScriptStruct* StaticStruct<struct FSkyworthSplashDesc>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthHMDTypes_h
+#define CURRENT_FILE_ID sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthHMDTypes_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

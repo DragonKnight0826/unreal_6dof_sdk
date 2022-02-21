@@ -12,8 +12,6 @@
 	"SupportURL": "https://www.skyworthxr.com/sdk.html",
 	"EngineVersion": "4.25.0",
 	"CanContainContent": true,
-	"IsBetaVersion": false,
-	"IsExperimentalVersion": false,
 	"Installed": true,
 	"SupportedTargetPlatforms": [
 		"Win32",

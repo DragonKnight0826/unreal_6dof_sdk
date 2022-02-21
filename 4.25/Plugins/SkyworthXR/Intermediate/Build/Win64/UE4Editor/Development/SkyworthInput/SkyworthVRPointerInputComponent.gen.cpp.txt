@@ -1,7 +1,0 @@
-F:\workplace\UnrealSDK\sdktest\Plugins\SkyworthXR\Intermediate\Build\Win64\UE4Editor\Development\SkyworthInput\Definitions.SkyworthInput.h
-F:\Software\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-F:\Software\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-F:\workplace\UnrealSDK\sdktest\Plugins\SkyworthXR\Source\SkyworthInput/Classes/SkyworthVRPointerInputComponent.h
-F:\workplace\UnrealSDK\sdktest\Plugins\SkyworthXR\Source\SkyworthInput\Classes\SkyworthVRPointer.h
-F:\workplace\UnrealSDK\sdktest\Plugins\SkyworthXR\Intermediate\Build\Win64\UE4Editor\Inc\SkyworthInput\SkyworthVRPointer.generated.h
-F:\workplace\UnrealSDK\sdktest\Plugins\SkyworthXR\Intermediate\Build\Win64\UE4Editor\Inc\SkyworthInput\SkyworthVRPointerInputComponent.generated.h

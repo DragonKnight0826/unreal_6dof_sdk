@@ -2510,11 +2510,11 @@ namespace SkyworthHMD
 			EyeLayerDesc.TextureSize.w = EyeLayerDesc.MaxViewportSize.w;
 			EyeLayerDesc.TextureSize.h = EyeLayerDesc.MaxViewportSize.h;
 
-			if (Layout == ovrpLayout_DoubleWide)
+			/*if (Layout == ovrpLayout_DoubleWide)
 			{
 				vpRect[1].Pos.x = vpRect[0].Size.w;
 				EyeLayerDesc.TextureSize.w *= 2;
-			}
+			}*/
 
 			EyeLayer->SetEyeLayerDesc(EyeLayerDesc, vpRect);
 			EyeLayer->bNeedsTexSrgbCreate = Settings->Flags.bsRGBEyeBuffer;

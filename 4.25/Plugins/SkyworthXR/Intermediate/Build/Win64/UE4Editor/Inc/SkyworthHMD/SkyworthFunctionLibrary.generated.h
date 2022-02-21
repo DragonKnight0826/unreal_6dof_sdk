@@ -24,29 +24,29 @@ struct FSHmdUserProfile;
 #endif
 #define SKYWORTHHMD_SkyworthFunctionLibrary_generated_h
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_108_GENERATED_BODY \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_108_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSGuardianTestResult_Statics; \
 	SKYWORTHHMD_API static class UScriptStruct* StaticStruct();
 
 
 template<> SKYWORTHHMD_API UScriptStruct* StaticStruct<struct FSGuardianTestResult>();
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_48_GENERATED_BODY \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_48_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSHmdUserProfile_Statics; \
 	SKYWORTHHMD_API static class UScriptStruct* StaticStruct();
 
 
 template<> SKYWORTHHMD_API UScriptStruct* StaticStruct<struct FSHmdUserProfile>();
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_32_GENERATED_BODY \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_32_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FSHmdUserProfileField_Statics; \
 	SKYWORTHHMD_API static class UScriptStruct* StaticStruct();
 
 
 template<> SKYWORTHHMD_API UScriptStruct* StaticStruct<struct FSHmdUserProfileField>();
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_SPARSE_DATA
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_RPC_WRAPPERS \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_SPARSE_DATA
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execSetGuardianVisibility); \
 	DECLARE_FUNCTION(execGetNodeGuardianIntersection); \
@@ -93,7 +93,7 @@ template<> SKYWORTHHMD_API UScriptStruct* StaticStruct<struct FSHmdUserProfileFi
 	DECLARE_FUNCTION(execGetPose);
 
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_RPC_WRAPPERS_NO_PURE_DECLS \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execSetGuardianVisibility); \
 	DECLARE_FUNCTION(execGetNodeGuardianIntersection); \
@@ -140,7 +140,7 @@ template<> SKYWORTHHMD_API UScriptStruct* StaticStruct<struct FSHmdUserProfileFi
 	DECLARE_FUNCTION(execGetPose);
 
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_INCLASS_NO_PURE_DECLS \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUSkyworthFunctionLibrary(); \
 	friend struct Z_Construct_UClass_USkyworthFunctionLibrary_Statics; \
@@ -149,7 +149,7 @@ public: \
 	DECLARE_SERIALIZER(USkyworthFunctionLibrary)
 
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_INCLASS \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_INCLASS \
 private: \
 	static void StaticRegisterNativesUSkyworthFunctionLibrary(); \
 	friend struct Z_Construct_UClass_USkyworthFunctionLibrary_Statics; \
@@ -158,7 +158,7 @@ public: \
 	DECLARE_SERIALIZER(USkyworthFunctionLibrary)
 
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_STANDARD_CONSTRUCTORS \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USkyworthFunctionLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USkyworthFunctionLibrary) \
@@ -171,7 +171,7 @@ private: \
 public:
 
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_ENHANCED_CONSTRUCTORS \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USkyworthFunctionLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -184,28 +184,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USkyworthFunctionLibrary); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USkyworthFunctionLibrary)
 
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_PRIVATE_PROPERTY_OFFSET
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_131_PROLOG
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_GENERATED_BODY_LEGACY \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_PRIVATE_PROPERTY_OFFSET
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_131_PROLOG
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_PRIVATE_PROPERTY_OFFSET \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_SPARSE_DATA \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_RPC_WRAPPERS \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_INCLASS \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_STANDARD_CONSTRUCTORS \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_PRIVATE_PROPERTY_OFFSET \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_SPARSE_DATA \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_RPC_WRAPPERS \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_INCLASS \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_GENERATED_BODY \
+#define HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_PRIVATE_PROPERTY_OFFSET \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_SPARSE_DATA \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_RPC_WRAPPERS_NO_PURE_DECLS \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_INCLASS_NO_PURE_DECLS \
-	sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_ENHANCED_CONSTRUCTORS \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_PRIVATE_PROPERTY_OFFSET \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_SPARSE_DATA \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_RPC_WRAPPERS_NO_PURE_DECLS \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_INCLASS_NO_PURE_DECLS \
+	HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h_134_ENHANCED_CONSTRUCTORS \
 static_assert(false, "Unknown access specifier for GENERATED_BODY() macro in class SkyworthFunctionLibrary."); \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -213,7 +213,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> SKYWORTHHMD_API UClass* StaticClass<class USkyworthFunctionLibrary>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID sdktest_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h
+#define CURRENT_FILE_ID HostProject_Plugins_SkyworthXR_Source_SkyworthHMD_Public_SkyworthFunctionLibrary_h
 
 
 #define FOREACH_ENUM_FSBOUNDARYTYPE(op) \

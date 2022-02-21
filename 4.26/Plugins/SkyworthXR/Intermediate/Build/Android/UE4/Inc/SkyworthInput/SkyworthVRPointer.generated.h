@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SKYWORTHINPUT_SkyworthVRPointer_generated_h
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_SPARSE_DATA
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_RPC_WRAPPERS
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_RPC_WRAPPERS_NO_PURE_DECLS
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_STANDARD_CONSTRUCTORS \
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_SPARSE_DATA
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_RPC_WRAPPERS
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_RPC_WRAPPERS_NO_PURE_DECLS
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USkyworthVRPointer(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USkyworthVRPointer) \
@@ -29,7 +29,7 @@ private: \
 public:
 
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_ENHANCED_CONSTRUCTORS \
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USkyworthVRPointer(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -42,7 +42,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USkyworthVRPointer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USkyworthVRPointer)
 
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_UINTERFACE_BODY() \
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_UINTERFACE_BODY() \
 private: \
 	static void StaticRegisterNativesUSkyworthVRPointer(); \
 	friend struct Z_Construct_UClass_USkyworthVRPointer_Statics; \
@@ -51,22 +51,22 @@ public: \
 	DECLARE_SERIALIZER(USkyworthVRPointer)
 
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_BODY_LEGACY \
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_BODY_LEGACY \
 		PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_UINTERFACE_BODY() \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_STANDARD_CONSTRUCTORS \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_UINTERFACE_BODY() \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_STANDARD_CONSTRUCTORS \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_BODY \
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_BODY \
 	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_UINTERFACE_BODY() \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_ENHANCED_CONSTRUCTORS \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_GENERATED_UINTERFACE_BODY() \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_ENHANCED_CONSTRUCTORS \
 private: \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_INCLASS_IINTERFACE_NO_PURE_DECLS \
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_INCLASS_IINTERFACE_NO_PURE_DECLS \
 protected: \
 	virtual ~ISkyworthVRPointer() {} \
 public: \
@@ -75,7 +75,7 @@ public: \
 	virtual UObject* _getUObject() const { check(0 && "Missing required implementation."); return nullptr; }
 
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_INCLASS_IINTERFACE \
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_INCLASS_IINTERFACE \
 protected: \
 	virtual ~ISkyworthVRPointer() {} \
 public: \
@@ -84,23 +84,23 @@ public: \
 	virtual UObject* _getUObject() const { check(0 && "Missing required implementation."); return nullptr; }
 
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_46_PROLOG
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_54_GENERATED_BODY_LEGACY \
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_46_PROLOG
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_54_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_SPARSE_DATA \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_RPC_WRAPPERS \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_INCLASS_IINTERFACE \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_SPARSE_DATA \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_RPC_WRAPPERS \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_INCLASS_IINTERFACE \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_54_GENERATED_BODY \
+#define MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_54_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_SPARSE_DATA \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_RPC_WRAPPERS_NO_PURE_DECLS \
-	HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_INCLASS_IINTERFACE_NO_PURE_DECLS \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_SPARSE_DATA \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_RPC_WRAPPERS_NO_PURE_DECLS \
+	MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h_49_INCLASS_IINTERFACE_NO_PURE_DECLS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -108,7 +108,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> SKYWORTHINPUT_API UClass* StaticClass<class USkyworthVRPointer>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID HostProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h
+#define CURRENT_FILE_ID MyProject_Plugins_SkyworthXR_Source_SkyworthInput_Classes_SkyworthVRPointer_h
 
 
 #define FOREACH_ENUM_ESKYWORTHVRPOINTERINPUTMODE(op) \

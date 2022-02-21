@@ -1,0 +1,38 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.SkyworthInput.cpp.obj": [
+			"gvr_arm_model.cpp.obj",
+			"gvr_arm_model_math.cpp.obj",
+			"SkyworthInput.cpp.obj",
+			"SkyworthInputModule.cpp.obj",
+			"SkyworthVRActorPointerResponder.cpp.obj",
+			"SkyworthVRComponentPointerResponder.cpp.obj",
+			"SkyworthVRControllerEventManager.cpp.obj",
+			"SkyworthVRControllerFunctionLibrary.cpp.obj",
+			"SkyworthVRGazeReticleComponent.cpp.obj",
+			"SkyworthVRLaserPlaneComponent.cpp.obj",
+			"SkyworthVRLaserVisual.cpp.obj",
+			"SkyworthVRLaserVisualComponent.cpp.obj",
+			"SkyworthVRMotionControllerComponent.cpp.obj",
+			"SkyworthVRPointer.cpp.obj",
+			"SkyworthVRPointerInputComponent.cpp.obj",
+			"SkyworthVRWidgetInteractionComponent.cpp.obj"
+		],
+		"Module.SkyworthInput.gen.cpp.obj": [
+			"SkyworthInput.init.gen.cpp.obj",
+			"SkyworthVRActorPointerResponder.gen.cpp.obj",
+			"SkyworthVRComponentPointerResponder.gen.cpp.obj",
+			"SkyworthVRControllerEventManager.gen.cpp.obj",
+			"SkyworthVRControllerFunctionLibrary.gen.cpp.obj",
+			"SkyworthVRGazeReticleComponent.gen.cpp.obj",
+			"SkyworthVRLaserPlaneComponent.gen.cpp.obj",
+			"SkyworthVRLaserVisual.gen.cpp.obj",
+			"SkyworthVRLaserVisualComponent.gen.cpp.obj",
+			"SkyworthVRMotionControllerComponent.gen.cpp.obj",
+			"SkyworthVRPointer.gen.cpp.obj",
+			"SkyworthVRPointerInputComponent.gen.cpp.obj",
+			"SkyworthVRWidgetInteractionComponent.gen.cpp.obj"
+		]
+	}
+}

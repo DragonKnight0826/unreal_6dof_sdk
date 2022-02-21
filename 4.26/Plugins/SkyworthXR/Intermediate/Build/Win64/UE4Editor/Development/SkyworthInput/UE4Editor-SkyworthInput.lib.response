@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-SkyworthInput.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"F:\Temp\MyProject\Intermediate\Build\Win64\MyProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
+"F:\Temp\MyProject\Plugins\SkyworthXR\Intermediate\Build\Win64\UE4Editor\Development\SkyworthInput\Module.SkyworthInput.cpp.obj"
+"F:\Temp\MyProject\Plugins\SkyworthXR\Intermediate\Build\Win64\UE4Editor\Development\SkyworthInput\Module.SkyworthInput.gen.cpp.obj"
+"F:\Temp\MyProject\Plugins\SkyworthXR\Intermediate\Build\Win64\UE4Editor\Development\SkyworthInput\Default.rc2.res"
+/OUT:"F:\Temp\MyProject\Plugins\SkyworthXR\Intermediate\Build\Win64\UE4Editor\Development\SkyworthInput\UE4Editor-SkyworthInput.lib"
+/INCLUDE:IMPLEMENT_MODULE_SkyworthInput

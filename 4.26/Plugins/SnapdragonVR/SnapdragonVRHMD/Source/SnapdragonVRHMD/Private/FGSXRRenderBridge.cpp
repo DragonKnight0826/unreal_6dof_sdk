@@ -25,7 +25,13 @@ bool FGSXRRenderBridge::Present(int32& InOutSyncInterval)
 	if (pSnapdragonVRHMD)
 	{
 		pSnapdragonVRHMD->EndFrame_RHIThread();
+
+#if ENGINE_MINOR_VERSION < 27
+		bNeedsNativePresent = !FPlatformMisc::IsStandaloneStereoOnlyDevice();
+#else
 		bNeedsNativePresent = !pSnapdragonVRHMD->IsStandaloneStereoOnlyDevice();
+#endif
+		
 	}
 #endif
 

@@ -7,9 +7,7 @@
 //=============================================================================
 
 #include "SnapdragonVRHMD.h"
-#if ENGINE_MINOR_VERSION < 27
-#include "Engine.h"
-#endif
+
 #include "HardwareInfo.h"
 #include "../Public/SnapdragonVRHMDFunctionLibrary.h"
 
@@ -1455,7 +1453,9 @@ FSnapdragonVRHMD::FSnapdragonVRHMD(const FAutoRegister& AutoRegister) :
 	FSceneViewExtensionBase(AutoRegister),
 	bInitialized(false),
     bResumed(false),
+#if ENGINE_MINOR_VERSION == 27
 	bIsStandaloneStereoOnlyDevice(false),
+#endif
     CurHmdOrientation(FQuat::Identity),
     LastHmdOrientation(FQuat::Identity),
     DeltaControlRotation(FRotator::ZeroRotator),

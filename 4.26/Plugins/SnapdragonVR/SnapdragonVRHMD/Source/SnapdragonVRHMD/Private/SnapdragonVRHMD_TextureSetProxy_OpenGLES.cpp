@@ -73,7 +73,7 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 {
 	check(InArraySize == 1 || InTarget == GL_TEXTURE_2D_ARRAY);
 
-	//ÎªÁË½â¾öÎö¹¹Ê±GetMemorySize¶ÏÑÔ±ÀÀ£ÎÊÌâ£¬ÔÝÊ±²»Çå³þÊÇ·ñÓÐÒþ»¼
+	//ä¸ºäº†è§£å†³æžæž„æ—¶GetMemorySizeæ–­è¨€å´©æºƒé—®é¢˜ï¼Œæš‚æ—¶ä¸æ¸…æ¥šæ˜¯å¦æœ‰éšæ‚£
 	//((FOpenGLTextureCube*)this->GetTextureCube())->SetMemorySize(1);
 
 	// rbf debug
@@ -285,7 +285,12 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 
 void FSnapdragonVRTextureSet_OpenGL::SetNativeResource(const FTextureRHIRef& RenderTargetTexture)
 {
+#if ENGINE_MINOR_VERSION < 27
 	Resource = *(GLuint*)RenderTargetTexture->GetNativeResource();
+#else
+	SetResource(*(GLuint*)RenderTargetTexture->GetNativeResource());
+#endif
+	
 }
 
 FSnapdragonVRTextureSet_OpenGL* CreateTextureSetProxy_OpenGLES(

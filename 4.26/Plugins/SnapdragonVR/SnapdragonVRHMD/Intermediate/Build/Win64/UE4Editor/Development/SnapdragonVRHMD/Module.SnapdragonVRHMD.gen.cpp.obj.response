@@ -31,7 +31,7 @@
 /wd4244
 /wd4838
 /I .
-/I F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Private
+/I ..\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Private
 /I Runtime\Renderer\Private
 /I Runtime\Core\Private
 /I Runtime\OpenGLDrv\Private
@@ -243,23 +243,23 @@
 /I Runtime\MRMesh\Public
 /I Runtime\OpenGLDrv\Public
 /I Runtime\VulkanRHI\Public
-/I F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty
-/I F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty\SkyworthXRLib\SkyworthXRLib\Include
-/I ..\Plugins\Runtime\ProceduralMeshComponent\Intermediate\Build\Win64\UE4Editor\Inc\ProceduralMeshComponent
-/I ..\Plugins\Runtime\ProceduralMeshComponent\Source
-/I ..\Plugins\Runtime\ProceduralMeshComponent\Source\ProceduralMeshComponent\Public
+/I ..\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty
+/I ..\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty\SkyworthXRLib\SkyworthXRLib\Include
 /I Editor\EditorWidgets\Public
 /I Developer\DesktopWidgets\Public
 /I Developer\SharedSettingsWidgets\Public
 /I Developer\ExternalImagePicker\Public
 /I Editor\SequencerWidgets\Public
-/I F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Inc\SnapdragonVRHMD
-/I F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source
-/I F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Classes
-/I F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Public
+/I ..\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Inc\SnapdragonVRHMD
+/I ..\Plugins\SnapdragonVR\SnapdragonVRHMD\Source
+/I ..\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Classes
+/I ..\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Public
 /I Runtime\Launch\Public
 /I Developer\ProfilerService\Public
 /I Developer\ProfilerClient\Public
+/I ..\Plugins\Runtime\ProceduralMeshComponent\Intermediate\Build\Win64\UE4Editor\Inc\ProceduralMeshComponent
+/I ..\Plugins\Runtime\ProceduralMeshComponent\Source
+/I ..\Plugins\Runtime\ProceduralMeshComponent\Source\ProceduralMeshComponent\Public
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -285,18 +285,18 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
 /I ThirdParty\Vulkan\Include
 /I ThirdParty\Vulkan\Include\vulkan
-/I "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\INCLUDE"
-/I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.2\include\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"F:\UnrealObject\SkyWorthXR_Demo\Intermediate\Build\Win64\SkyWorthXR_DemoEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h"
-/Yu"F:\UnrealObject\SkyWorthXR_Demo\Intermediate\Build\Win64\SkyWorthXR_DemoEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h"
-/Fp"F:\UnrealObject\SkyWorthXR_Demo\Intermediate\Build\Win64\SkyWorthXR_DemoEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.pch"
-"F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.gen.cpp"
-/FI"F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Definitions.SnapdragonVRHMD.h"
-/Fo"F:\UnrealObject\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.gen.cpp.obj"
+/I "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\INCLUDE"
+/I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\ucrt"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\shared"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\winrt"
+/FI"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h"
+/Yu"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h"
+/Fp"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.pch"
+"D:\UnrealEngine\4.26.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.gen.cpp"
+/FI"D:\UnrealEngine\4.26.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Definitions.SnapdragonVRHMD.h"
+/Fo"D:\UnrealEngine\4.26.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.gen.cpp.obj"
 /TP
 /GR-
 /W4

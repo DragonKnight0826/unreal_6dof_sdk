@@ -7,7 +7,9 @@
 //=============================================================================
 
 #include "SnapdragonVRHMD.h"
+#if ENGINE_MINOR_VERSION < 27
 #include "Engine.h"
+#endif
 #include "HardwareInfo.h"
 #include "../Public/SnapdragonVRHMDFunctionLibrary.h"
 
@@ -31,6 +33,29 @@
 
 #include "Core/Public/HAL/RunnableThread.h"
 
+bool InGameThread()
+{
+	if (GIsGameThreadIdInitialized)
+	{
+		return FPlatformTLS::GetCurrentThreadId() == GGameThreadId;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool InRenderThread()
+{
+	if (GIsThreadedRendering && !GIsRenderingThreadSuspended.Load(EMemoryOrder::Relaxed))
+	{
+		return IsInActualRenderingThread();
+	}
+	else
+	{
+		return InGameThread();
+	}
+}
 
 DECLARE_CYCLE_STAT(TEXT("Update Player Camera"), STAT_UpdatePlayerCamera, STATGROUP_Tickables);
 
@@ -52,7 +77,7 @@ FCriticalSection FSnapdragonVRHMDCustomPresent::InVRModeCriticalSection;
 FCriticalSection FSnapdragonVRHMDCustomPresent::PerfLevelCriticalSection;
 
 #include <android_native_app_glue.h>
-
+#include "Android/AndroidEGL.h"
 #include "Android/AndroidJNI.h"
 #include "Android/AndroidApplication.h"
 #endif // PLATFORM_ANDROID
@@ -63,7 +88,6 @@ FCriticalSection FSnapdragonVRHMDCustomPresent::PerfLevelCriticalSection;
 #include "DrawDebugHelpers.h"
 
 #include "SCGSXRApi.h"
-
 DEFINE_LOG_CATEGORY(LogSVR);
 
 #if SNAPDRAGONVR_HMD_SUPPORTED_PLATFORMS
@@ -1222,10 +1246,18 @@ void FSnapdragonVRHMD::PostRenderViewFamily_RenderThread(FRHICommandListImmediat
 	// });
 	
 }
+#if ENGINE_MINOR_VERSION < 27
 bool FSnapdragonVRHMD::IsActiveThisFrame(FViewport* InViewport) const
 {
 	return GEngine && GEngine->IsStereoscopic3D(InViewport);
 }
+#else
+bool FSnapdragonVRHMD::IsActiveThisFrame_Internal(const FSceneViewExtensionContext& Context) const
+{
+	return GEngine && GEngine->IsStereoscopic3D(Context.Viewport);
+}
+#endif
+
 #if ENGINE_MINOR_VERSION > 25
 bool FSnapdragonVRHMD::AllocateRenderTargetTexture(uint32 Index, uint32 SizeX, uint32 SizeY, uint8 Format, uint32 NumMips, ETextureCreateFlags Flags, ETextureCreateFlags TargetableTextureFlags, FTexture2DRHIRef& OutTargetableTexture, FTexture2DRHIRef& OutShaderResourceTexture, uint32 NumSamples)
 #else
@@ -1240,7 +1272,7 @@ bool FSnapdragonVRHMD::AllocateRenderTargetTexture(uint32 Index, uint32 SizeX, u
 		GLuint TextureID = 0;
 		glGenTextures(1, &TextureID);
 		GLenum textureType = bIsMobileMultiViewEnabled ? GL_TEXTURE_2D_ARRAY : GL_TEXTURE_2D;			
-		glBindTexture(textureType, TextureID);			
+		glBindTexture(textureType, TextureID);
 		if (bIsMobileMultiViewEnabled) {
 			glTexStorage3D(textureType, 1, GL_RGBA8, SizeX, SizeY, 2);
 		}
@@ -1261,11 +1293,13 @@ bool FSnapdragonVRHMD::AllocateRenderTargetTexture(uint32 Index, uint32 SizeX, u
 	OutTargetableTexture = OutShaderResourceTexture =RenderBridge->SwapChain->GetTexture2DArray() ? RenderBridge->SwapChain->GetTexture2DArray() : RenderBridge->SwapChain->GetTexture2D();
 	return true;	
 }
+
 void FSnapdragonVRHMD::StartRendering_RHIThread()
 {
 	if(bStartRendering)
 		return;
 
+	UE_LOG(LogSVR, Log, TEXT("StartRendering ; InRenderThread = %s, InRHIThread = %s"), InRenderThread() ? TEXT("True") : TEXT("Flase"), IsInRHIThread() ? TEXT("True") : TEXT("Flase"));
 	bStartRendering = true;
 	uint32_t TrackingMode = kGSXRTrackingRotation | kGSXRTrackingPosition;
     SC::GSXR_nativeSetSlamType(TrackingMode);
@@ -1275,7 +1309,14 @@ void FSnapdragonVRHMD::StartRendering_RHIThread()
     beginParams.nativeWindow = AndroidEGL::GetInstance()->GetNativeWindow();
     beginParams.mainThreadId = gettid();
     beginParams.colorSpace = kGSXRColorSpaceLinear;
-	UE_LOG(LogSVR,Log,TEXT("xmh GSXR_nativeStartSlam"));
+
+	UE_LOG(LogSVR,Log,TEXT("xmh GSXR_nativeStartSlam: cpuPerfLevel = %d, gpuPerfLevel = %d, nativeWindow = %d, mainThreadId = %d, colorSpace = %d"),
+		beginParams.cpuPerfLevel,
+		beginParams.gpuPerfLevel,
+		beginParams.nativeWindow,
+		beginParams.mainThreadId,
+		beginParams.colorSpace);
+
     GSXRResult result = SC::GSXR_nativeStartSlam(&beginParams);
 	mFrameIndex = 0;
 	UE_LOG(LogSVR,Log,TEXT("GSXR_nativeStartSlam:%d"),result);
@@ -1293,13 +1334,20 @@ void FSnapdragonVRHMD::StopRendering_RHIThread()
 	// SC::GSXR_nativeShutdown();
 	// bInitialized = false;
 }
+
 void FSnapdragonVRHMD::BeginFrame_RHIThread()
 {
 	if (!bStartRendering)
 	{
 		return;
 	}
+
+#if ENGINE_MINOR_VERSION < 27
 	RenderBridge->SwapChain->IncrementSwapChainIndex_RHIThread(0);
+#else
+	RenderBridge->SwapChain->IncrementSwapChainIndex_RHIThread();
+#endif
+	
 }
 
 void FSnapdragonVRHMD::PreRenderFrame_RHIThread()
@@ -1371,7 +1419,7 @@ void FSnapdragonVRHMD::EndFrame_RHIThread()
 		FrameParams.renderLayers[0].imageCoords.LowerUVs[2] = 0.5f;
 		FrameParams.renderLayers[0].imageCoords.UpperUVs[2] = 0.5f;
 		FrameParams.renderLayers[0].eyeMask = kGSXREyeMaskLeft;
-		// FrameParams.renderLayers[0].layerFlags |= kGSXRLayerFlagOpaque;
+		//FrameParams.renderLayers[0].layerFlags |= kGSXRLayerFlagOpaque;
 
 		FrameParams.renderLayers[1].imageHandle = *(GLuint *)SwapChainTexture->GetNativeResource();
 		FrameParams.renderLayers[1].imageType = kGSXRTypeTexture;
@@ -1379,7 +1427,7 @@ void FSnapdragonVRHMD::EndFrame_RHIThread()
 		FrameParams.renderLayers[1].imageCoords.LowerUVs[0] = 0.5f;
 		FrameParams.renderLayers[1].imageCoords.UpperUVs[0] = 0.5f;
 		FrameParams.renderLayers[1].eyeMask = kGSXREyeMaskRight;
-		// FrameParams.renderLayers[1].layerFlags |= kGSXRLayerFlagOpaque;
+		//FrameParams.renderLayers[1].layerFlags |= kGSXRLayerFlagOpaque;
 		// UE_LOG(LogSVR, Log, TEXT("FOpenGLESCustomPresentSVR::SubmitFrame - not using array"));
 	}
 	FrameParams.frameOptions = kGSXRDisableChromaticCorrection;
@@ -1388,6 +1436,9 @@ void FSnapdragonVRHMD::EndFrame_RHIThread()
 	FrameParams.headPoseState.pose.rotation.x,FrameParams.headPoseState.pose.rotation.y,FrameParams.headPoseState.pose.rotation.z,FrameParams.headPoseState.pose.rotation.w);
 	FrameParams.minVsyncs = 1;
 	UE_LOG(LogSVR,Log,TEXT("(%s) (Frame %d) SubmitFrame(mRenderPose) => Calling SC::GSXR_nativeSubmitDataFrame(Frame %d),imageHandle=%d"), IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), FrameParams.frameIndex, FrameParams.frameIndex,FrameParams.renderLayers[0].imageHandle);
+	UE_LOG(LogSVR, Log, TEXT("SubmitFrame : frameIndex = %d"), FrameParams.frameIndex);
+	UE_LOG(LogSVR, Log, TEXT("SubmitFrame : minVsyncs = %d"), FrameParams.minVsyncs);
+	
 	SC::GSXR_nativeSubmitDataFrame(&FrameParams);
 	RenderBridge->SwapChain->ReleaseCurrentImage_RHIThread();
 	mFrameIndex++;
@@ -1404,6 +1455,7 @@ FSnapdragonVRHMD::FSnapdragonVRHMD(const FAutoRegister& AutoRegister) :
 	FSceneViewExtensionBase(AutoRegister),
 	bInitialized(false),
     bResumed(false),
+	bIsStandaloneStereoOnlyDevice(false),
     CurHmdOrientation(FQuat::Identity),
     LastHmdOrientation(FQuat::Identity),
     DeltaControlRotation(FRotator::ZeroRotator),
@@ -1701,6 +1753,7 @@ void FSnapdragonVRHMD::InitializeIfNecessaryOnResume()
 			StartRendering_RHIThread();
 		});
 	});
+	UE_LOG(LogSVR, Log, TEXT("StartRendering ; bStartRendering = %s"), bStartRendering ? TEXT("True") : TEXT("Flase"));
 	FlushRenderingCommands();
 }
 

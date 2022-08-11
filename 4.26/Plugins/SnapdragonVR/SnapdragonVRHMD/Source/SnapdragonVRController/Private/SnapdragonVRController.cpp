@@ -87,8 +87,8 @@ void OnControllerTriggerCallback(int hall_x, int hall_y, const int lr)
 {
 	UE_LOG(LogSnapdragonVRController, Log, TEXT("TriggerCallback:hall_x = %d, hall_y = %d, lr = %d"), hall_x, hall_y, lr);
 
-	TempAxis[lr][ESnapdragonVRControllerAxis1D::Type::Trigger] = hall_x;
-	TempAxis[lr][ESnapdragonVRControllerAxis1D::Type::Grip] = hall_y;
+	TempAxis[lr][ESnapdragonVRControllerAxis1D::Type::Trigger] = hall_x / 10.f;
+	TempAxis[lr][ESnapdragonVRControllerAxis1D::Type::Grip] = hall_y / 10.f;
 
 	if (!lr)
 	{
@@ -174,8 +174,8 @@ void OnControllerRockerCallback(int touch_x, int touch_y, const int lr)
 		return;
 	}
 
-	TempAxis2D[lr][ESnapdragonVRControllerAxis2D::JoyStick].x = touch_x;
-	TempAxis2D[lr][ESnapdragonVRControllerAxis2D::JoyStick].x = touch_y;
+	TempAxis2D[lr][ESnapdragonVRControllerAxis2D::JoyStick].x = (touch_x - 8) / 8.f;
+	TempAxis2D[lr][ESnapdragonVRControllerAxis2D::JoyStick].y = (touch_y - 8) /	8.f;
 }
 
 
@@ -349,16 +349,16 @@ void FSnapdragonVRController::PreInit()
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Button_B_Touch, LOCTEXT("SkyWorthXRController_Button_B_Touch", "SkyWorthXR Controller (R) Touch Button B"), FKeyDetails::GamepadKey));
 
 	// Axis 1D
-	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Trigger_Axis, LOCTEXT("SkyWorthXRController_Left_Trigger_Axis", "SkyWorthXR Controller (L) Trigger Axis"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
-	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Grip_Axis, LOCTEXT("SkyWorthXRController_Left_Grip_Axis", "SkyWorthXR Controller (L) Grip Axis"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
-	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_Trigger_Axis, LOCTEXT("SkyWorthXRController_Right_Trigger_Axis", "SkyWorthXR Controller (R) Trigger Axis"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
-	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_Grip_Axis, LOCTEXT("SkyWorthXRController_Right_Grip_Axis", "SkyWorthXR Controller (R) Grip_Axis"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Trigger_Axis, LOCTEXT("SkyWorthXRController_Left_Trigger_Axis", "SkyWorthXR Controller (L) Trigger Axis"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Grip_Axis, LOCTEXT("SkyWorthXRController_Left_Grip_Axis", "SkyWorthXR Controller (L) Grip Axis"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_Trigger_Axis, LOCTEXT("SkyWorthXRController_Right_Trigger_Axis", "SkyWorthXR Controller (R) Trigger Axis"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_Grip_Axis, LOCTEXT("SkyWorthXRController_Right_Grip_Axis", "SkyWorthXR Controller (R) Grip_Axis"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
 
 	//Axis 2D
-	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_JoyStick_Axis_X, LOCTEXT("SkyWorthXRController_Left_JoyStick_Axis_X", "SkyWorthXR Controller (L) JoyStick Axis X"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
-	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_JoyStick_Axis_Y, LOCTEXT("SkyWorthXRController_Left_JoyStick_Axis_Y", "SkyWorthXR Controller (L) JoyStick Axis Y"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
-	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_JoyStick_Axis_X, LOCTEXT("SkyWorthXRController_Right_JoyStick_Axis_X", "SkyWorthXR Controller (R) JoyStick Axis X"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
-	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_JoyStick_Axis_Y, LOCTEXT("SkyWorthXRController_Right_JoyStick_Axis_Y", "SkyWorthXR Controller (R) JoyStick Axis Y"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_JoyStick_Axis_X, LOCTEXT("SkyWorthXRController_Left_JoyStick_Axis_X", "SkyWorthXR Controller (L) JoyStick Axis X"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_JoyStick_Axis_Y, LOCTEXT("SkyWorthXRController_Left_JoyStick_Axis_Y", "SkyWorthXR Controller (L) JoyStick Axis Y"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_JoyStick_Axis_X, LOCTEXT("SkyWorthXRController_Right_JoyStick_Axis_X", "SkyWorthXR Controller (R) JoyStick Axis X"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_JoyStick_Axis_Y, LOCTEXT("SkyWorthXRController_Right_JoyStick_Axis_Y", "SkyWorthXR Controller (R) JoyStick Axis Y"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
 
 	//Buttons
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Menu, LOCTEXT("SkyWorthXRController_Left_Menu", "SkyWorthXR Controller (L) Menu"), FKeyDetails::GamepadKey));
@@ -587,6 +587,7 @@ void FSnapdragonVRController::ProcessControllerButtons()
 					FVector2D Loc = GetAxis2D(i, Hand, ESnapdragonVRControllerAxis2D::JoyStick);
 					MessageHandler->OnControllerAnalog(SnapdragonVRControllerKeyNames::SkyWorthXRController_Left_JoyStick_Axis_X, 0, Loc.X);
 					MessageHandler->OnControllerAnalog(SnapdragonVRControllerKeyNames::SkyWorthXRController_Left_JoyStick_Axis_Y, 0, Loc.Y);
+					UE_LOG(LogSnapdragonVRController, Log, TEXT("JoyStick Left X= %f, Y = %f"), Loc.X, Loc.Y);
 
 				}
 				else if (Hand == EControllerHand::Right)
@@ -600,6 +601,7 @@ void FSnapdragonVRController::ProcessControllerButtons()
 					FVector2D Loc = GetAxis2D(i, Hand, ESnapdragonVRControllerAxis2D::JoyStick);
 					MessageHandler->OnControllerAnalog(SnapdragonVRControllerKeyNames::SkyWorthXRController_Right_JoyStick_Axis_X, 0, Loc.X);
 					MessageHandler->OnControllerAnalog(SnapdragonVRControllerKeyNames::SkyWorthXRController_Right_JoyStick_Axis_Y, 0, Loc.Y);
+					UE_LOG(LogSnapdragonVRController, Log, TEXT("JoyStick Right X= %f, Y = %f"), Loc.X, Loc.Y);
 				}
 			}
 		}

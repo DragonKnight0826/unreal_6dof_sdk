@@ -110,7 +110,13 @@ public:
 	//virtual bool IsActiveThisFrame(class FViewport* InViewport) const override { return false;  }  // RBF questionable
 	virtual void PostRenderViewFamily_RenderThread(FRHICommandListImmediate& RHICmdList, FSceneViewFamily& InViewFamily) override;
 	virtual void PostRenderView_RenderThread(FRHICommandListImmediate& RHICmdList, FSceneView& InView) override {}
+
+#if ENGINE_MINOR_VERSION < 27
 	virtual bool IsActiveThisFrame(class FViewport* InViewport) const override;
+#else
+	virtual bool IsActiveThisFrame_Internal(const FSceneViewExtensionContext& Context) const override;
+#endif
+	
 
 	///////////////////////////////////////////////////
 	// Begin IStereoRendering Pure-Virtual Interface //
@@ -167,7 +173,7 @@ public:
 
 	// Whether separate render target should be used or not.
 	virtual bool ShouldUseSeparateRenderTarget() const override { return IsStereoEnabled(); }
-	#if ENGINE_MINOR_VERSION >25
+#if ENGINE_MINOR_VERSION >25
 	virtual bool AllocateRenderTargetTexture(uint32 Index, uint32 SizeX, uint32 SizeY, uint8 Format, uint32 NumMips, ETextureCreateFlags InTexFlags, ETextureCreateFlags InTargetableTextureFlags, FTexture2DRHIRef& OutTargetableTexture, FTexture2DRHIRef& OutShaderResourceTexture, uint32 NumSamples = 1) override;
 #else
 	virtual bool AllocateRenderTargetTexture(uint32 Index, uint32 SizeX, uint32 SizeY, uint8 Format, uint32 NumMips, uint32 Flags, uint32 TargetableTextureFlags, FTexture2DRHIRef& OutTargetableTexture, FTexture2DRHIRef& OutShaderResourceTexture, uint32 NumSamples = 1) override;
@@ -422,6 +428,10 @@ public:
 	/** FXRTrackingSystemBase protected interface */
 	virtual float GetWorldToMetersScale() const override;
 
+#if ENGINE_MINOR_VERSION > 26
+	bool IsStandaloneStereoOnlyDevice() const { return bIsStandaloneStereoOnlyDevice; }
+#endif
+
 	#if SNAPDRAGONVR_HMD_SUPPORTED_PLATFORMS
 	// Performance helper functions
 	static void PerfLevelLog(const TCHAR* const InPrefix, enum GSXRPerfLevel InPerfLevelCpu, enum GSXRPerfLevel InPerfLevelGpu);
@@ -510,7 +520,10 @@ private:
 private:
 	bool bInitialized;
 	bool bResumed;
-
+#if ENGINE_MINOR_VERSION > 26
+	bool bIsStandaloneStereoOnlyDevice;
+#endif
+	
 // #if SNAPDRAGONVR_HMD_SUPPORTED_PLATFORMS
 // 	TRefCountPtr<FSnapdragonVRHMDCustomPresent> pSnapdragonVRBridge;
 // #else
@@ -576,27 +589,3 @@ public:
 // #else
 // #define TM_MSG(...)
 // #endif
-
-bool InGameThread()
-{
-	if (GIsGameThreadIdInitialized)
-	{
-		return FPlatformTLS::GetCurrentThreadId() == GGameThreadId;
-	}
-	else
-	{
-		return true;
-	}
-}
-
-bool InRenderThread()
-{
-	if (GIsThreadedRendering && !GIsRenderingThreadSuspended.Load(EMemoryOrder::Relaxed))
-	{
-		return IsInActualRenderingThread();
-	}
-	else
-	{
-		return InGameThread();
-	}
-}

@@ -19,6 +19,7 @@
 		"Win32",
 		"Android"
 	],
+
 	"Modules": [
 		{
 			"Name": "SnapdragonVRHMD",
@@ -40,5 +41,14 @@
 				"Android"
 			]
 		}
+	],
+
+	"Plugins":
+	[
+		{
+			"Name":"ProceduralMeshComponent",
+			"Enabled":true
+		}
+
 	]
 }

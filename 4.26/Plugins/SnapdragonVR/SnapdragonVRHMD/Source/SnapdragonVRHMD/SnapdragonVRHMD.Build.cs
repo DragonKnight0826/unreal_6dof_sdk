@@ -151,8 +151,7 @@ namespace UnrealBuildTool.Rules
                     "OpenGLDrv",
                     "OpenGL",
                     "VulkanRHI",
-					"SkyworthXRLib",
-                    "ProceduralMeshComponent"
+					"SkyworthXRLib"
                 }
                 );
 

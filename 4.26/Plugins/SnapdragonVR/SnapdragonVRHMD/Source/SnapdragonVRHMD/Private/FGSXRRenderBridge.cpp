@@ -19,11 +19,24 @@ bool FGSXRRenderBridge::NeedsNativePresent()
 
 bool FGSXRRenderBridge::Present(int32& InOutSyncInterval)
 {
+	bool bNeedsNativePresent = true;
+
 #if SNAPDRAGONVR_HMD_SUPPORTED_PLATFORMS
-	pSnapdragonVRHMD->EndFrame_RHIThread();
+	if (pSnapdragonVRHMD)
+	{
+		pSnapdragonVRHMD->EndFrame_RHIThread();
+
+#if ENGINE_MINOR_VERSION < 27
+		bNeedsNativePresent = !FPlatformMisc::IsStandaloneStereoOnlyDevice();
+#else
+		bNeedsNativePresent = !pSnapdragonVRHMD->IsStandaloneStereoOnlyDevice();
 #endif
+		
+	}
+#endif
+
 	InOutSyncInterval = 0; // VSync off
-	const bool bNeedsNativePresent = !FPlatformMisc::IsStandaloneStereoOnlyDevice();
+
 	return bNeedsNativePresent;
 }
 

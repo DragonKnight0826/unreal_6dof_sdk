@@ -23,4 +23,4 @@ The following functions are supported:
  - Binocular stereo rendering
  - Key input
  
- Please read [the developer documentation](https://skyworthxr.com/xrsdk/unrealsdk10/index.html) for details
+ Please read [the developer documentation](https://skyworthxr.com/xrsdk/unrealsdk10en/index.html) for details

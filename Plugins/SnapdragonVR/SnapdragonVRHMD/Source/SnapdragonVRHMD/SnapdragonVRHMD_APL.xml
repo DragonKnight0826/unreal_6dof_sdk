@@ -26,11 +26,6 @@
 			{
 			return PackagedForSnapdragonVR;
 			}
-
-			public boolean AndroidThunkJava_IsOculusMobileApplication()
-			{
-			return false;
-			}
 		</insert>
 	</gameActivityClassAdditions>
 	

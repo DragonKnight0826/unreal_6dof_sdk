@@ -28,6 +28,7 @@
 /we4458
 /we4459
 /wd4463
+/we4668
 /wd4244
 /wd4838
 /I .
@@ -77,6 +78,8 @@
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\GameplayTags
 /I Runtime\GameplayTags\Classes
 /I Runtime\GameplayTags\Public
+/I ..\Intermediate\Build\Win64\UE4Editor\Inc\DeveloperSettings
+/I Runtime\DeveloperSettings\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\PacketHandler
 /I Runtime\PacketHandlers
 /I Runtime\PacketHandlers\PacketHandler\Classes
@@ -94,8 +97,6 @@
 /I Runtime\NetworkReplayStreaming\NetworkReplayStreaming\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\PhysicsCore
 /I Runtime\PhysicsCore\Public
-/I ..\Intermediate\Build\Win64\UE4Editor\Inc\DeveloperSettings
-/I Runtime\DeveloperSettings\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\Chaos
 /I Runtime\Experimental
 /I Runtime\Experimental\Chaos\Public
@@ -265,18 +266,18 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\INCLUDE"
+/I "D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\winrt"
-/FI"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"D:\UnrealEngine\4.26.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp"
-/FI"D:\UnrealEngine\4.26.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Definitions.SnapdragonVRController.h"
-/Fo"D:\UnrealEngine\4.26.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp.obj"
+/FI"D:\UnrealEngine\4.27.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"D:\UnrealEngine\4.27.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\UnrealEngine\4.27.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"D:\UnrealEngine\4.27.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp"
+/FI"D:\UnrealEngine\4.27.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Definitions.SnapdragonVRController.h"
+/Fo"D:\UnrealEngine\4.27.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp.obj"
 /TP
 /GR-
 /W4

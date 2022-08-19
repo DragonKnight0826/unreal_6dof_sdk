@@ -1493,10 +1493,14 @@ FSnapdragonVRHMD::FSnapdragonVRHMD(const FAutoRegister& AutoRegister) :
 		SetupOcclusionMeshes();
 	}
 }
+
+#if ENGINE_MINOR_VERSION > 25
 int32 FSnapdragonVRHMD::GetXRSystemFlags() const
 {
 	return EXRSystemFlags::IsHeadMounted;
 }
+#endif
+
 
 //-----------------------------------------------------------------------------
 FSnapdragonVRHMD::~FSnapdragonVRHMD()

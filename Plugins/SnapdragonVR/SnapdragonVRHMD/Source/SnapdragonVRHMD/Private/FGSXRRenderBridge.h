@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Launch/Resources/Version.h"
 #include "XRRenderBridge.h"
 #include "XRSwapChain.h"
 

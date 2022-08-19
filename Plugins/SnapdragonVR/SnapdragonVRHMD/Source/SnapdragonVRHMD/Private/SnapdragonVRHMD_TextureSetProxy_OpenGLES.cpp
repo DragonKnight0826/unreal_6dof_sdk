@@ -6,7 +6,7 @@
 //
 //=============================================================================
 #include "SnapdragonVRHMD_TextureSetProxy.h"
-
+#include "RHI/Public/RHIDefinitions.h"
 #include "OpenGLDrv/Private/OpenGLDrvPrivate.h"
 #include "OpenGLDrv/Public/OpenGLResources.h"
 #include "SnapdragonXR_CVars.h"
@@ -68,7 +68,11 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 	false,
 	true,
 	InFlags,
-	//nullptr,
+
+#if ENGINE_MINOR_VERSION < 26
+	nullptr,
+#endif
+
 	FClearValueBinding::White)
 {
 	check(InArraySize == 1 || InTarget == GL_TEXTURE_2D_ARRAY);
@@ -95,7 +99,7 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 		if (bNoSRGBSupport)
 		{
 			// Remove sRGB read flag when not supported
-			InTargetableTextureFlags &= ~TexCreate_SRGB;
+			InTargetableTextureFlags = ETextureCreateFlags(InTargetableTextureFlags & ~TexCreate_SRGB);
 		}
 
 		GLuint TextureID = 0;
@@ -208,7 +212,10 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 				false, // cubemaps?
 				true,  // in allocated storage?
 				InTargetableTextureFlags,
-				//nullptr, // texture range
+
+#if ENGINE_MINOR_VERSION < 26
+				nullptr, // texture range
+#endif	
 				FClearValueBinding(Color)
 			);
 
@@ -232,7 +239,10 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 				false,
 				true,
 				InTargetableTextureFlags,
-				//nullptr,
+
+#if ENGINE_MINOR_VERSION < 26
+				nullptr, // texture range
+#endif
 				FClearValueBinding(Color)
 			);
 

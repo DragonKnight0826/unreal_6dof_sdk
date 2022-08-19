@@ -10,7 +10,6 @@
 #include "SnapdragonVRControllerFunctionLibrary.h"
 #include "Core/Public/Misc/CoreDelegates.h"
 #include "IHeadMountedDisplay.h"
-
 #include "Misc/Paths.h"
 #include "HAL/FileManager.h"
 #include "GameFramework/WorldSettings.h"
@@ -18,6 +17,8 @@
 #include "Engine/Engine.h"
 #include "HAL/UnrealMemory.h"
 #include "SCGSXRApi.h"
+
+#include "ApplicationCore/Public/GenericPlatform/IInputInterface.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*		_____  ______          _____    __  __ ______
@@ -348,6 +349,19 @@ void FSnapdragonVRController::PreInit()
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Button_A_Touch, LOCTEXT("SkyWorthXRController_Button_A_Touch", "SkyWorthXR Controller (R) Touch Button A"), FKeyDetails::GamepadKey));
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Button_B_Touch, LOCTEXT("SkyWorthXRController_Button_B_Touch", "SkyWorthXR Controller (R) Touch Button B"), FKeyDetails::GamepadKey));
 
+#if ENGINE_MINOR_VERSION < 26
+	// Axis 1D
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Trigger_Axis, LOCTEXT("SkyWorthXRController_Left_Trigger_Axis", "SkyWorthXR Controller (L) Trigger Axis"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Grip_Axis, LOCTEXT("SkyWorthXRController_Left_Grip_Axis", "SkyWorthXR Controller (L) Grip Axis"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_Trigger_Axis, LOCTEXT("SkyWorthXRController_Right_Trigger_Axis", "SkyWorthXR Controller (R) Trigger Axis"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_Grip_Axis, LOCTEXT("SkyWorthXRController_Right_Grip_Axis", "SkyWorthXR Controller (R) Grip_Axis"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+
+	//Axis 2D
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_JoyStick_Axis_X, LOCTEXT("SkyWorthXRController_Left_JoyStick_Axis_X", "SkyWorthXR Controller (L) JoyStick Axis X"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_JoyStick_Axis_Y, LOCTEXT("SkyWorthXRController_Left_JoyStick_Axis_Y", "SkyWorthXR Controller (L) JoyStick Axis Y"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_JoyStick_Axis_X, LOCTEXT("SkyWorthXRController_Right_JoyStick_Axis_X", "SkyWorthXR Controller (R) JoyStick Axis X"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_JoyStick_Axis_Y, LOCTEXT("SkyWorthXRController_Right_JoyStick_Axis_Y", "SkyWorthXR Controller (R) JoyStick Axis Y"), FKeyDetails::GamepadKey | FKeyDetails::FloatAxis));
+#else
 	// Axis 1D
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Trigger_Axis, LOCTEXT("SkyWorthXRController_Left_Trigger_Axis", "SkyWorthXR Controller (L) Trigger Axis"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Grip_Axis, LOCTEXT("SkyWorthXRController_Left_Grip_Axis", "SkyWorthXR Controller (L) Grip Axis"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
@@ -359,6 +373,7 @@ void FSnapdragonVRController::PreInit()
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_JoyStick_Axis_Y, LOCTEXT("SkyWorthXRController_Left_JoyStick_Axis_Y", "SkyWorthXR Controller (L) JoyStick Axis Y"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_JoyStick_Axis_X, LOCTEXT("SkyWorthXRController_Right_JoyStick_Axis_X", "SkyWorthXR Controller (R) JoyStick Axis X"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_JoyStick_Axis_Y, LOCTEXT("SkyWorthXRController_Right_JoyStick_Axis_Y", "SkyWorthXR Controller (R) JoyStick Axis Y"), FKeyDetails::GamepadKey | FKeyDetails::Axis1D));
+#endif
 
 	//Buttons
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Left_Menu, LOCTEXT("SkyWorthXRController_Left_Menu", "SkyWorthXR Controller (L) Menu"), FKeyDetails::GamepadKey));

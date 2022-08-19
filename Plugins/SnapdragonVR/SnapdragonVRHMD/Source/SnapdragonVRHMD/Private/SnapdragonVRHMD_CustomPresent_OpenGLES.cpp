@@ -33,7 +33,18 @@ public:
 		// Create texture for reticle layer
 		FOpenGLDynamicRHI* OpenGLRHI = static_cast<FOpenGLDynamicRHI*>(GDynamicRHI);
 		FRHIResourceCreateInfo CreateInfo;
-		ReticleTexture = OpenGLRHI->RHICreateTexture2D(5, 5, PF_B8G8R8A8, 1, 1, TexCreate_ShaderResource, ERHIAccess::Unknown, CreateInfo);
+		ReticleTexture = OpenGLRHI->RHICreateTexture2D(
+			5, 
+			5, 
+			PF_B8G8R8A8, 
+			1, 
+			1, 
+			TexCreate_ShaderResource, 
+
+#if ENGINE_MINOR_VERSION > 25
+			ERHIAccess::Unknown,
+#endif
+			CreateInfo);
 
 		if (IsInRenderingThread() || IsInRHIThread())
 		{

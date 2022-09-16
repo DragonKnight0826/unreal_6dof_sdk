@@ -116,7 +116,7 @@ public: \
 	NO_API USnapdragonVRHMDFunctionLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USnapdragonVRHMDFunctionLibrary) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USnapdragonVRHMDFunctionLibrary); \
-	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USnapdragonVRHMDFunctionLibrary); \
+DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USnapdragonVRHMDFunctionLibrary); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API USnapdragonVRHMDFunctionLibrary(USnapdragonVRHMDFunctionLibrary&&); \
@@ -133,7 +133,7 @@ private: \
 	NO_API USnapdragonVRHMDFunctionLibrary(const USnapdragonVRHMDFunctionLibrary&); \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USnapdragonVRHMDFunctionLibrary); \
-	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USnapdragonVRHMDFunctionLibrary); \
+DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USnapdragonVRHMDFunctionLibrary); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USnapdragonVRHMDFunctionLibrary)
 
 

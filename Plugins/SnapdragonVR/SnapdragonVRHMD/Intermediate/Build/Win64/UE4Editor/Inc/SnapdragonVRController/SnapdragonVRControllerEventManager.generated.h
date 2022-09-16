@@ -73,7 +73,7 @@ public: \
 	NO_API USnapdragonVRControllerEventManager(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USnapdragonVRControllerEventManager) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USnapdragonVRControllerEventManager); \
-	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USnapdragonVRControllerEventManager); \
+DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USnapdragonVRControllerEventManager); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API USnapdragonVRControllerEventManager(USnapdragonVRControllerEventManager&&); \
@@ -90,7 +90,7 @@ private: \
 	NO_API USnapdragonVRControllerEventManager(const USnapdragonVRControllerEventManager&); \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USnapdragonVRControllerEventManager); \
-	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USnapdragonVRControllerEventManager); \
+DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USnapdragonVRControllerEventManager); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USnapdragonVRControllerEventManager)
 
 

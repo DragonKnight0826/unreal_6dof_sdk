@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-SnapdragonVRHMD.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"B:\WindowsFile\Documents\Unreal Projects\Test_Android\Intermediate\Build\Win64\Test_AndroidEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
+"B:\WindowsFile\Documents\Unreal Projects\Test_Android\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UnrealEditor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.cpp.obj"
+"B:\WindowsFile\Documents\Unreal Projects\Test_Android\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UnrealEditor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.gen.cpp.obj"
+"B:\WindowsFile\Documents\Unreal Projects\Test_Android\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UnrealEditor\Development\SnapdragonVRHMD\Default.rc2.res"
+/OUT:"B:\WindowsFile\Documents\Unreal Projects\Test_Android\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UnrealEditor\Development\SnapdragonVRHMD\UnrealEditor-SnapdragonVRHMD.lib"

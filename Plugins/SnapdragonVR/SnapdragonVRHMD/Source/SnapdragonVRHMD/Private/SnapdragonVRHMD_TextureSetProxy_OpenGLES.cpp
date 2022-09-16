@@ -69,7 +69,7 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 	true,
 	InFlags,
 
-#if ENGINE_MINOR_VERSION < 26
+#if ENGINE_MINOR_VERSION < 26 && ENGINE_MAJOR_VERSION < 5
 	nullptr,
 #endif
 
@@ -87,10 +87,14 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 	for (int i = 0; i < CVars::GNumSwapchainImages; ++i)
 	{
 		bool bArrayTexture = (InArraySize > 1);
-
+#if ENGINE_MINOR_VERSION < 25 && ENGINE_MAJOR_VERSION < 5
+		bool bNoSRGBSupport = (GMaxRHIFeatureLevel == ERHIFeatureLevel::ES2);
+#else
 		bool bNoSRGBSupport = (GMaxRHIFeatureLevel == ERHIFeatureLevel::ES2_REMOVED);
+#endif
+		
 
-		if ((InTargetableTextureFlags & TexCreate_RenderTargetable) && InFormat == PF_B8G8R8A8 && !FOpenGL::SupportsBGRA8888())
+		if (((int32)InTargetableTextureFlags & (int32)TexCreate_RenderTargetable) && InFormat == PF_B8G8R8A8 && !FOpenGL::SupportsBGRA8888())
 		{
 			// Some android devices does not support BGRA as a color attachment
 			InFormat = PF_R8G8B8A8;
@@ -109,7 +113,7 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 		dbgprint("FSnapdragonVRTextureSet_OpenGL c'tor - creating texture ID %d, Size %d,%d format - %d",
 			TextureID, InSizeX, InSizeY, (uint)InFormat);
 
-		const bool bSRGB = (InTargetableTextureFlags & TexCreate_SRGB) != 0;
+		const bool bSRGB = ((int32)InTargetableTextureFlags & (int32)TexCreate_SRGB) != 0;
 		const FOpenGLTextureFormat& GLFormat = GOpenGLTextureFormats[InFormat];
 		if (GLFormat.InternalFormat[bSRGB] == GL_NONE)
 		{
@@ -213,7 +217,7 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 				true,  // in allocated storage?
 				InTargetableTextureFlags,
 
-#if ENGINE_MINOR_VERSION < 26
+#if ENGINE_MINOR_VERSION < 26 && ENGINE_MAJOR_VERSION < 5
 				nullptr, // texture range
 #endif	
 				FClearValueBinding(Color)
@@ -240,7 +244,7 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 				true,
 				InTargetableTextureFlags,
 
-#if ENGINE_MINOR_VERSION < 26
+#if ENGINE_MINOR_VERSION < 26 && ENGINE_MAJOR_VERSION < 5
 				nullptr, // texture range
 #endif
 				FClearValueBinding(Color)
@@ -295,7 +299,7 @@ FSnapdragonVRTextureSet_OpenGL::FSnapdragonVRTextureSet_OpenGL(
 
 void FSnapdragonVRTextureSet_OpenGL::SetNativeResource(const FTextureRHIRef& RenderTargetTexture)
 {
-#if ENGINE_MINOR_VERSION < 27
+#if ENGINE_MINOR_VERSION < 27 && ENGINE_MAJOR_VERSION < 5
 	Resource = *(GLuint*)RenderTargetTexture->GetNativeResource();
 #else
 	SetResource(*(GLuint*)RenderTargetTexture->GetNativeResource());

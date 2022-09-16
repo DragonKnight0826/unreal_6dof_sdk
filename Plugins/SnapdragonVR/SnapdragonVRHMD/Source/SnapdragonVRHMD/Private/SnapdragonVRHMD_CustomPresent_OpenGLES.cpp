@@ -32,7 +32,7 @@ public:
 	{
 		// Create texture for reticle layer
 		FOpenGLDynamicRHI* OpenGLRHI = static_cast<FOpenGLDynamicRHI*>(GDynamicRHI);
-		FRHIResourceCreateInfo CreateInfo;
+		FRHIResourceCreateInfo CreateInfo(TEXT("SnapdragonVRHMD_CustomPresent_OpenGLES"));
 		ReticleTexture = OpenGLRHI->RHICreateTexture2D(
 			5, 
 			5, 
@@ -41,7 +41,7 @@ public:
 			1, 
 			TexCreate_ShaderResource, 
 
-#if ENGINE_MINOR_VERSION > 25
+#if ENGINE_MINOR_VERSION > 25 || ENGINE_MAJOR_VERSION == 5
 			ERHIAccess::Unknown,
 #endif
 			CreateInfo);

@@ -1,0 +1,21 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\development\\snapdragonvrcontroller\\module.snapdragonvrcontroller.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "b:\\windowsfile\\documents\\unreal projects\\test_android\\intermediate\\build\\win64\\test_androideditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\development\\snapdragonvrcontroller\\definitions.snapdragonvrcontroller.h",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrcontroller\\snapdragonvrcontroller.init.gen.cpp",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrcontroller\\snapdragonvrcontrollereventmanager.gen.cpp",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\source\\snapdragonvrcontroller\\classes\\snapdragonvrcontrollereventmanager.h",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrcontroller\\snapdragonvrcontrollereventmanager.generated.h",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrcontroller\\snapdragonvrcontrollerfunctionlibrary.gen.cpp",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\source\\snapdragonvrcontroller\\classes\\snapdragonvrcontrollerfunctionlibrary.h",
+            "a:\\epic games\\ue_5.0\\engine\\source\\runtime\\headmounteddisplay\\public\\imotioncontroller.h",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrcontroller\\snapdragonvrcontrollerfunctionlibrary.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -17,7 +17,6 @@
 	"Installed": false,
 	"SupportedTargetPlatforms": [
 		"Win64",
-		"Win32",
 		"Android"
 	],
 	"Modules": [
@@ -27,7 +26,6 @@
 			"LoadingPhase": "PostConfigInit",
 			"WhitelistPlatforms": [
 				"Win64",
-				"Win32",
 				"Android"
 			]
 		},
@@ -37,7 +35,6 @@
 			"LoadingPhase": "PreDefault",
 			"WhitelistPlatforms": [
 				"Win64",
-				"Win32",
 				"Android"
 			]
 		}

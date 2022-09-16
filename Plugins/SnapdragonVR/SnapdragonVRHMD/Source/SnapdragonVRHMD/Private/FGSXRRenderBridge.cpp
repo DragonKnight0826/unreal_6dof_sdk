@@ -26,7 +26,7 @@ bool FGSXRRenderBridge::Present(int32& InOutSyncInterval)
 	{
 		pSnapdragonVRHMD->EndFrame_RHIThread();
 
-#if ENGINE_MINOR_VERSION < 27
+#if ENGINE_MINOR_VERSION < 27 && ENGINE_MAJOR_VERSION < 5
 		bNeedsNativePresent = !FPlatformMisc::IsStandaloneStereoOnlyDevice();
 #else
 		bNeedsNativePresent = !pSnapdragonVRHMD->IsStandaloneStereoOnlyDevice();
@@ -48,7 +48,7 @@ public:
 	{
 		
 	}
-#if ENGINE_MINOR_VERSION >25
+#if ENGINE_MINOR_VERSION >25 || ENGINE_MAJOR_VERSION == 5
 	virtual FXRSwapChainPtr CreateSwapChain(uint8 Format, uint32 SizeX, uint32 SizeY, uint32 ArraySize, uint32 NumMips, uint32 NumSamples, ETextureCreateFlags Flags, ETextureCreateFlags TargetableTextureFlags,uint32 MSAAValue,TArray<uint32> TexutreResources) override
 #else	
 	virtual FXRSwapChainPtr CreateSwapChain(uint8 Format, uint32 SizeX, uint32 SizeY, uint32 ArraySize, uint32 NumMips, uint32 NumSamples, uint32 Flags, uint32 TargetableTextureFlags,uint32 MSAAValue,TArray<uint32> TexutreResources) override

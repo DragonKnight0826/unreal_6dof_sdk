@@ -17,9 +17,9 @@
 #include "Engine/Engine.h"
 #include "HAL/UnrealMemory.h"
 #include "SCGSXRApi.h"
-
+#include "HeadMountedDisplay/Public/HeadMountedDisplayFunctionLibrary.h"
 #include "ApplicationCore/Public/GenericPlatform/IInputInterface.h"
-
+#include "Kismet/GameplayStatics.h"
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*		_____  ______          _____    __  __ ______
 		|  __ \|  ____|   /\   |  __ \  |  \/  |  ____|
@@ -564,18 +564,37 @@ void FSnapdragonVRController::ProcessControllerButtons()
 					{
 						UE_LOG(LogSnapdragonVRController, Log, TEXT("Button down = %s, HandId = %d, ButtonIndex = %d, mask = %X"), *Buttons[j][ButtonIndex].ToString(), j, ButtonIndex, (1 << ButtonIndex));
 						MessageHandler->OnControllerButtonPressed(Buttons[j][ButtonIndex], 0, false);
+
+						if (Buttons[j][ButtonIndex] == SnapdragonVRControllerKeyNames::SkyWorthXRController_Left_Menu)
+						{
+							ResetStartTimeL = 1.5f;
+						}
+						else if (Buttons[j][ButtonIndex] == SnapdragonVRControllerKeyNames::SkyWorthXRController_Right_Menu)
+						{
+							ResetStartTimeR = 1.5f;
+						}
 					}
 					else if (GetButtonUp(i, Hand, ButtonType))
 					{
 						UE_LOG(LogSnapdragonVRController, Log, TEXT("Button up = %s, HandId = %d, ButtonIndex = %d, mask = %X"), *Buttons[j][ButtonIndex].ToString(), j, ButtonIndex, (1 << ButtonIndex));
 						MessageHandler->OnControllerButtonReleased(Buttons[j][ButtonIndex], 0, false);
+
+						if (Buttons[j][ButtonIndex] == SnapdragonVRControllerKeyNames::SkyWorthXRController_Left_Menu)
+						{
+							ResetStartTimeL = -1.f;
+						}
+						else if (Buttons[j][ButtonIndex] == SnapdragonVRControllerKeyNames::SkyWorthXRController_Right_Menu)
+						{
+							ResetStartTimeR = -1.f;
+						}
+
 					}
 				}
 
 				for (int32 TouchIndex = 0; TouchIndex < (int32)ESnapdragonVRControllerTouch::TotalCount; ++TouchIndex)
 				{
 					ESnapdragonVRControllerTouch::Type TouchType = static_cast<ESnapdragonVRControllerTouch::Type>(TouchIndex);
-
+					
 					// Process our known set of buttons
 					if (GetTouchDown(i, Hand, TouchType))
 					{
@@ -806,6 +825,26 @@ float FSnapdragonVRController::GetWorldToMetersScale() const
 //-----------------------------------------------------------------------------
 void FSnapdragonVRController::Tick(float DeltaTime)
 {
+	if (ResetStartTimeL > 0.f)
+	{
+		ResetStartTimeL -= DeltaTime;
+
+		if (ResetStartTimeL <= 0.f)
+		{
+			UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
+			ResetStartTimeL = -1.f;
+		}
+	}
+	if (ResetStartTimeR > 0.f)
+	{
+		ResetStartTimeR -= DeltaTime;
+
+		if (ResetStartTimeR <= 0.f)
+		{
+			UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
+			ResetStartTimeL = -1.f;
+		}
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -881,7 +920,8 @@ bool FSnapdragonVRController::GetControllerOrientationAndPosition(const int32 Co
 	if (IsAvailable(ControllerIndex, DeviceHand) && SC::GSXR_nativeIsControllerConnect(uint32(DeviceHand)))
 	{
 		OutPosition = GetPosition(ControllerIndex, DeviceHand) * WorldToMetersScale;
-		OutOrientation = UKismetMathLibrary::ComposeRotators(FRotator(0.f, -90.f, 45.f),GetOrientation(ControllerIndex, DeviceHand).Rotator());
+		//OutOrientation = UKismetMathLibrary::ComposeRotators(FRotator(0.f, -90.f, 45.f),GetOrientation(ControllerIndex, DeviceHand).Rotator());
+		OutOrientation = GetOrientation(ControllerIndex, DeviceHand).Rotator();
 		FVector euler = OutOrientation.Euler();
 		UE_LOG(LogSnapdragonVRController, Log, TEXT("Controller IDX=%d, Hand=%s Raw O&P=[%f,%f,%f] [%f,%f,%f,]"), ControllerIndex,
 			DeviceHand == EControllerHand::Left ? TEXT("Left") :

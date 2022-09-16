@@ -1,0 +1,20 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\development\\snapdragonvrhmd\\module.snapdragonvrhmd.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "b:\\windowsfile\\documents\\unreal projects\\test_android\\intermediate\\build\\win64\\test_androideditor\\development\\unrealed\\sharedpch.unrealed.shadowerrors.h.pch",
+        "Includes": [
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\development\\snapdragonvrhmd\\definitions.snapdragonvrhmd.h",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrhmd\\snapdragonvrhmd.init.gen.cpp",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrhmd\\snapdragonvrhmdeventmanager.gen.cpp",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\source\\snapdragonvrhmd\\classes\\snapdragonvrhmdeventmanager.h",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrhmd\\snapdragonvrhmdeventmanager.generated.h",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrhmd\\snapdragonvrhmdfunctionlibrary.gen.cpp",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\source\\snapdragonvrhmd\\public\\snapdragonvrhmdfunctionlibrary.h",
+            "b:\\windowsfile\\documents\\unreal projects\\test_android\\plugins\\snapdragonvr\\snapdragonvrhmd\\intermediate\\build\\win64\\unrealeditor\\inc\\snapdragonvrhmd\\snapdragonvrhmdfunctionlibrary.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

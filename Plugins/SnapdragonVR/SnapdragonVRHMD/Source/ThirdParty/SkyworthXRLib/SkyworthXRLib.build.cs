@@ -25,6 +25,7 @@ public class SkyworthXRLib : ModuleRules
                );
 
             PublicAdditionalLibraries.Add(SourceDirectory + "Lib/arm64-v8a/" + "libgsxr_fe.so");
+            PublicAdditionalLibraries.Add(SourceDirectory + "Lib/armeabi-v7a/" + "libgsxr_fe.so");
 
             AdditionalPropertiesForReceipt.Add("AndroidPlugin", Path.Combine(ModuleDirectory, "SkyworthXRLib_APL.xml"));
         }

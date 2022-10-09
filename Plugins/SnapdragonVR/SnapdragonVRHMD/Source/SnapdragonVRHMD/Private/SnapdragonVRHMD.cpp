@@ -1066,32 +1066,32 @@ FMatrix FSnapdragonVRHMD::GetStereoProjectionMatrix(const int32 ViewIndex) const
 FMatrix FSnapdragonVRHMD::GetStereoProjectionMatrix(const EStereoscopicPass StereoPassType) const
 #endif
 {
-	// GSXRDeviceInfo di = SC::GSXR_nativeGetDeviceInfo();
+	 GSXRDeviceInfo di = SC::GSXR_nativeGetDeviceInfo();
 
-	// GSXRViewFrustum Frustum = (StereoPassType == eSSP_LEFT_EYE) ? di.leftEyeFrustum : di.rightEyeFrustum;
+	 GSXRViewFrustum Frustum = (StereoPassType == eSSP_LEFT_EYE) ? di.leftEyeFrustum : di.rightEyeFrustum;
 
-	// float InvNearZ = 1.0f / Frustum.near;
+	 float InvNearZ = 1.0f / Frustum.near;
 
-	// float Right = Frustum.right * InvNearZ;
-	// float Left = Frustum.left * InvNearZ;
-	// float Bottom = Frustum.bottom * InvNearZ;
-	// float Top = Frustum.top * InvNearZ;
+	 float Right = Frustum.right * InvNearZ;
+	 float Left = Frustum.left * InvNearZ;
+	 float Bottom = Frustum.bottom * InvNearZ;
+	 float Top = Frustum.top * InvNearZ;
 
-	// float ZNear = GNearClippingPlane;
+	 float ZNear = GNearClippingPlane;
 
-	// float SumRL = (Right + Left);
-	// float SumTB = (Top + Bottom);
-	// float InvRL = (1.0f / (Right - Left));
-	// float InvTB = (1.0f / (Top - Bottom));
+	 float SumRL = (Right + Left);
+	 float SumTB = (Top + Bottom);
+	 float InvRL = (1.0f / (Right - Left));
+	 float InvTB = (1.0f / (Top - Bottom));
 
-	// return FMatrix(
-	// 	FPlane((2.0f * InvRL), 0.0f, 0.0f, 0.0f),
-	// 	FPlane(0.0f, (2.0f * InvTB), 0.0f, 0.0f),
-	// 	FPlane((SumRL * InvRL), (SumTB * InvTB), 0.0f, 1.0f),
-	// 	FPlane(0.0f, 0.0f, ZNear, 0.0f)
-	// );
+	 return FMatrix(
+	 	FPlane((2.0f * InvRL), 0.0f, 0.0f, 0.0f),
+	 	FPlane(0.0f, (2.0f * InvTB), 0.0f, 0.0f),
+	 	FPlane((SumRL * InvRL), (SumTB * InvTB), 0.0f, 1.0f),
+	 	FPlane(0.0f, 0.0f, ZNear, 0.0f)
+	 );
 
-	float HFov,VFov;
+	/*float HFov,VFov;
 	float ZNear = GNearClippingPlane;
 	GetFieldOfView(HFov,VFov);
 	float Left = -FPlatformMath::Tan(HFov/2);
@@ -1107,8 +1107,8 @@ FMatrix FSnapdragonVRHMD::GetStereoProjectionMatrix(const EStereoscopicPass Ster
 			FPlane(0.0f, (2.0f * InvTB), 0.0f, 0.0f),
 			FPlane((SumRL * -InvRL), (SumTB * -InvTB), 0.0f, 1.0f),
 			FPlane(0.0f, 0.0f, ZNear, 0.0f)
-		);
-	return ProjectionMatrix;
+		);*/
+	//return ProjectionMatrix;
 }
 
 FIntPoint FSnapdragonVRHMD::GetIdealRenderTargetSize() const

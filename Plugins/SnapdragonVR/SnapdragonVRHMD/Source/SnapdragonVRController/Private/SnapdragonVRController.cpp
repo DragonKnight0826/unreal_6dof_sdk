@@ -20,6 +20,7 @@
 #include "HeadMountedDisplay/Public/HeadMountedDisplayFunctionLibrary.h"
 #include "ApplicationCore/Public/GenericPlatform/IInputInterface.h"
 #include "Kismet/GameplayStatics.h"
+#include "HandShankHelper.h"
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*		_____  ______          _____    __  __ ______
 		|  __ \|  ____|   /\   |  __ \  |  \/  |  ____|
@@ -38,6 +39,10 @@ deal with things like that - please make sure they are only here.
 //DEFINE_LOG_CATEGORY_STATIC(LogSnapdragonVRController, Log, All);
 #define LOCTEXT_NAMESPACE "SnapdragonVRController"
 //-----------------------------------------------------------------------------
+#if PLATFORM_ANDROID
+handshank_client_helper_t* m_HandShankClient = nullptr;
+#endif
+
 
 uint32_t TempButtonState[CONTROLLER_PAIRS_MAX][CONTROLLERS_PER_PLAYER] = {};
 
@@ -175,8 +180,8 @@ void OnControllerRockerCallback(int touch_x, int touch_y, const int lr)
 		return;
 	}
 
-	TempAxis2D[lr][ESnapdragonVRControllerAxis2D::JoyStick].x = (touch_x - 8) / 8.f;
-	TempAxis2D[lr][ESnapdragonVRControllerAxis2D::JoyStick].y = (touch_y - 8) /	8.f;
+	TempAxis2D[lr][ESnapdragonVRControllerAxis2D::JoyStick].x = (touch_x >= 5 && touch_x <= 11) ? 0.f : (touch_x - 8) / 8.f;
+	TempAxis2D[lr][ESnapdragonVRControllerAxis2D::JoyStick].y = (touch_y >= 5 && touch_y <= 11) ? 0.f : (touch_y - 8) /	8.f;
 }
 
 
@@ -311,10 +316,10 @@ FSnapdragonVRController::FSnapdragonVRController(const TSharedRef< FGenericAppli
 	//绑定回调事件
 #if PLATFORM_ANDROID
 
-	SC::GSXR_nativeSetControllerTriggerCallback(OnControllerTriggerCallback);
-	SC::GSXR_nativeSetControllerRockerCallback(OnControllerRockerCallback);
-	SC::GSXR_nativeSetControllerKeyEventCallback(OnControllerKeyEventCallback);
-	SC::GSXR_nativeSetControllerKeyTouchEventCallback(OnControllerKeyTouchEventCallback);
+	HandShankClient_RegisterHallEventCB(m_HandShankClient, OnControllerTriggerCallback);
+	HandShankClient_RegisterTouchEventCB(m_HandShankClient, OnControllerRockerCallback);
+	HandShankClient_RegisterKeyEventCB(m_HandShankClient, OnControllerKeyEventCallback);
+	HandShankClient_RegisterKeyTouchEventCB(m_HandShankClient, OnControllerKeyTouchEventCallback);
 
 #endif
 
@@ -389,6 +394,10 @@ void FSnapdragonVRController::PreInit()
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Button_A, LOCTEXT("SkyWorthXRController_Button_A", "SkyWorthXR Controller (R) Button_A"), FKeyDetails::GamepadKey));
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Button_B, LOCTEXT("SkyWorthXRController_Button_B", "SkyWorthXR Controller (R) Button_B"), FKeyDetails::GamepadKey));
 
+#if PLATFORM_ANDROID
+	m_HandShankClient = HandShankClient_Create();
+#endif
+
 }
 //-----------------------------------------------------------------------------
 void FSnapdragonVRController::ApplicationStopDelegate()
@@ -418,6 +427,7 @@ void FSnapdragonVRController::StartTracking()
 		for (int j = 0; j < CONTROLLERS_PER_PLAYER; j++)
 		{
 			#if SNAPDRAGONVRCONTROLLER_SUPPORTED_PLATFORMS
+			HandShankClient_Start(m_HandShankClient);
 			ControllerAndHandIndexToDeviceIdMap[i][j] = SC::GSXR_nativeControllerStartTracking(NULL);
 			#endif
 
@@ -458,6 +468,7 @@ void FSnapdragonVRController::StopTracking()
 			{
 				#if SNAPDRAGONVRCONTROLLER_SUPPORTED_PLATFORMS
 				SC::GSXR_nativeControllerStopTracking(ControllerAndHandIndexToDeviceIdMap[i][j]);
+				HandShankClient_Stop(m_HandShankClient);
 				#endif
 				ControllerAndHandIndexToDeviceIdMap[i][j] = -1;
 			}
@@ -505,7 +516,7 @@ void FSnapdragonVRController::PollController()
 				//UE_LOG(LogSnapdragonVRController, Log, TEXT("FSnapdragonVRController::PollController NOT CONNECTED"));
 			}
 			
-			currentState[i][j] = SC::GSXR_nativeControllerGetState(ControllerAndHandIndexToDeviceIdMap[i][j], 0 );  // For new service in SVR space, 2nd param is 0
+			currentState[i][j] = SC::GSXR_nativeControllerGetState(ControllerAndHandIndexToDeviceIdMap[i][j], 0);  // For new service in SVR space, 2nd param is 0
 
 			EControllerHand Hand = static_cast<EControllerHand>(j);
 			if (!IsAvailable(i, Hand))
@@ -513,6 +524,7 @@ void FSnapdragonVRController::PollController()
 
 			float tempbuff[7];
 			SC::GSXR_nativeGetControllerPosture(tempbuff, j);
+
 			currentState[i][j].position.x = tempbuff[0];
 			currentState[i][j].position.y = tempbuff[1];
 			currentState[i][j].position.z = tempbuff[2];
@@ -909,7 +921,7 @@ void FSnapdragonVRController::SetChannelValues(int32 ControllerId, const FForceF
 	}
 
 #endif // SNAPDRAGONVRCONTROLLER_SUPPORTED_PLATFORMS
-}
+} 
 
 //-----------------------------------------------------------------------------
 bool FSnapdragonVRController::GetControllerOrientationAndPosition(const int32 ControllerIndex, const EControllerHand DeviceHand, FRotator& OutOrientation, FVector& OutPosition, float WorldToMetersScale) const
@@ -917,7 +929,7 @@ bool FSnapdragonVRController::GetControllerOrientationAndPosition(const int32 Co
 	
 #if SNAPDRAGONVRCONTROLLER_SUPPORTED_PLATFORMS
 
-	if (IsAvailable(ControllerIndex, DeviceHand) && SC::GSXR_nativeIsControllerConnect(uint32(DeviceHand)))
+	if (IsAvailable(ControllerIndex, DeviceHand) && HandShankClient_GetConnectState(m_HandShankClient, uint32(DeviceHand)))
 	{
 		OutPosition = GetPosition(ControllerIndex, DeviceHand) * WorldToMetersScale;
 		//OutOrientation = UKismetMathLibrary::ComposeRotators(FRotator(0.f, -90.f, 45.f),GetOrientation(ControllerIndex, DeviceHand).Rotator());
@@ -950,12 +962,11 @@ ETrackingStatus FSnapdragonVRController::GetControllerTrackingStatus(const int32
 
 bool FSnapdragonVRController::SetControllerVibrate(EControllerHand Hand, bool Open, float Frequency, float Amplitude, float Time)
 {
-
 	if (IsAvailable(0, Hand))
 	{
-		uint32_t frequency1 = (uint32_t)(Frequency * 16);//(uint32_t)std::ceil(frequency*16);
-		auto amplitude1 = (uint32_t)(Amplitude * 16);//(uint32_t)std::ceil(amplitude*16);
-		auto time1 = (uint32_t)(Time * 10);//(uint32_t)std::round((float)(time / 1e9) / 3.2f * 10);
+		uint32_t frequency1 = (uint32_t)(UKismetMathLibrary::FClamp(Frequency, 0.f, 1.f) * 15.f);//(uint32_t)std::ceil(frequency*16);
+		auto amplitude1 = (uint32_t)(UKismetMathLibrary::FClamp(Amplitude, 0.f, 1.f) * 15.f);//(uint32_t)std::ceil(amplitude*16);
+		auto time1 = (uint32_t)(UKismetMathLibrary::FClamp(Time, 0.f, 3.f) * 5.f);//(uint32_t)std::round((float)(time / 1e9) / 3.2f * 10);
 
 		uint32_t data;
 		data = (Hand == EControllerHand::Left ? 0 : 1);
@@ -963,8 +974,9 @@ bool FSnapdragonVRController::SetControllerVibrate(EControllerHand Hand, bool Op
 		data |= time1 << 3;
 		data |= frequency1 << 8;
 		data |= amplitude1 << 12;
+
 		SC::GSXR_nativeSetControllerVibrate(data);
-		UE_LOG(LogSnapdragonVRController, Log, TEXT("ControllerVibrate lr = %d, Open = %d, Frequency = %f, Amplitude = %f, Time = %f"), (Hand == EControllerHand::Left ? 0 : 1), Open, Frequency, Amplitude, Time);
+		UE_LOG(LogSnapdragonVRController, Log, TEXT("ControllerVibrate LR = %d, Open = %d, Frequency = %f, Amplitude = %f, Time = %f"), (Hand == EControllerHand::Left ? 0 : 1), Open, Frequency, Amplitude, Time);
 		return true;
 	}
 	return false;

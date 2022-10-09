@@ -6,8 +6,9 @@
 /NAME:"UE4Editor-SnapdragonVRHMD.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"D:\UnrealEngine\4.27.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
-"D:\UnrealEngine\4.27.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.cpp.obj"
-"D:\UnrealEngine\4.27.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.gen.cpp.obj"
-"D:\UnrealEngine\4.27.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Default.rc2.res"
-/OUT:"D:\UnrealEngine\4.27.2\Engine\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\UE4Editor-SnapdragonVRHMD.lib"
+"D:\Document\Unreal Projects\Test_None\Intermediate\Build\Win64\Test_NoneEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
+"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.cpp.obj"
+"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.gen.cpp.obj"
+"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Default.rc2.res"
+/OUT:"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\UE4Editor-SnapdragonVRHMD.lib"
+/INCLUDE:IMPLEMENT_MODULE_SnapdragonVRHMD

@@ -22,7 +22,7 @@ DEFINE_LOG_CATEGORY_STATIC(LogSnapdragonVRController, Log, All);
 
 
 /** Total number of controllers in a set */
-#define CONTROLLERS_PER_PLAYER	2
+#define CONTROLLERS_PER_PLAYER	4
 
 //** Total number of controller pairs */
 #define CONTROLLER_PAIRS_MAX 1
@@ -49,6 +49,7 @@ struct FSkyWorthXRKeyNames
 	static const FName Button_Right_JoyStick;
 	static const FName Button_Right_Grip;
 	static const FName Button_Right_Trigger;
+	static const FName Button_Enter;
 };
 
 namespace AndroidControllerKeyNames
@@ -101,6 +102,8 @@ namespace SnapdragonVRControllerKeys
 	const FKey SkyWorthXRController_Right_JoyStick("SkyWorthXRController_Right_JoyStick");
 	const FKey SkyWorthXRController_Right_Grip("SkyWorthXRController_Right_Grip");
 	const FKey SkyWorthXRController_Right_Trigger("SkyWorthXRController_Right_Trigger");
+	//HMD(头显上的按键)
+	const FKey SkyWorthXRController_HMD_Enter("SkyWorthXRController_HMD_Enter");
 }
 
 namespace SnapdragonVRControllerKeyNames
@@ -144,6 +147,7 @@ namespace SnapdragonVRControllerKeyNames
 	const FGamepadKeyNames::Type SkyWorthXRController_Right_JoyStick("SkyWorthXRController_Right_JoyStick");
 	const FGamepadKeyNames::Type SkyWorthXRController_Right_Grip("SkyWorthXRController_Right_Grip");
 	const FGamepadKeyNames::Type SkyWorthXRController_Right_Trigger("SkyWorthXRController_Right_Trigger");
+	const FGamepadKeyNames::Type SkyWorthXRController_HMD_Enter("SkyWorthXRController_HMD_Enter");
 
 }
 struct EGSXRControllerKeyCode
@@ -242,6 +246,15 @@ struct ESnapdragonVRControllerAxis2D
 		TotalCount
 	};
 };
+struct ESnapdragonVRControllerHMDButton
+{
+	enum Type
+	{
+		Button_Enter,
+		/** Max number of controller buttons.  Must be < 256 */
+		TotalCount
+	};
+};
 
 struct ESnapdragonVRControllerButton
 {
@@ -259,7 +272,6 @@ struct ESnapdragonVRControllerButton
 		Button_Right_JoyStick,
 		Button_Right_Grip,
 		Button_Right_Trigger,
-
 		/** Max number of controller buttons.  Must be < 256 */
 		TotalCount
 	};
@@ -349,6 +361,7 @@ public: // Helper Functions
 
 	float GetWorldToMetersScale() const;
 
+	void SetListener() const;
 private:
 
 	inline bool GetButton(const int32 ControllerIndex, const EControllerHand DeviceHand, ESnapdragonVRControllerButton::Type button) const 

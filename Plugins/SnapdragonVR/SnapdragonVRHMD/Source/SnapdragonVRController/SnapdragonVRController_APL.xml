@@ -22,10 +22,79 @@
 	<resourceCopies>
 	</resourceCopies>
 
-	<!-- optional additions to the GameActivity imports in GameActivity.java
-	<gameActivityImportAdditions>
-	</gameActivityImportAdditions>
-	-->
+	<!-- optional additions to the GameActivity imports in GameActivity.java-->
+	<gameActivityClassAdditions>
+		<insert>
+			public boolean AndroidKeyEnter=false;
+
+			public boolean AndroidThunkJava_GetEnterKey() {
+
+			return AndroidKeyEnter;
+			}
+
+
+			public void AndroidThunkJava_SetKeyListener()
+			{
+			System.out.println(" AndroidThunkJava_SetKeyListener");
+			View mainRootView = mainDecorView.findViewById(android.R.id.content).getRootView();
+			mainView.setOnKeyListener(new View.OnKeyListener() {
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+			System.out.println(" KEYCODE--KEYCODE_DPAD_CENTER=" +  keyCode);
+			if(keyCode==KeyEvent.KEYCODE_DPAD_CENTER)
+			{
+			if(event.getAction()==KeyEvent.ACTION_UP)
+			{
+			AndroidKeyEnter=false;
+			System.out.println(" AndroidKeyEnter1");
+			}
+			if(event.getAction()==KeyEvent.ACTION_DOWN)
+			{
+			AndroidKeyEnter=true;
+			System.out.println(" AndroidKeyEnter2");
+			}
+			}
+			return false;
+			}
+			});
+			}
+
+
+			public boolean AndroidKeyRecenter = false;
+			public class RecenterBroadcastRecenter extends BroadcastReceiver {
+			//接收到广播后，则自动调用该方法
+			@Override
+			public void onReceive(Context context, Intent intent) {
+			String action = intent.getAction();
+			if(action =="com.ssnwt.action.RECENTER")
+			{
+			System.out.println(" KEYCODE--AndroidKeyRecenter" );
+			AndroidKeyRecenter = true;
+			}
+			}
+			}
+
+			public void AndroidThunkJava_ResetReceiverState()
+			{
+			AndroidKeyRecenter = false;
+			}
+			public boolean AndroidThunkJava_GetReceiverState()
+			{
+			return AndroidKeyRecenter;
+			}
+
+			public void AndroidThunkJava_SetRecenterBroadcastRecenter()
+			{
+			//1.实例化MyBroadcaseReceiver
+			RecenterBroadcastRecenter recenterBroadcaseReceiver = new RecenterBroadcastRecenter();
+			//2.设置广播类型
+			IntentFilter intentFilter = new IntentFilter();
+			intentFilter.addAction("com.ssnwt.action.RECENTER");
+			//3.动态注册广播
+			registerReceiver(recenterBroadcaseReceiver, intentFilter);
+			}
+		</insert>
+	</gameActivityClassAdditions>
+	
 
 	<!-- optional additions to the GameActivity class in GameActivity.java -->
 

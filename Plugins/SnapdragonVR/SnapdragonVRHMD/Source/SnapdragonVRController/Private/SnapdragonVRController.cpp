@@ -21,6 +21,10 @@
 #include "ApplicationCore/Public/GenericPlatform/IInputInterface.h"
 #include "Kismet/GameplayStatics.h"
 #include "HandShankHelper.h"
+#if PLATFORM_ANDROID
+#include "Android/AndroidJNI.h"
+#include "Android/AndroidApplication.h"
+#endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*		_____  ______          _____    __  __ ______
 		|  __ \|  ____|   /\   |  __ \  |  \/  |  ____|
@@ -299,6 +303,7 @@ FSnapdragonVRController::FSnapdragonVRController(const TSharedRef< FGenericAppli
 	Buttons[(int32)EControllerHand::Right][ESnapdragonVRControllerButton::Button_Right_Grip] = SnapdragonVRControllerKeyNames::SkyWorthXRController_Right_Grip;
 	Buttons[(int32)EControllerHand::Right][ESnapdragonVRControllerButton::Button_Right_Trigger] = SnapdragonVRControllerKeyNames::SkyWorthXRController_Right_Trigger;
 
+	Buttons[(int32)EControllerHand::AnyHand][ESnapdragonVRControllerHMDButton::Button_Enter] = SnapdragonVRControllerKeyNames::SkyWorthXRController_HMD_Enter;
 
 
 	// Register life cycle delegates
@@ -320,9 +325,8 @@ FSnapdragonVRController::FSnapdragonVRController(const TSharedRef< FGenericAppli
 	HandShankClient_RegisterTouchEventCB(m_HandShankClient, OnControllerRockerCallback);
 	HandShankClient_RegisterKeyEventCB(m_HandShankClient, OnControllerKeyEventCallback);
 	HandShankClient_RegisterKeyTouchEventCB(m_HandShankClient, OnControllerKeyTouchEventCallback);
-
+	SetListener();
 #endif
-
 }
 
 //-----------------------------------------------------------------------------
@@ -393,11 +397,10 @@ void FSnapdragonVRController::PreInit()
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Right_JoyStick, LOCTEXT("SkyWorthXRController_Right_JoyStick", "SkyWorthXR Controller (R) JoyStick"), FKeyDetails::GamepadKey));
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Button_A, LOCTEXT("SkyWorthXRController_Button_A", "SkyWorthXR Controller (R) Button_A"), FKeyDetails::GamepadKey));
 	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_Button_B, LOCTEXT("SkyWorthXRController_Button_B", "SkyWorthXR Controller (R) Button_B"), FKeyDetails::GamepadKey));
-
+	EKeys::AddKey(FKeyDetails(SnapdragonVRControllerKeys::SkyWorthXRController_HMD_Enter, LOCTEXT("SkyWorthXRController_HMD_Enter", "SkyWorthXR Controller (R) HMD_Enter"), FKeyDetails::GamepadKey));
 #if PLATFORM_ANDROID
 	m_HandShankClient = HandShankClient_Create();
 #endif
-
 }
 //-----------------------------------------------------------------------------
 void FSnapdragonVRController::ApplicationStopDelegate()
@@ -545,14 +548,48 @@ void FSnapdragonVRController::PollController()
 			{
 				currentState[i][j].analog2D[AxisIndex] = TempAxis2D[j][AxisIndex];
 			}
-			
 
+			if(j == (int32)EControllerHand::AnyHand)
+			{
+				bool IsKeyDown = false;
+				if (JNIEnv* Env = FAndroidApplication::GetJavaEnv())
+				{
+					static jmethodID Funid = FJavaWrapper::FindMethod(Env, FJavaWrapper::GameActivityClassID, "AndroidThunkJava_GetEnterKey", "()Z", false);
 
+					UE_LOG(LogSnapdragonVRController, Log, TEXT("SnapdragonVRController tick key %d"), Funid);
+					IsKeyDown = FJavaWrapper::CallBooleanMethod(Env, FJavaWrapper::GameActivityThis, Funid);
+				}
+				if (IsKeyDown)
+				{
+					currentState[i][j].buttonState = 1;
+				}
+				else
+				{
+					currentState[i][j].buttonState = 0;
+				}
+			}
 		#endif
 			//UE_LOG(LogSnapdragonVRController, Log, TEXT("FSnapdragonVRController::PollController -  SC::GSXR_nativeControllerGetState(caps=%d) for Player[%d], Controller[%d]"), currentCaps[i][j].caps, i, j);
 		}
 	}
+	bool IsReCenter = false;
+#if SNAPDRAGONVRCONTROLLER_SUPPORTED_PLATFORMS
+	
+	if (JNIEnv* Env = FAndroidApplication::GetJavaEnv())
+	{
+		static jmethodID Funid = FJavaWrapper::FindMethod(Env, FJavaWrapper::GameActivityClassID, "AndroidThunkJava_GetReceiverState", "()Z", false);
+		
 
+		UE_LOG(LogSnapdragonVRController, Log, TEXT("SnapdragonVRController ReCenter"));
+		IsReCenter = FJavaWrapper::CallBooleanMethod(Env, FJavaWrapper::GameActivityThis, Funid);
+		if (IsReCenter)
+		{
+			UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
+			static jmethodID ResetFunid = FJavaWrapper::FindMethod(Env, FJavaWrapper::GameActivityClassID, "AndroidThunkJava_ResetReceiverState", "()V", false);
+			FJavaWrapper::CallVoidMethod(Env, FJavaWrapper::GameActivityThis, ResetFunid);
+		}
+	}
+#endif
 }
 
 //-----------------------------------------------------------------------------
@@ -564,8 +601,28 @@ void FSnapdragonVRController::ProcessControllerButtons()
 		for (int j = 0; j < CONTROLLERS_PER_PLAYER; j++)
 		{
 			EControllerHand Hand = static_cast<EControllerHand>(j);
-
-			if (IsAvailable(i, Hand))
+			if(Hand== EControllerHand::AnyHand)
+			{
+				uint32_t TempState = currentState[(int32)ESnapdragonVRControllerHMDButton::Button_Enter][(int32)EControllerHand::AnyHand].buttonState;
+				if(previousButtonState[(int32)ESnapdragonVRControllerHMDButton::Button_Enter][(int32)EControllerHand::AnyHand]!=
+					TempState)
+				{
+					if(TempState)
+					{
+						UE_LOG(LogSnapdragonVRController, Log, TEXT("Button down = %s, HandId = %d, ButtonIndex = %d, mask = %X"), *Buttons[j][ESnapdragonVRControllerHMDButton::Button_Enter].ToString(), j, ESnapdragonVRControllerHMDButton::Button_Enter, 0);
+						UE_LOG(LogSnapdragonVRController, Log, TEXT("index j:%d i:%d"), j, i);
+						MessageHandler->OnControllerButtonPressed(Buttons[j][ESnapdragonVRControllerHMDButton::Button_Enter], 0, false);
+					}
+					else
+					{
+						UE_LOG(LogSnapdragonVRController, Log, TEXT("Button Up = %s, HandId = %d, ButtonIndex = %d, mask = %X"), *Buttons[j][ESnapdragonVRControllerHMDButton::Button_Enter].ToString(), j, ESnapdragonVRControllerHMDButton::Button_Enter, 0);
+						UE_LOG(LogSnapdragonVRController, Log, TEXT("index j:%d i:%d"), j, i);
+						MessageHandler->OnControllerButtonReleased(Buttons[j][ESnapdragonVRControllerHMDButton::Button_Enter], 0, false);
+					}
+				}
+				
+			}
+			else if (IsAvailable(i, Hand))
 			{
 				for (int32 ButtonIndex = 0; ButtonIndex < (int32)ESnapdragonVRControllerButton::TotalCount; ++ButtonIndex)
 				{
@@ -575,6 +632,7 @@ void FSnapdragonVRController::ProcessControllerButtons()
 					if (GetButtonDown(i, Hand, ButtonType))
 					{
 						UE_LOG(LogSnapdragonVRController, Log, TEXT("Button down = %s, HandId = %d, ButtonIndex = %d, mask = %X"), *Buttons[j][ButtonIndex].ToString(), j, ButtonIndex, (1 << ButtonIndex));
+						UE_LOG(LogSnapdragonVRController, Log, TEXT("index j:%d i:%d"), j, i);
 						MessageHandler->OnControllerButtonPressed(Buttons[j][ButtonIndex], 0, false);
 
 						if (Buttons[j][ButtonIndex] == SnapdragonVRControllerKeyNames::SkyWorthXRController_Left_Menu)
@@ -612,12 +670,14 @@ void FSnapdragonVRController::ProcessControllerButtons()
 					{
 						UE_LOG(LogSnapdragonVRController, Log, TEXT("Touch down = %s, HandId = %d, TouchIndex = %d, mask = %X"), *Touches[j][TouchIndex].ToString(), j, TouchIndex, (1 << TouchIndex));
 						MessageHandler->OnControllerButtonPressed(Touches[j][TouchIndex], 0, false);
+						UE_LOG(LogSnapdragonVRController, Log, TEXT("SnapdragonVRController OnkeyDown"));
 
 					}
 					else if (GetTouchUp(i, Hand, TouchType))
 					{
 						UE_LOG(LogSnapdragonVRController, Log, TEXT("Touch up = %s, HandId = %d, TouchIndex = %d, mask = %X"), *Touches[j][TouchIndex].ToString(), j, TouchIndex, (1 << TouchIndex));
 						MessageHandler->OnControllerButtonReleased(Touches[j][TouchIndex], 0, false);
+						UE_LOG(LogSnapdragonVRController, Log, TEXT("SnapdragonVRController OnkeyUp"));
 					}
 				}
 
@@ -834,6 +894,27 @@ float FSnapdragonVRController::GetWorldToMetersScale() const
 	return worldScale;
 }
 
+void FSnapdragonVRController::SetListener() const
+{
+#if PLATFORM_ANDROID
+	UE_LOG(LogSnapdragonVRController, Log, TEXT("SnapdragonVRController SetListener"));
+	if (JNIEnv* Env = FAndroidApplication::GetJavaEnv())
+	{
+		static jmethodID SetKeyListenerid = FJavaWrapper::FindMethod(Env, FJavaWrapper::GameActivityClassID, "AndroidThunkJava_SetKeyListener", "()V", false);
+		static jmethodID SetRecenterBroadcastRecenterid = FJavaWrapper::FindMethod(Env, FJavaWrapper::GameActivityClassID, "AndroidThunkJava_SetRecenterBroadcastRecenter", "()V", false);
+
+		FJavaWrapper::CallVoidMethod(Env, FJavaWrapper::GameActivityThis, SetKeyListenerid);
+
+		FJavaWrapper::CallVoidMethod(Env, FJavaWrapper::GameActivityThis, SetRecenterBroadcastRecenterid);
+		if (Env->ExceptionCheck())
+		{
+			Env->ExceptionDescribe();
+			Env->ExceptionClear();
+		}
+	}
+#endif
+}
+
 //-----------------------------------------------------------------------------
 void FSnapdragonVRController::Tick(float DeltaTime)
 {
@@ -964,9 +1045,9 @@ bool FSnapdragonVRController::SetControllerVibrate(EControllerHand Hand, bool Op
 {
 	if (IsAvailable(0, Hand))
 	{
-		uint32_t frequency1 = (uint32_t)(UKismetMathLibrary::FClamp(Frequency, 0.f, 1.f) * 15.f);//(uint32_t)std::ceil(frequency*16);
-		auto amplitude1 = (uint32_t)(UKismetMathLibrary::FClamp(Amplitude, 0.f, 1.f) * 15.f);//(uint32_t)std::ceil(amplitude*16);
-		auto time1 = (uint32_t)(UKismetMathLibrary::FClamp(Time, 0.f, 3.f) * 5.f);//(uint32_t)std::round((float)(time / 1e9) / 3.2f * 10);
+		uint32_t frequency1 = UKismetMathLibrary::FCeil(UKismetMathLibrary::FClamp(Frequency, 0.f, 1.f) * 15.f);
+		auto amplitude1 = UKismetMathLibrary::FCeil(UKismetMathLibrary::FClamp(Amplitude, 0.f, 1.f) * 15.f);
+		auto time1 = (uint32_t)(UKismetMathLibrary::FClamp(Time, 0.f, 3.f) * 5.f + .5f);
 
 		uint32_t data;
 		data = (Hand == EControllerHand::Left ? 0 : 1);

@@ -40,7 +40,8 @@ namespace UnrealBuildTool.Rules
 					"UMG",
 					"Slate",
 					"SlateCore",
-					"SkyworthXRLib"
+					"SkyworthXRLib",
+					"Launch"
 				}
 				);
 
@@ -49,10 +50,14 @@ namespace UnrealBuildTool.Rules
 					// ... add other private include paths required here ...
 					}
 				);
-
-			// removed the dependency on the SVR lib code here because in the plugin description for the controllers (the uplugin file)
-			// we state that the SnapdragonHMD plugin is required and IT has a dependency on the VR/XR lib
-			// adding the controller plugin will automatically add the HMD plugin - and will complain if you try to remove it.
-		}
+            if (Target.Platform == UnrealTargetPlatform.Android)
+            {
+                string PluginPath = Utils.MakePathRelativeTo(ModuleDirectory, Target.RelativeEnginePath);
+                AdditionalPropertiesForReceipt.Add("AndroidPlugin", Path.Combine(PluginPath, "SnapdragonVRController_APL.xml"));
+            }
+            // removed the dependency on the SVR lib code here because in the plugin description for the controllers (the uplugin file)
+            // we state that the SnapdragonHMD plugin is required and IT has a dependency on the VR/XR lib
+            // adding the controller plugin will automatically add the HMD plugin - and will complain if you try to remove it.
+        }
 	}
 }

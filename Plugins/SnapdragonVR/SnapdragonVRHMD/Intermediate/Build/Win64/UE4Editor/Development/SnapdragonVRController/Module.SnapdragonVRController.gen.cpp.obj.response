@@ -238,6 +238,10 @@
 /I Runtime\MRMesh\Public
 /I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty
 /I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty\SkyworthXRLib\SkyworthXRLib\Include
+/I Runtime\Launch\Public
+/I Runtime\SessionServices\Public
+/I Developer\ProfilerService\Public
+/I Developer\ProfilerClient\Public
 /I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Inc\SnapdragonVRController
 /I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source
 /I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRController\Classes

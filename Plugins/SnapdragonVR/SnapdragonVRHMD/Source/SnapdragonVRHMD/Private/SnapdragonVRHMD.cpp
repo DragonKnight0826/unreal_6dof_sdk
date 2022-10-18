@@ -406,6 +406,7 @@ bool FSnapdragonVRHMD::GetCurrentPose(int32 DeviceId, FQuat& OutOrientation, FVe
 	{
 		OutOrientation = CurrentFrame_GameThread.Orientation;
 		OutPosition = CurrentFrame_GameThread.Position;
+		FlushRenderingCommands();
 	}
 
 	return true;

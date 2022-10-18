@@ -5,6 +5,7 @@
 			"FGSXRRenderBridge.cpp.obj",
 			"FGSXRStereoLayer.cpp.obj",
 			"FGSXRSwapChain.cpp.obj",
+			"SnapdragonVRHMD.cpp.obj",
 			"SnapdragonVRHMD_CustomPresent.cpp.obj",
 			"SnapdragonVRHMD_CustomPresent_OpenGLES.cpp.obj",
 			"SnapdragonVRHMD_CustomPresent_Vulkan.cpp.obj",
@@ -15,8 +16,7 @@
 			"SnapdragonVRHMDFunctionLibrary.cpp.obj",
 			"SnapdragonVRHMDModule.cpp.obj",
 			"SnapdragonVRHMDRender.cpp.obj",
-			"SnapdragonXR_CVars.cpp.obj",
-			"SnapdragonVRHMD.cpp.obj"
+			"SnapdragonXR_CVars.cpp.obj"
 		],
 		"Module.SnapdragonVRHMD.gen.cpp.obj": [
 			"SnapdragonVRHMD.init.gen.cpp.obj",

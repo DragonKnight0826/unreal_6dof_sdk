@@ -34,7 +34,6 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
-"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\SnapdragonVRController.cpp.obj"
 "D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.cpp.obj"
 "D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp.obj"
 "D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Default.rc2.res"
@@ -47,6 +46,7 @@
 "D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UMG\UE4Editor-UMG.lib"
 "D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Slate\UE4Editor-Slate.lib"
 "D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\SlateCore\UE4Editor-SlateCore.lib"
+"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"

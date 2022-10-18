@@ -40,12 +40,12 @@
 //
 // just some template magic to allow one to create a std::array 
 // without counting the number of elements manually...
-//template <typename V, typename... T>
-//constexpr auto static_array_of(T&&... t)
-//->std::array < V, sizeof...(T) >
-//{
-//	return { { std::forward<T>(t)... } }; // yes double brackets are necessary
-//}
+template <typename V, typename... T>
+constexpr auto static_array_of(T&&... t)
+->std::array < V, sizeof...(T) >
+{
+	return { { std::forward<T>(t)... } }; // yes double brackets are necessary
+}
 
 #define SNAPDRAGONVR_HMD_SUPPORTED_PLATFORMS (PLATFORM_ANDROID && (PLATFORM_ANDROID_ARM || PLATFORM_ANDROID_ARM64))
 

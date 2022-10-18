@@ -2,6 +2,7 @@
 #include "D:/Document/UnrealProject/SkyworthXR.UnrealSDK.Sample/SkyWorthXR_Demo/Plugins/SnapdragonVR/SnapdragonVRHMD/Source/SnapdragonVRHMD/Private/FGSXRRenderBridge.cpp"
 #include "D:/Document/UnrealProject/SkyworthXR.UnrealSDK.Sample/SkyWorthXR_Demo/Plugins/SnapdragonVR/SnapdragonVRHMD/Source/SnapdragonVRHMD/Private/FGSXRStereoLayer.cpp"
 #include "D:/Document/UnrealProject/SkyworthXR.UnrealSDK.Sample/SkyWorthXR_Demo/Plugins/SnapdragonVR/SnapdragonVRHMD/Source/SnapdragonVRHMD/Private/FGSXRSwapChain.cpp"
+#include "D:/Document/UnrealProject/SkyworthXR.UnrealSDK.Sample/SkyWorthXR_Demo/Plugins/SnapdragonVR/SnapdragonVRHMD/Source/SnapdragonVRHMD/Private/SnapdragonVRHMD.cpp"
 #include "D:/Document/UnrealProject/SkyworthXR.UnrealSDK.Sample/SkyWorthXR_Demo/Plugins/SnapdragonVR/SnapdragonVRHMD/Source/SnapdragonVRHMD/Private/SnapdragonVRHMD_CustomPresent.cpp"
 #include "D:/Document/UnrealProject/SkyworthXR.UnrealSDK.Sample/SkyWorthXR_Demo/Plugins/SnapdragonVR/SnapdragonVRHMD/Source/SnapdragonVRHMD/Private/SnapdragonVRHMD_CustomPresent_OpenGLES.cpp"
 #include "D:/Document/UnrealProject/SkyworthXR.UnrealSDK.Sample/SkyWorthXR_Demo/Plugins/SnapdragonVR/SnapdragonVRHMD/Source/SnapdragonVRHMD/Private/SnapdragonVRHMD_CustomPresent_Vulkan.cpp"

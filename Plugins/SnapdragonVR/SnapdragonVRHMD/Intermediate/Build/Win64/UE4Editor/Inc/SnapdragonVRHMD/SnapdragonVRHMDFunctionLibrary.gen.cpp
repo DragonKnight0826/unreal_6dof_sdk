@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 	SNAPDRAGONVRHMD_API UClass* Z_Construct_UClass_USnapdragonVRHMDFunctionLibrary();
 	ENGINE_API UClass* Z_Construct_UClass_UBlueprintFunctionLibrary();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FQuat();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FQuat();
 	SNAPDRAGONVRHMD_API UClass* Z_Construct_UClass_USnapdragonVRHMDEventManager_NoRegister();
 // End Cross Module References
 	static UEnum* ESnapdragonVRHMD_Eye_StaticEnum()
@@ -37,7 +37,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 		return ESnapdragonVRHMD_Eye_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ESnapdragonVRHMD_Eye(ESnapdragonVRHMD_Eye_StaticEnum, TEXT("/Script/SnapdragonVRHMD"), TEXT("ESnapdragonVRHMD_Eye"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRHMD_Eye_Hash() { return 3684763827U; }
+	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRHMD_Eye_Hash() { return 1926750391U; }
 	UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRHMD_Eye()
 	{
 #if WITH_HOT_RELOAD
@@ -70,7 +70,6 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
-				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -551,19 +550,19 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 			float x;
 			float y;
 		};
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_x;
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_y;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_x;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection_Statics::NewProp_x = { "x", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventgetAverageGazeDirection_Parms, x), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection_Statics::NewProp_y = { "y", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventgetAverageGazeDirection_Parms, y), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection_Statics::NewProp_x = { "x", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventgetAverageGazeDirection_Parms, x), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection_Statics::NewProp_x,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection_Statics::NewProp_y,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection_Statics::NewProp_x,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection_Statics::Function_MetaDataParams[] = {
@@ -592,24 +591,24 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 			FVector OutDirection;
 			bool Success;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutDirection;
 		static void NewProp_Success_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_Success;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutDirection;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::NewProp_OutDirection = { "OutDirection", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeGazeDirection_Parms, OutDirection), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::NewProp_Success_SetBit(void* Obj)
 	{
 		((SnapdragonVRHMDFunctionLibrary_eventGetEyeGazeDirection_Parms*)Obj)->Success = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::NewProp_Success = { "Success", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRHMDFunctionLibrary_eventGetEyeGazeDirection_Parms), &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::NewProp_Success_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::NewProp_OutDirection = { "OutDirection", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeGazeDirection_Parms, OutDirection), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::NewProp_OutDirection,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::NewProp_Success,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::NewProp_OutDirection,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection_Statics::Function_MetaDataParams[] = {
@@ -637,30 +636,30 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 			float Openness;
 			bool Success;
 		};
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_WhichEye_Underlying;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_WhichEye;
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Openness;
 		static void NewProp_Success_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_Success;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Openness;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_WhichEye;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_WhichEye_Underlying;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_WhichEye_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_WhichEye = { "WhichEye", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOpenness_Parms, WhichEye), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRHMD_Eye, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_Openness = { "Openness", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOpenness_Parms, Openness), METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_Success_SetBit(void* Obj)
 	{
 		((SnapdragonVRHMDFunctionLibrary_eventGetEyeOpenness_Parms*)Obj)->Success = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_Success = { "Success", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRHMDFunctionLibrary_eventGetEyeOpenness_Parms), &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_Success_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_Openness = { "Openness", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOpenness_Parms, Openness), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_WhichEye = { "WhichEye", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOpenness_Parms, WhichEye), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRHMD_Eye, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_WhichEye_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_WhichEye_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_WhichEye,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_Openness,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_Success,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_Openness,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_WhichEye,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::NewProp_WhichEye_Underlying,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness_Statics::Function_MetaDataParams[] = {
@@ -690,30 +689,30 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 			FRotator OutRotation;
 			bool Success;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutPosition;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutOrientation;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutRotation;
 		static void NewProp_Success_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_Success;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutRotation;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutOrientation;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutPosition;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutPosition = { "OutPosition", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOrientationAndPosition_Parms, OutPosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutOrientation = { "OutOrientation", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOrientationAndPosition_Parms, OutOrientation), Z_Construct_UScriptStruct_FQuat, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutRotation = { "OutRotation", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOrientationAndPosition_Parms, OutRotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_Success_SetBit(void* Obj)
 	{
 		((SnapdragonVRHMDFunctionLibrary_eventGetEyeOrientationAndPosition_Parms*)Obj)->Success = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_Success = { "Success", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRHMDFunctionLibrary_eventGetEyeOrientationAndPosition_Parms), &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_Success_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutRotation = { "OutRotation", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOrientationAndPosition_Parms, OutRotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutOrientation = { "OutOrientation", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOrientationAndPosition_Parms, OutOrientation), Z_Construct_UScriptStruct_FQuat, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutPosition = { "OutPosition", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetEyeOrientationAndPosition_Parms, OutPosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutPosition,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutOrientation,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutRotation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_Success,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutRotation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutOrientation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::NewProp_OutPosition,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition_Statics::Function_MetaDataParams[] = {
@@ -777,30 +776,30 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 			FRotator OutRotator;
 			bool Success;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutPosition;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutOrientation;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutRotator;
 		static void NewProp_Success_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_Success;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutRotator;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutOrientation;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutPosition;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutPosition = { "OutPosition", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetHeadOrientationAndPosition_Parms, OutPosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutOrientation = { "OutOrientation", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetHeadOrientationAndPosition_Parms, OutOrientation), Z_Construct_UScriptStruct_FQuat, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutRotator = { "OutRotator", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetHeadOrientationAndPosition_Parms, OutRotator), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_Success_SetBit(void* Obj)
 	{
 		((SnapdragonVRHMDFunctionLibrary_eventGetHeadOrientationAndPosition_Parms*)Obj)->Success = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_Success = { "Success", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRHMDFunctionLibrary_eventGetHeadOrientationAndPosition_Parms), &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_Success_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutRotator = { "OutRotator", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetHeadOrientationAndPosition_Parms, OutRotator), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutOrientation = { "OutOrientation", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetHeadOrientationAndPosition_Parms, OutOrientation), Z_Construct_UScriptStruct_FQuat, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutPosition = { "OutPosition", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetHeadOrientationAndPosition_Parms, OutPosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutPosition,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutOrientation,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutRotator,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_Success,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutRotator,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutOrientation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::NewProp_OutPosition,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition_Statics::Function_MetaDataParams[] = {
@@ -828,30 +827,30 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 			float Openness;
 			bool Success;
 		};
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_WhichEye_Underlying;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_WhichEye;
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Openness;
 		static void NewProp_Success_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_Success;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Openness;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_WhichEye;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_WhichEye_Underlying;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_WhichEye_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_WhichEye = { "WhichEye", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetPupilDialation_Parms, WhichEye), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRHMD_Eye, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_Openness = { "Openness", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetPupilDialation_Parms, Openness), METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_Success_SetBit(void* Obj)
 	{
 		((SnapdragonVRHMDFunctionLibrary_eventGetPupilDialation_Parms*)Obj)->Success = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_Success = { "Success", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRHMDFunctionLibrary_eventGetPupilDialation_Parms), &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_Success_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_Openness = { "Openness", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetPupilDialation_Parms, Openness), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_WhichEye = { "WhichEye", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventGetPupilDialation_Parms, WhichEye), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRHMD_Eye, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_WhichEye_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_WhichEye_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_WhichEye,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_Openness,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_Success,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_Openness,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_WhichEye,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::NewProp_WhichEye_Underlying,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation_Statics::Function_MetaDataParams[] = {
@@ -1051,19 +1050,19 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 			float x;
 			float y;
 		};
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_x;
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_y;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_x;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain_Statics::NewProp_x = { "x", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventgetTextureFoveationGain_Parms, x), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain_Statics::NewProp_y = { "y", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventgetTextureFoveationGain_Parms, y), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain_Statics::NewProp_x = { "x", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventgetTextureFoveationGain_Parms, x), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain_Statics::NewProp_x,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain_Statics::NewProp_y,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain_Statics::NewProp_x,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain_Statics::Function_MetaDataParams[] = {
@@ -1378,13 +1377,13 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 			int32 GpuLevel;
 		};
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CpuLevel_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_CpuLevel;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GpuLevel_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_GpuLevel;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CpuLevel_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_CpuLevel;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -1392,20 +1391,20 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel = { "CpuLevel", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventSetCpuAndGpuLevelsSVR_Parms, CpuLevel), METADATA_PARAMS(Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_GpuLevel_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_GpuLevel = { "GpuLevel", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventSetCpuAndGpuLevelsSVR_Parms, GpuLevel), METADATA_PARAMS(Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_GpuLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_GpuLevel_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel = { "CpuLevel", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventSetCpuAndGpuLevelsSVR_Parms, CpuLevel), METADATA_PARAMS(Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_GpuLevel,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::NewProp_CpuLevel,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR_Statics::Function_MetaDataParams[] = {
@@ -1608,19 +1607,19 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 			float x;
 			float y;
 		};
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_x;
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_y;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_x;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain_Statics::NewProp_x = { "x", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventsetTextureFoveationGain_Parms, x), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain_Statics::NewProp_y = { "y", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventsetTextureFoveationGain_Parms, y), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain_Statics::NewProp_x = { "x", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRHMDFunctionLibrary_eventsetTextureFoveationGain_Parms, x), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain_Statics::NewProp_x,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain_Statics::NewProp_y,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain_Statics::NewProp_x,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain_Statics::Function_MetaDataParams[] = {
@@ -1698,19 +1697,19 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_enableTemporalFoveation, "enableTemporalFoveation" }, // 1411120925
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_enableTextureFoveation, "enableTextureFoveation" }, // 3664776228
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_enableTextureFoveationFocus, "enableTextureFoveationFocus" }, // 1936507489
-		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection, "getAverageGazeDirection" }, // 3279569622
-		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection, "GetEyeGazeDirection" }, // 2460566846
-		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness, "GetEyeOpenness" }, // 3074536440
-		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition, "GetEyeOrientationAndPosition" }, // 3324957027
+		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getAverageGazeDirection, "getAverageGazeDirection" }, // 4165495660
+		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeGazeDirection, "GetEyeGazeDirection" }, // 3621779979
+		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOpenness, "GetEyeOpenness" }, // 3028312289
+		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetEyeOrientationAndPosition, "GetEyeOrientationAndPosition" }, // 3122170106
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getEyetrackingMarkerRadius, "getEyetrackingMarkerRadius" }, // 576163823
-		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition, "GetHeadOrientationAndPosition" }, // 1870753137
-		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation, "GetPupilDialation" }, // 2457139999
+		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetHeadOrientationAndPosition, "GetHeadOrientationAndPosition" }, // 2838733459
+		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetPupilDialation, "GetPupilDialation" }, // 2497194921
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_GetSnapdragonVRHMDEventManager, "GetSnapdragonVRHMDEventManager" }, // 215089382
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationArea, "getTextureFoveationArea" }, // 1855157971
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationFocusAmplitude, "getTextureFoveationFocusAmplitude" }, // 1052737787
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationFocusFrequency, "getTextureFoveationFocusFrequency" }, // 3565764173
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationFocusFrequencyRho, "getTextureFoveationFocusFrequencyRho" }, // 2888257018
-		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain, "getTextureFoveationGain" }, // 2328468491
+		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureFoveationGain, "getTextureFoveationGain" }, // 513243434
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_getTextureMinimumPixelDensity, "getTextureMinimumPixelDensity" }, // 3744306494
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_isEyetrackingEnabled, "isEyetrackingEnabled" }, // 2533096200
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_isEyetrackingMarkerEnabled, "isEyetrackingMarkerEnabled" }, // 3186099517
@@ -1719,13 +1718,13 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_isTextureFoveationFocusEnabled, "isTextureFoveationFocusEnabled" }, // 3174022252
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_RecenterOrientation, "RecenterOrientation" }, // 1686719474
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_RecenterPosition, "RecenterPosition" }, // 3407485500
-		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR, "SetCpuAndGpuLevelsSVR" }, // 3890748999
+		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_SetCpuAndGpuLevelsSVR, "SetCpuAndGpuLevelsSVR" }, // 2666234713
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setEyetrackingMarkerRadius, "setEyetrackingMarkerRadius" }, // 3850226728
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationArea, "setTextureFoveationArea" }, // 1084519913
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationFocusAmplitude, "setTextureFoveationFocusAmplitude" }, // 1641579496
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationFocusFrequency, "setTextureFoveationFocusFrequency" }, // 3119352734
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationFocusFrequencyRho, "setTextureFoveationFocusFrequencyRho" }, // 1673926642
-		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain, "setTextureFoveationGain" }, // 2079707801
+		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureFoveationGain, "setTextureFoveationGain" }, // 1015170846
 		{ &Z_Construct_UFunction_USnapdragonVRHMDFunctionLibrary_setTextureMinimumPixelDensity, "setTextureMinimumPixelDensity" }, // 2181364729
 	};
 #if WITH_METADATA
@@ -1761,7 +1760,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDFunctionLibrary() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USnapdragonVRHMDFunctionLibrary, 3515524187);
+	IMPLEMENT_CLASS(USnapdragonVRHMDFunctionLibrary, 1907841171);
 	template<> SNAPDRAGONVRHMD_API UClass* StaticClass<USnapdragonVRHMDFunctionLibrary>()
 	{
 		return USnapdragonVRHMDFunctionLibrary::StaticClass();

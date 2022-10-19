@@ -27,7 +27,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRController_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x0DEC3F77,
+				0xFE753A27,
 				0xA40A3682,
 				METADATA_PARAMS(nullptr, 0)
 			};

@@ -6,9 +6,9 @@
 /NAME:"UE4Editor-SnapdragonVRController.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"D:\Document\Unreal Projects\Test_None\Intermediate\Build\Win64\Test_NoneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
-"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.cpp.obj"
-"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp.obj"
-"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Default.rc2.res"
-/OUT:"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\UE4Editor-SnapdragonVRController.lib"
+"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.cpp.obj"
+"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp.obj"
+"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Default.rc2.res"
+/OUT:"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\UE4Editor-SnapdragonVRController.lib"
 /INCLUDE:IMPLEMENT_MODULE_SnapdragonVRController

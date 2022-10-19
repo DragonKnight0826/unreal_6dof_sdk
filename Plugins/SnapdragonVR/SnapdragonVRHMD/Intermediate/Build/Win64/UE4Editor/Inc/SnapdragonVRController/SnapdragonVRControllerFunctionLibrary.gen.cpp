@@ -18,8 +18,8 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRControllerFunctionLibrary() {}
 	ENGINE_API UClass* Z_Construct_UClass_UBlueprintFunctionLibrary();
 	UPackage* Z_Construct_UPackage__Script_SnapdragonVRController();
 	INPUTCORE_API UEnum* Z_Construct_UEnum_InputCore_EControllerHand();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	HEADMOUNTEDDISPLAY_API UEnum* Z_Construct_UEnum_HeadMountedDisplay_ETrackingStatus();
 	SNAPDRAGONVRCONTROLLER_API UClass* Z_Construct_UClass_USnapdragonVRControllerEventManager_NoRegister();
 // End Cross Module References
@@ -103,33 +103,33 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRControllerFunctionLibrary() {}
 			int32 OutBatteryLevel;
 			bool ReturnValue;
 		};
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ControllerIndex;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Hand;
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_OutBatteryLevel;
 		static void NewProp_ReturnValue_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_OutBatteryLevel;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Hand;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ControllerIndex;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_ControllerIndex = { "ControllerIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerBatteryLevel_Parms, ControllerIndex), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerBatteryLevel_Parms, Hand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_OutBatteryLevel = { "OutBatteryLevel", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerBatteryLevel_Parms, OutBatteryLevel), METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_ReturnValue_SetBit(void* Obj)
 	{
 		((SnapdragonVRControllerFunctionLibrary_eventGetControllerBatteryLevel_Parms*)Obj)->ReturnValue = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRControllerFunctionLibrary_eventGetControllerBatteryLevel_Parms), &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_OutBatteryLevel = { "OutBatteryLevel", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerBatteryLevel_Parms, OutBatteryLevel), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerBatteryLevel_Parms, Hand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_ControllerIndex = { "ControllerIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerBatteryLevel_Parms, ControllerIndex), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_ControllerIndex,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_Hand_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_Hand,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_OutBatteryLevel,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_OutBatteryLevel,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_Hand,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_Hand_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::NewProp_ControllerIndex,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel_Statics::Function_MetaDataParams[] = {
@@ -157,36 +157,36 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRControllerFunctionLibrary() {}
 			FVector OutPosition;
 			bool ReturnValue;
 		};
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ControllerIndex;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Hand;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutOrientation;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutPosition;
 		static void NewProp_ReturnValue_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutPosition;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_OutOrientation;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Hand;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ControllerIndex;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_ControllerIndex = { "ControllerIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms, ControllerIndex), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms, Hand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_OutOrientation = { "OutOrientation", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms, OutOrientation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_OutPosition = { "OutPosition", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms, OutPosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_ReturnValue_SetBit(void* Obj)
 	{
 		((SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms*)Obj)->ReturnValue = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms), &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_OutPosition = { "OutPosition", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms, OutPosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_OutOrientation = { "OutOrientation", nullptr, (EPropertyFlags)0x0010000000000180, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms, OutOrientation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms, Hand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_ControllerIndex = { "ControllerIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerOrientationAndPosition_Parms, ControllerIndex), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_ControllerIndex,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_Hand_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_Hand,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_OutOrientation,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_OutPosition,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_OutPosition,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_OutOrientation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_Hand,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_Hand_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::NewProp_ControllerIndex,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition_Statics::Function_MetaDataParams[] = {
@@ -212,36 +212,36 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRControllerFunctionLibrary() {}
 			EControllerHand DeviceHand;
 			ETrackingStatus ReturnValue;
 		};
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_ReturnValue_Underlying;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_DeviceHand;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_DeviceHand_Underlying;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ControllerIndex_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ControllerIndex;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_DeviceHand_Underlying;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_DeviceHand;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_ReturnValue_Underlying;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerTrackingStatus_Parms, ReturnValue), Z_Construct_UEnum_HeadMountedDisplay_ETrackingStatus, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_DeviceHand = { "DeviceHand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerTrackingStatus_Parms, DeviceHand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_DeviceHand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ControllerIndex_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ControllerIndex = { "ControllerIndex", nullptr, (EPropertyFlags)0x0010000000000082, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerTrackingStatus_Parms, ControllerIndex), METADATA_PARAMS(Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ControllerIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ControllerIndex_MetaData)) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_DeviceHand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_DeviceHand = { "DeviceHand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerTrackingStatus_Parms, DeviceHand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventGetControllerTrackingStatus_Parms, ReturnValue), Z_Construct_UEnum_HeadMountedDisplay_ETrackingStatus, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ControllerIndex,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_DeviceHand_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_DeviceHand,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ReturnValue_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ReturnValue_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_DeviceHand,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_DeviceHand_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::NewProp_ControllerIndex,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus_Statics::Function_MetaDataParams[] = {
@@ -301,30 +301,30 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRControllerFunctionLibrary() {}
 			EControllerHand Hand;
 			bool ReturnValue;
 		};
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ControllerIndex;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Hand;
 		static void NewProp_ReturnValue_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Hand;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_ControllerIndex;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_ControllerIndex = { "ControllerIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventRecenter_Parms, ControllerIndex), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventRecenter_Parms, Hand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_ReturnValue_SetBit(void* Obj)
 	{
 		((SnapdragonVRControllerFunctionLibrary_eventRecenter_Parms*)Obj)->ReturnValue = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRControllerFunctionLibrary_eventRecenter_Parms), &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventRecenter_Parms, Hand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_ControllerIndex = { "ControllerIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventRecenter_Parms, ControllerIndex), METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_ControllerIndex,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_Hand_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_Hand,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_Hand,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_Hand_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::NewProp_ControllerIndex,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter_Statics::Function_MetaDataParams[] = {
@@ -353,44 +353,44 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRControllerFunctionLibrary() {}
 			float Time;
 			bool ReturnValue;
 		};
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Hand;
-		static void NewProp_Open_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_Open;
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Frequency;
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Amplitude;
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Time;
 		static void NewProp_ReturnValue_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Time;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Amplitude;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Frequency;
+		static void NewProp_Open_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_Open;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Hand;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms, Hand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
-	void Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Open_SetBit(void* Obj)
-	{
-		((SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms*)Obj)->Open = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Open = { "Open", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms), &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Open_SetBit, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Frequency = { "Frequency", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms, Frequency), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Amplitude = { "Amplitude", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms, Amplitude), METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Time = { "Time", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms, Time), METADATA_PARAMS(nullptr, 0) };
 	void Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_ReturnValue_SetBit(void* Obj)
 	{
 		((SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms*)Obj)->ReturnValue = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms), &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Time = { "Time", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms, Time), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Amplitude = { "Amplitude", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms, Amplitude), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Frequency = { "Frequency", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms, Frequency), METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Open_SetBit(void* Obj)
+	{
+		((SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms*)Obj)->Open = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Open = { "Open", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms), &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Open_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnapdragonVRControllerFunctionLibrary_eventSetControllerVibrate_Parms, Hand), Z_Construct_UEnum_InputCore_EControllerHand, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Hand_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Hand,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Open,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Frequency,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Amplitude,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Time,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Time,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Amplitude,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Frequency,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Open,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Hand,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::NewProp_Hand_Underlying,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate_Statics::Function_MetaDataParams[] = {
@@ -427,12 +427,12 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRControllerFunctionLibrary() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_SnapdragonVRController,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_USnapdragonVRControllerFunctionLibrary_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel, "GetControllerBatteryLevel" }, // 1807760431
-		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition, "GetControllerOrientationAndPosition" }, // 2511397107
-		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus, "GetControllerTrackingStatus" }, // 1016249914
+		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerBatteryLevel, "GetControllerBatteryLevel" }, // 3945032425
+		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerOrientationAndPosition, "GetControllerOrientationAndPosition" }, // 3884753273
+		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetControllerTrackingStatus, "GetControllerTrackingStatus" }, // 2403691874
 		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_GetSnapdragonVRControllerEventManager, "GetSnapdragonVRControllerEventManager" }, // 3573972080
-		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter, "Recenter" }, // 1198085170
-		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate, "SetControllerVibrate" }, // 2332022172
+		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_Recenter, "Recenter" }, // 3091211709
+		{ &Z_Construct_UFunction_USnapdragonVRControllerFunctionLibrary_SetControllerVibrate, "SetControllerVibrate" }, // 2011076045
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USnapdragonVRControllerFunctionLibrary_Statics::Class_MetaDataParams[] = {
@@ -469,7 +469,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRControllerFunctionLibrary() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USnapdragonVRControllerFunctionLibrary, 1811429735);
+	IMPLEMENT_CLASS(USnapdragonVRControllerFunctionLibrary, 428718852);
 	template<> SNAPDRAGONVRCONTROLLER_API UClass* StaticClass<USnapdragonVRControllerFunctionLibrary>()
 	{
 		return USnapdragonVRControllerFunctionLibrary::StaticClass();

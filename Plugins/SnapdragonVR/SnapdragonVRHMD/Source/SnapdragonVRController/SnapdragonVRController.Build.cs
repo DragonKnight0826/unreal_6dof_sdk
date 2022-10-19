@@ -40,10 +40,16 @@ namespace UnrealBuildTool.Rules
 					"UMG",
 					"Slate",
 					"SlateCore",
-					"SkyworthXRLib",
-					"Launch"
+					"SkyworthXRLib"
 				}
 				);
+
+			PublicIncludePathModuleNames.AddRange(
+                new string[]
+                {
+                    "Launch"
+                }
+                );
 
             PrivateIncludePaths.AddRange(
 				new string[] {

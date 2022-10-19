@@ -31,7 +31,7 @@
 /wd4244
 /wd4838
 /I .
-/I "D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Private"
+/I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Private
 /I Runtime\Renderer\Private
 /I Runtime\Core\Private
 /I Runtime\OpenGLDrv\Private
@@ -243,17 +243,17 @@
 /I Runtime\MRMesh\Public
 /I Runtime\OpenGLDrv\Public
 /I Runtime\VulkanRHI\Public
-/I "D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty"
-/I "D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty\SkyworthXRLib\SkyworthXRLib\Include"
+/I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty
+/I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\ThirdParty\SkyworthXRLib\SkyworthXRLib\Include
 /I Editor\EditorWidgets\Public
 /I Developer\DesktopWidgets\Public
 /I Developer\SharedSettingsWidgets\Public
 /I Developer\ExternalImagePicker\Public
 /I Editor\SequencerWidgets\Public
-/I "D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Inc\SnapdragonVRHMD"
-/I "D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Source"
-/I "D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Classes"
-/I "D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Public"
+/I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Inc\SnapdragonVRHMD
+/I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source
+/I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Classes
+/I D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Source\SnapdragonVRHMD\Public
 /I Runtime\Launch\Public
 /I Developer\ProfilerService\Public
 /I Developer\ProfilerClient\Public
@@ -291,12 +291,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.20348.0\winrt"
-/FI"D:\Document\Unreal Projects\Test_None\Intermediate\Build\Win64\Test_NoneEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h"
-/Yu"D:\Document\Unreal Projects\Test_None\Intermediate\Build\Win64\Test_NoneEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h"
-/Fp"D:\Document\Unreal Projects\Test_None\Intermediate\Build\Win64\Test_NoneEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.pch"
-"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.cpp"
-/FI"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Definitions.SnapdragonVRHMD.h"
-/Fo"D:\Document\Unreal Projects\Test_None\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.cpp.obj"
+/FI"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h"
+/Yu"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h"
+/Fp"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.pch"
+"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.cpp"
+/FI"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Definitions.SnapdragonVRHMD.h"
+/Fo"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRHMD\Module.SnapdragonVRHMD.cpp.obj"
 /TP
 /GR-
 /W4

@@ -31,7 +31,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMD_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x57C85C89,
+				0x58DAD584,
 				0x1B09193F,
 				METADATA_PARAMS(nullptr, 0)
 			};

@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 	SNAPDRAGONVRHMD_API UFunction* Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature();
 	SNAPDRAGONVRHMD_API UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRModeEventType();
 	SNAPDRAGONVRHMD_API UFunction* Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature();
-	SNAPDRAGONVRHMD_API UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalZone();
 	SNAPDRAGONVRHMD_API UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalLevel();
+	SNAPDRAGONVRHMD_API UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalZone();
 	SNAPDRAGONVRHMD_API UFunction* Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature();
 	SNAPDRAGONVRHMD_API UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRSdkServiceEventType();
 	SNAPDRAGONVRHMD_API UClass* Z_Construct_UClass_USnapdragonVRHMDEventManager_NoRegister();
@@ -33,19 +33,19 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		{
 			ESnapdragonVRSensorEventType Type;
 		};
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Type_Underlying;
 		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Type;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Type_Underlying;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature_Statics::NewProp_Type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature_Statics::NewProp_Type = { "Type", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_SnapdragonVRHMD_eventSnapdragonVRSensorDelegate_Parms, Type), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRSensorEventType, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature_Statics::NewProp_Type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature_Statics::NewProp_Type_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature_Statics::NewProp_Type,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature_Statics::NewProp_Type_Underlying,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature_Statics::Function_MetaDataParams[] = {
@@ -68,19 +68,19 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		{
 			ESnapdragonVRModeEventType Type;
 		};
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Type_Underlying;
 		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Type;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Type_Underlying;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature_Statics::NewProp_Type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature_Statics::NewProp_Type = { "Type", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_SnapdragonVRHMD_eventSnapdragonVRModeDelegate_Parms, Type), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRModeEventType, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature_Statics::NewProp_Type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature_Statics::NewProp_Type_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature_Statics::NewProp_Type,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature_Statics::NewProp_Type_Underlying,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature_Statics::Function_MetaDataParams[] = {
@@ -104,25 +104,25 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 			ESnapdragonVRThermalZone Zone;
 			ESnapdragonVRThermalLevel Level;
 		};
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Zone_Underlying;
-		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Zone;
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Level_Underlying;
 		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Level;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Level_Underlying;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Zone;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Zone_Underlying;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Zone_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Zone = { "Zone", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_SnapdragonVRHMD_eventSnapdragonVRThermalDelegate_Parms, Zone), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalZone, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Level_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Level = { "Level", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_SnapdragonVRHMD_eventSnapdragonVRThermalDelegate_Parms, Level), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalLevel, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Level_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Zone = { "Zone", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_SnapdragonVRHMD_eventSnapdragonVRThermalDelegate_Parms, Zone), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalZone, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Zone_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Zone_Underlying,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Zone,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Level_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Level,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Level_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Zone,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::NewProp_Zone_Underlying,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature_Statics::Function_MetaDataParams[] = {
@@ -145,19 +145,19 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		{
 			ESnapdragonVRSdkServiceEventType Type;
 		};
-		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Type_Underlying;
 		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_Type;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_Type_Underlying;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature_Statics::NewProp_Type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature_Statics::NewProp_Type = { "Type", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_SnapdragonVRHMD_eventSnapdragonVRSdkServiceDelegate_Parms, Type), Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRSdkServiceEventType, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature_Statics::NewProp_Type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature_Statics::NewProp_Type_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature_Statics::NewProp_Type,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature_Statics::NewProp_Type_Underlying,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature_Statics::Function_MetaDataParams[] = {
@@ -188,7 +188,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		return ESnapdragonVRThermalZone_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ESnapdragonVRThermalZone(ESnapdragonVRThermalZone_StaticEnum, TEXT("/Script/SnapdragonVRHMD"), TEXT("ESnapdragonVRThermalZone"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalZone_Hash() { return 1151388468U; }
+	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalZone_Hash() { return 904464080U; }
 	UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalZone()
 	{
 #if WITH_HOT_RELOAD
@@ -221,7 +221,6 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
-				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -244,7 +243,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		return ESnapdragonVRThermalLevel_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ESnapdragonVRThermalLevel(ESnapdragonVRThermalLevel_StaticEnum, TEXT("/Script/SnapdragonVRHMD"), TEXT("ESnapdragonVRThermalLevel"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalLevel_Hash() { return 1370336740U; }
+	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalLevel_Hash() { return 617111824U; }
 	UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRThermalLevel()
 	{
 #if WITH_HOT_RELOAD
@@ -281,7 +280,6 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
-				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -304,7 +302,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		return ESnapdragonVRSensorEventType_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ESnapdragonVRSensorEventType(ESnapdragonVRSensorEventType_StaticEnum, TEXT("/Script/SnapdragonVRHMD"), TEXT("ESnapdragonVRSensorEventType"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRSensorEventType_Hash() { return 228971798U; }
+	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRSensorEventType_Hash() { return 3323099936U; }
 	UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRSensorEventType()
 	{
 #if WITH_HOT_RELOAD
@@ -335,7 +333,6 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
-				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -358,7 +355,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		return ESnapdragonVRModeEventType_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ESnapdragonVRModeEventType(ESnapdragonVRModeEventType_StaticEnum, TEXT("/Script/SnapdragonVRHMD"), TEXT("ESnapdragonVRModeEventType"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRModeEventType_Hash() { return 3695904719U; }
+	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRModeEventType_Hash() { return 867541158U; }
 	UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRModeEventType()
 	{
 #if WITH_HOT_RELOAD
@@ -391,7 +388,6 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
-				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -414,7 +410,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		return ESnapdragonVRSdkServiceEventType_StaticEnum();
 	}
 	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ESnapdragonVRSdkServiceEventType(ESnapdragonVRSdkServiceEventType_StaticEnum, TEXT("/Script/SnapdragonVRHMD"), TEXT("ESnapdragonVRSdkServiceEventType"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRSdkServiceEventType_Hash() { return 91068524U; }
+	uint32 Get_Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRSdkServiceEventType_Hash() { return 4004015488U; }
 	UEnum* Z_Construct_UEnum_SnapdragonVRHMD_ESnapdragonVRSdkServiceEventType()
 	{
 #if WITH_HOT_RELOAD
@@ -447,7 +443,6 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 				Enumerators,
 				UE_ARRAY_COUNT(Enumerators),
 				RF_Public|RF_Transient|RF_MarkAsNative,
-				EEnumFlags::None,
 				UE4CodeGen_Private::EDynamicType::NotDynamic,
 				(uint8)UEnum::ECppForm::EnumClass,
 				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
@@ -470,21 +465,21 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnSnapdragonVRSdkServiceDelegate_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnSnapdragonVRSensorDelegate_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSnapdragonVRSdkServiceDelegate;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnSnapdragonVRThermalDelegate_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSnapdragonVRThermalDelegate;
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSnapdragonVRSensorDelegate;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnSnapdragonVRModeDelegate_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSnapdragonVRModeDelegate;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnSnapdragonVRSensorDelegate_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnSnapdragonVRThermalDelegate_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSnapdragonVRSensorDelegate;
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSnapdragonVRThermalDelegate;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnSnapdragonVRSdkServiceDelegate_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSnapdragonVRSdkServiceDelegate;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -502,17 +497,11 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSensorDelegate_MetaData[] = {
 		{ "ModuleRelativePath", "Classes/SnapdragonVRHMDEventManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate = { "OnSnapdragonVRSdkServiceDelegate", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USnapdragonVRHMDEventManager, OnSnapdragonVRSdkServiceDelegate), Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate_MetaData[] = {
-		{ "ModuleRelativePath", "Classes/SnapdragonVRHMDEventManager.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate = { "OnSnapdragonVRThermalDelegate", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USnapdragonVRHMDEventManager, OnSnapdragonVRThermalDelegate), Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate_MetaData)) };
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSensorDelegate = { "OnSnapdragonVRSensorDelegate", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USnapdragonVRHMDEventManager, OnSnapdragonVRSensorDelegate), Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSensorDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSensorDelegate_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRModeDelegate_MetaData[] = {
 		{ "ModuleRelativePath", "Classes/SnapdragonVRHMDEventManager.h" },
@@ -520,16 +509,22 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 #endif
 	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRModeDelegate = { "OnSnapdragonVRModeDelegate", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USnapdragonVRHMDEventManager, OnSnapdragonVRModeDelegate), Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRModeDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRModeDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRModeDelegate_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSensorDelegate_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate_MetaData[] = {
 		{ "ModuleRelativePath", "Classes/SnapdragonVRHMDEventManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSensorDelegate = { "OnSnapdragonVRSensorDelegate", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USnapdragonVRHMDEventManager, OnSnapdragonVRSensorDelegate), Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSensorDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSensorDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSensorDelegate_MetaData)) };
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate = { "OnSnapdragonVRThermalDelegate", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USnapdragonVRHMDEventManager, OnSnapdragonVRThermalDelegate), Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRThermalDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate_MetaData[] = {
+		{ "ModuleRelativePath", "Classes/SnapdragonVRHMDEventManager.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate = { "OnSnapdragonVRSdkServiceDelegate", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USnapdragonVRHMDEventManager, OnSnapdragonVRSdkServiceDelegate), Z_Construct_UDelegateFunction_SnapdragonVRHMD_SnapdragonVRSdkServiceDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRModeDelegate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSensorDelegate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRModeDelegate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRThermalDelegate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::NewProp_OnSnapdragonVRSdkServiceDelegate,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_USnapdragonVRHMDEventManager_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<USnapdragonVRHMDEventManager>::IsAbstract,
@@ -558,7 +553,7 @@ void EmptyLinkFunctionForGeneratedCodeSnapdragonVRHMDEventManager() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USnapdragonVRHMDEventManager, 2072201787);
+	IMPLEMENT_CLASS(USnapdragonVRHMDEventManager, 3255572039);
 	template<> SNAPDRAGONVRHMD_API UClass* StaticClass<USnapdragonVRHMDEventManager>()
 	{
 		return USnapdragonVRHMDEventManager::StaticClass();

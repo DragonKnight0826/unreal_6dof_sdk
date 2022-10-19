@@ -1,5 +1,5 @@
 /MANIFEST:EMBED
-/MANIFESTINPUT:D:\UnrealEngine\4.26.2\Engine\Build\Windows\Resources\Default-Win64.manifest
+/MANIFESTINPUT:D:\UnrealEngine\UE_4.25\Engine\Build\Windows\Resources\Default-Win64.manifest
 /NOLOGO
 /DEBUG
 /errorReport:prompt
@@ -33,20 +33,10 @@
 /NODEFAULTLIB:"LIBCD"
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
-"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.cpp.obj"
-"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp.obj"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Default.rc2.res"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputCore\UE4Editor-InputCore.lib"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputDevice\UE4Editor-InputDevice.lib"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\HeadMountedDisplay\UE4Editor-HeadMountedDisplay.lib"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UMG\UE4Editor-UMG.lib"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\Slate\UE4Editor-Slate.lib"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\SlateCore\UE4Editor-SlateCore.lib"
-"D:\UnrealEngine\4.26.2\Engine\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor.lib"
+"D:\Document\Unreal Projects\SkyWorthXR_425\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\Document\Unreal Projects\SkyWorthXR_425\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.cpp.obj"
+"D:\Document\Unreal Projects\SkyWorthXR_425\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp.obj"
+"D:\Document\Unreal Projects\SkyWorthXR_425\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Default.rc2.res"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"
@@ -71,8 +61,17 @@
 "setupapi.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Binaries\Win64\UE4Editor-SnapdragonVRController.dll"
-/IMPLIB:"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\UE4Editor-SnapdragonVRController.suppressed.lib"
-/PDB:"D:\Document\UnrealProject\SkyworthXR.UnrealSDK.Sample\SkyWorthXR_Demo\Plugins\SnapdragonVR\SnapdragonVRHMD\Binaries\Win64\UE4Editor-SnapdragonVRController.pdb"
+"D:\UnrealEngine\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
+"D:\UnrealEngine\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
+"D:\UnrealEngine\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
+"D:\UnrealEngine\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputCore\UE4Editor-InputCore.lib"
+"D:\UnrealEngine\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputDevice\UE4Editor-InputDevice.lib"
+"D:\UnrealEngine\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\HeadMountedDisplay\UE4Editor-HeadMountedDisplay.lib"
+"D:\UnrealEngine\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\UMG\UE4Editor-UMG.lib"
+"D:\UnrealEngine\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\Slate\UE4Editor-Slate.lib"
+"D:\UnrealEngine\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\SlateCore\UE4Editor-SlateCore.lib"
+/OUT:"D:\Document\Unreal Projects\SkyWorthXR_425\Plugins\SnapdragonVR\SnapdragonVRHMD\Binaries\Win64\UE4Editor-SnapdragonVRController.dll"
+/IMPLIB:"D:\Document\Unreal Projects\SkyWorthXR_425\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\UE4Editor-SnapdragonVRController.suppressed.lib"
+/PDB:"D:\Document\Unreal Projects\SkyWorthXR_425\Plugins\SnapdragonVR\SnapdragonVRHMD\Binaries\Win64\UE4Editor-SnapdragonVRController.pdb"
 /ignore:4078
 /INCLUDE:IMPLEMENT_MODULE_SnapdragonVRController

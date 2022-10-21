@@ -1069,8 +1069,11 @@ FMatrix FSnapdragonVRHMD::GetStereoProjectionMatrix(const EStereoscopicPass Ster
 {
 	 GSXRDeviceInfo di = SC::GSXR_nativeGetDeviceInfo();
 
+#if ENGINE_MAJOR_VERSION == 5
+	 GSXRViewFrustum Frustum = (ViewIndex == eSSE_LEFT_EYE) ? di.leftEyeFrustum : di.rightEyeFrustum;
+#else
 	 GSXRViewFrustum Frustum = (StereoPassType == eSSP_LEFT_EYE) ? di.leftEyeFrustum : di.rightEyeFrustum;
-
+#endif
 	 float InvNearZ = 1.0f / Frustum.near;
 
 	 float Right = Frustum.right * InvNearZ;
@@ -1743,7 +1746,12 @@ bool FSnapdragonVRHMD::Startup()
 	static IConsoleVariable* CETEVar = IConsoleManager::Get().FindConsoleVariable(TEXT("r.SVR.EyeTrackingEnabled"));
 	CETEVar->Set(false);
 
+#if ENGINE_MAJOR_VERSION == 5
+	MobileMSAAValue = IConsoleManager::Get().FindTConsoleVariableDataInt(TEXT("r.Mobile.AntiAliasing"))->GetValueOnAnyThread() == 3;
+#else
 	MobileMSAAValue = IConsoleManager::Get().FindTConsoleVariableDataInt(TEXT("r.MobileMSAA"))->GetValueOnAnyThread();
+#endif
+
 	UE_LOG(LogSVR, Log, TEXT("MSAA = %d"), MobileMSAAValue);
 	return true;
 }

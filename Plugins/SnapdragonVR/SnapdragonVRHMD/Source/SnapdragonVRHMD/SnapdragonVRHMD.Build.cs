@@ -7,11 +7,26 @@
 
 using System;
 using System.IO;
+using UnrealBuildTool;
 
 namespace UnrealBuildTool.Rules
 {
     public class SnapdragonVRHMD : ModuleRules
     {
+        private int ReadEngineVersion()
+        {
+            ReadOnlyBuildVersion Version = ReadOnlyBuildVersion.Current;
+
+            int EngineMajorVersion = Version.MajorVersion;
+            //string EngineMinorVersion = Version.MinorVersion.ToString();
+            //string EnginePatchVersion = Version.PatchVersion.ToString();
+            //string EngineChangelist = Version.Changelist.ToString();
+            //string EngineBranch = Version.BranchName;
+
+            //EngineMajorVersion + "." + EngineMinorVersion + "." + EnginePatchVersion + "//" + EngineChangelist + "//" + EngineBranch;
+            return EngineMajorVersion;
+        }
+
         public SnapdragonVRHMD(ReadOnlyTargetRules Target) : base(Target)
         {
             PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
@@ -40,14 +55,14 @@ namespace UnrealBuildTool.Rules
             //System.Console.WriteLine("  >>>>>>>>>>>>  APLPath -> " + APLPath);
 
 
-    //        PrivateIncludePaths.AddRange(
-    //            new string[]{
-    //            SnapdragonSDKHeaderDirectory
-				//// ... add other private include paths required here ...
-				//}
-    //        );
+            //        PrivateIncludePaths.AddRange(
+            //            new string[]{
+            //            SnapdragonSDKHeaderDirectory
+            //// ... add other private include paths required here ...
+            //}
+            //        );
 
-            
+
             //System.Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>SnapdragonSDKHeaderDirectory->" + SnapdragonSDKHeaderDirectory);
             // Loop through List with foreach.
 
@@ -154,6 +169,16 @@ namespace UnrealBuildTool.Rules
 					"SkyworthXRLib"
                 }
                 );
+
+            int EngineMajorVersion = ReadEngineVersion();
+            if (EngineMajorVersion == 5)
+            {
+                PrivateDependencyModuleNames.AddRange(
+               new string[]
+               {
+                    "RHICore"
+               });
+            }
 
             AddEngineThirdPartyPrivateStaticDependencies(Target, "OpenGL");
             PrivateDependencyModuleNames.Add("OpenGLDrv");

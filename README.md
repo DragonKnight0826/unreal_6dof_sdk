@@ -5,7 +5,8 @@
 - **4.25**
 - **4.26**
 - **4.27**
-
+- **5.0.3**
+- 
 支持以下功能
 
  - 双目立体渲染
@@ -21,6 +22,7 @@ Currently supported engine versions:
 - **4.25**
 - **4.26**
 - **4.27**
+- **5.03**
 
 The following functions are supported:
  - Binocular stereo rendering

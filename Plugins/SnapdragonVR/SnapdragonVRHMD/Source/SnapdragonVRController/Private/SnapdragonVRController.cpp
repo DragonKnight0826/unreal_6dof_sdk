@@ -100,25 +100,13 @@ void OnControllerTriggerCallback(int hall_x, int hall_y, const int lr)
 	TempAxis[lr][ESnapdragonVRControllerAxis1D::Type::Trigger] = hall_x / 10.f;
 	TempAxis[lr][ESnapdragonVRControllerAxis1D::Type::Grip] = hall_y / 10.f;
 
-	if (!lr)
-	{
-		uint32 Mask = KButtonMask[ESnapdragonVRControllerButton::Button_Left_Trigger];
-		TempButtonState[0][lr] = TempButtonState[0][lr] & ~Mask;
-		TempButtonState[0][lr] = TempButtonState[0][lr] | (hall_y ? 0 : Mask);
-		Mask = KButtonMask[ESnapdragonVRControllerButton::Button_Left_Grip];
-		TempButtonState[0][lr] = TempButtonState[0][lr] & ~Mask;
-		TempButtonState[0][lr] = TempButtonState[0][lr] | (hall_x ? 0 : Mask);
-	}
-	else
-	{
-		uint32 Mask = KButtonMask[ESnapdragonVRControllerButton::Button_Right_Trigger];
-		TempButtonState[0][lr] = TempButtonState[0][lr] & ~Mask;
-		TempButtonState[0][lr] = TempButtonState[0][lr] | (hall_y ? 0 : Mask);
+	int Mask = lr ? KButtonMask[ESnapdragonVRControllerButton::Button_Right_Trigger] : KButtonMask[ESnapdragonVRControllerButton::Button_Left_Trigger];
+	TempButtonState[0][lr] = TempButtonState[0][lr] & ~Mask;
+	TempButtonState[0][lr] = TempButtonState[0][lr] | ((hall_y > 5) ? 0 : Mask);
 
-		Mask = KButtonMask[ESnapdragonVRControllerButton::Button_Right_Grip];
-		TempButtonState[0][lr] = TempButtonState[0][lr] & ~Mask;
-		TempButtonState[0][lr] = TempButtonState[0][lr] | (hall_x ? 0 : Mask);
-	}
+	Mask = lr ? KButtonMask[ESnapdragonVRControllerButton::Button_Right_Grip] : KButtonMask[ESnapdragonVRControllerButton::Button_Left_Grip];
+	TempButtonState[0][lr] = TempButtonState[0][lr] & ~Mask;
+	TempButtonState[0][lr] = TempButtonState[0][lr] | ((hall_x > 5) ? 0 : Mask);
 }
 
 //手柄按键事件回调

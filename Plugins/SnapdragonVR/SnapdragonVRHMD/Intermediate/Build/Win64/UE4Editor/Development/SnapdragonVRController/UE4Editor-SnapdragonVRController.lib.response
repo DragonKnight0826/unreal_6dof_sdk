@@ -6,7 +6,7 @@
 /NAME:"UE4Editor-SnapdragonVRController.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"D:\Document\Unreal Projects\SkyWorthXR_425\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\Document\Unreal Projects\SkyWorthXR_425\Intermediate\Build\Win64\SkyWorthXR_425Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 "D:\Document\Unreal Projects\SkyWorthXR_425\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.cpp.obj"
 "D:\Document\Unreal Projects\SkyWorthXR_425\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Module.SnapdragonVRController.gen.cpp.obj"
 "D:\Document\Unreal Projects\SkyWorthXR_425\Plugins\SnapdragonVR\SnapdragonVRHMD\Intermediate\Build\Win64\UE4Editor\Development\SnapdragonVRController\Default.rc2.res"

@@ -924,6 +924,10 @@ SXRP_EXPORT SxrResult svrStartCamera();
 //! \brief Stop Camera
 //! \return SXR_ERROR_NONE for success; SXR_ERROR_UNKNOWN for any other error
 SXRP_EXPORT SxrResult svrStopCamera();
+
+//! \brief Stop Camera
+//! \param data 1bit:LR 2bit:Open 3bit:time 8bit:frequency1 12bit:amplitude1
+SXRP_EXPORT void sxrSetControllerVibrate(int data);
 #ifdef __cplusplus
 }
 #endif

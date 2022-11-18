@@ -15,15 +15,6 @@ public class SkyworthXRLib : ModuleRules
 
         if (Target.Platform == UnrealTargetPlatform.Android)
         {
-
-
-            PrivateDependencyModuleNames.AddRange(
-               new string[] 
-               { 
-                   "Launch" 
-               }
-               );
-
             PublicAdditionalLibraries.Add(SourceDirectory + "Lib/ARM64/Release/" + "libXRLoader.so");
             PublicAdditionalLibraries.Add(SourceDirectory + "Lib/ARM/Release/" + "libXRLoader.so");
 

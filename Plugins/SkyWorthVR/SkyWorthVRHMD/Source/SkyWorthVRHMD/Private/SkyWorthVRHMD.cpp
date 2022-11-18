@@ -1506,12 +1506,12 @@ void FSkyWorthVRHMD::EndFrame_RHIThread()
 	
 	FrameParams.frameOptions = kDisableChromaticCorrection;
 	FrameParams.headPoseState = CurrentFrame_RenderThread.headPoseState;
-	UE_LOG(LogSVR,Log,TEXT("headPoseState:(%f,%f,%f),(%f,%f,%f,%f)"),FrameParams.headPoseState.pose.position.x,FrameParams.headPoseState.pose.position.y,FrameParams.headPoseState.pose.position.z,
-	FrameParams.headPoseState.pose.rotation.x,FrameParams.headPoseState.pose.rotation.y,FrameParams.headPoseState.pose.rotation.z,FrameParams.headPoseState.pose.rotation.w);
+	//UE_LOG(LogSVR,Log,TEXT("headPoseState:(%f,%f,%f),(%f,%f,%f,%f)"),FrameParams.headPoseState.pose.position.x,FrameParams.headPoseState.pose.position.y,FrameParams.headPoseState.pose.position.z,
+	//FrameParams.headPoseState.pose.rotation.x,FrameParams.headPoseState.pose.rotation.y,FrameParams.headPoseState.pose.rotation.z,FrameParams.headPoseState.pose.rotation.w);
 	FrameParams.minVsyncs = 1;
-	UE_LOG(LogSVR,Log,TEXT("(%s) (Frame %d) SubmitFrame(mRenderPose) => Calling sxrSubmitFrame(Frame %d),imageHandle=%d"), IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), FrameParams.frameIndex, FrameParams.frameIndex,FrameParams.renderLayers[0].imageHandle);
-	UE_LOG(LogSVR, Log, TEXT("SubmitFrame : frameIndex = %d"), FrameParams.frameIndex);
-	UE_LOG(LogSVR, Log, TEXT("SubmitFrame : minVsyncs = %d"), FrameParams.minVsyncs);
+	//UE_LOG(LogSVR,Log,TEXT("(%s) (Frame %d) SubmitFrame(mRenderPose) => Calling sxrSubmitFrame(Frame %d),imageHandle=%d"), IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), FrameParams.frameIndex, FrameParams.frameIndex,FrameParams.renderLayers[0].imageHandle);
+	//UE_LOG(LogSVR, Log, TEXT("SubmitFrame : frameIndex = %d"), FrameParams.frameIndex);
+	//UE_LOG(LogSVR, Log, TEXT("SubmitFrame : minVsyncs = %d"), FrameParams.minVsyncs);
 
 	
 	

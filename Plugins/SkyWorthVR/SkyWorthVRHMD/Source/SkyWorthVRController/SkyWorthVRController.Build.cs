@@ -40,7 +40,8 @@ namespace UnrealBuildTool.Rules
 					"UMG",
 					"Slate",
 					"SlateCore",
-					"SkyworthXRLib"
+					"SkyworthXRLib",
+					"OpenVR"
 				}
 				);
 

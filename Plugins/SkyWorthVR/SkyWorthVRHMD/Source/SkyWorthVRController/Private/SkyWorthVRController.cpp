@@ -84,7 +84,6 @@ FSkyWorthVRController::FSkyWorthVRController(const TSharedRef<FGenericApplicatio
 	// This allows motion controllers to be both piggy-backed off HMD devices which support them, as well as standing alone.
 	IModularFeatures::Get().RegisterModularFeature(GetModularFeatureName(), this);
 
-	StartTracking();
 	for (int i = 0; i < CONTROLLERS_PER_PLAYER; ++i)
 	{
 		for (int j = 0; j < ESkyWorthVRControllerButton::TotalCount; ++j)
@@ -95,57 +94,57 @@ FSkyWorthVRController::FSkyWorthVRController(const TSharedRef<FGenericApplicatio
 
 	// Setup input mappings
 	//Touch
-	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::One] =
+	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerTouch::Button_Left_Menu] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_Menu_Touch;
-	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Two] =
+	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerTouch::Button_X] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Button_X_Touch;
-	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Three] =
+	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerTouch::Button_Y] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Button_Y_Touch;
-	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::PrimaryThumbstick] =
+	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerTouch::Button_Left_JoyStick] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_JoyStick_Touch;
-	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::PrimaryHandTrigger] =
+	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerTouch::Button_Left_Grip] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_Grip_Touch;
-	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::PrimaryIndexTrigger] =
+	Touches[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerTouch::Button_Left_Trigger] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_Trigger_Touch;
 
-	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::One] =
+	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerTouch::Button_Right_Menu] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_Menu_Touch;
-	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Two] =
+	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerTouch::Button_A] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Button_A_Touch;
-	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Three] =
+	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerTouch::Button_B] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Button_B_Touch;
-	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::PrimaryThumbstick] =
+	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerTouch::Button_Right_JoyStick] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_JoyStick_Touch;
-	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::PrimaryHandTrigger] =
+	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerTouch::Button_Right_Grip] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_Grip_Touch;
-	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::PrimaryIndexTrigger] =
+	Touches[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerTouch::Button_Right_Trigger] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_Trigger_Touch;
 
 	//Buttons
-	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::One] =
+	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Button_Left_Menu] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_Menu;
-	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Two] =
+	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Button_X] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Button_X;
-	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Three] =
+	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Button_Y] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Button_Y;
-	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::PrimaryThumbstick] =
+	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Button_Left_JoyStick] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_JoyStick;
-	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::PrimaryHandTrigger] =
+	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Button_Left_Grip] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_Grip;
-	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::PrimaryIndexTrigger] =
+	Buttons[static_cast<int32>(EControllerHand::Left)][ESkyWorthVRControllerButton::Button_Left_Trigger] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_Trigger;
 
-	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::One] =
+	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Button_Right_Menu] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_Menu;
-	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Two] =
+	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Button_A] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Button_A;
-	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Three] =
+	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Button_B] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Button_B;
-	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::PrimaryThumbstick] =
+	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Button_Right_JoyStick] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_JoyStick;
-	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::PrimaryHandTrigger] =
+	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Button_Right_Grip] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_Grip;
-	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::PrimaryIndexTrigger] =
+	Buttons[static_cast<int32>(EControllerHand::Right)][ESkyWorthVRControllerButton::Button_Right_Trigger] =
 		SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_Trigger;
 
 	Buttons[static_cast<int32>(EControllerHand::AnyHand)][ESkyWorthVRControllerHMDButton::Button_Enter] =
@@ -158,6 +157,8 @@ FSkyWorthVRController::FSkyWorthVRController(const TSharedRef<FGenericApplicatio
 		this, &FSkyWorthVRController::ApplicationStopDelegate);
 	FCoreDelegates::ApplicationHasEnteredForegroundDelegate.AddRaw(
 		this, &FSkyWorthVRController::ApplicationStartDelegate);
+
+	StartTracking();
 	//FCoreDelegates::ApplicationWillDeactivateDelegate.AddRaw(this, &FSkyWorthVRController::ApplicationStopDelegate);//calls to this delegate are often (always?) paired with a call to ApplicationWillEnterBackgroundDelegate(), but cover the possibility that only this delegate is called
 	//FCoreDelegates::ApplicationHasReactivatedDelegate.AddRaw(this, &FSkyWorthVRController::ApplicationStartDelegate);//calls to this delegate are often (always?) paired with a call to ApplicationHasEnteredForegroundDelegate(), but cover the possibility that only this delegate is called
 }
@@ -433,7 +434,7 @@ void FSkyWorthVRController::PollController()
 				//UE_LOG(LogSkyWorthVRController, Log, TEXT("FSkyWorthVRController::PollController NOT CONNECTED"));
 			}
 
-			currentState[i][j] = sxrControllerGetState(j, 0);
+			currentState[i][j] = sxrControllerGetState(ControllerAndHandIndexToDeviceIdMap[i][j], 0);
 
 #endif
 			/*UE_LOG(LogSkyWorthVRController, Log,
@@ -539,10 +540,10 @@ void FSkyWorthVRController::ProcessControllerButtons()
 					}
 				}
 
-				for (int32 TouchIndex = 0; TouchIndex < static_cast<int32>(ESkyWorthVRControllerButton::TotalCount); ++
+				for (int32 TouchIndex = 0; TouchIndex < static_cast<int32>(ESkyWorthVRControllerTouch::TotalCount); ++
 				     TouchIndex)
 				{
-					ESkyWorthVRControllerButton::Type TouchType = static_cast<ESkyWorthVRControllerButton::Type>(
+					ESkyWorthVRControllerTouch::Type TouchType = static_cast<ESkyWorthVRControllerTouch::Type>(
 						TouchIndex);
 
 					// Process our known set of buttons
@@ -895,17 +896,17 @@ bool FSkyWorthVRController::GetControllerOrientationAndPosition(const int32 Cont
 		//OutOrientation = UKismetMathLibrary::ComposeRotators(FRotator(0.f, -90.f, 45.f),GetOrientation(ControllerIndex, DeviceHand).Rotator());
 		OutOrientation = GetOrientation(ControllerIndex, DeviceHand).Rotator();
 		FVector euler = OutOrientation.Euler();
-		UE_LOG(LogSkyWorthVRController, Log, TEXT("Controller IDX=%d, Hand=%s Raw O&P=[%f,%f,%f] [%f,%f,%f,]"), ControllerIndex,
+		/*UE_LOG(LogSkyWorthVRController, Log, TEXT("Controller IDX=%d, Hand=%s Raw O&P=[%f,%f,%f] [%f,%f,%f,]"), ControllerIndex,
 			DeviceHand == EControllerHand::Left ? TEXT("Left") :
 				DeviceHand == EControllerHand::Right ? TEXT("Right") : TEXT("Unknown"),
-				euler.X, euler.Y, euler.Z, OutPosition.X, OutPosition.Y, OutPosition.Z);
+				euler.X, euler.Y, euler.Z, OutPosition.X, OutPosition.Y, OutPosition.Z);*/
 
 		return true;
 	}
 
 #endif
 
-	UE_LOG(LogSkyWorthVRController, Log, TEXT("Controller IDX=%d Not Found"), ControllerIndex);
+	//UE_LOG(LogSkyWorthVRController, Log, TEXT("Controller IDX=%d Not Found"), ControllerIndex);
 	return false;
 }
 
@@ -933,7 +934,7 @@ bool FSkyWorthVRController::SetControllerVibrate(EControllerHand Hand, bool Open
 		uint32_t data;
 		data = (Hand == EControllerHand::Left ? 0 : 1);
 		data |= Open << 2;
-		data |= time1 << 3;
+		data |= (time1 ? time1 : 1) << 3;
 		data |= frequency1 << 8;
 		data |= amplitude1 << 12;
 #if SkyWorthVRCONTROLLER_SUPPORTED_PLATFORMS
@@ -944,7 +945,23 @@ bool FSkyWorthVRController::SetControllerVibrate(EControllerHand Hand, bool Open
 		       (Hand == EControllerHand::Left ? 0 : 1), Open, Frequency, Amplitude, Time);
 		return true;
 	}
+
 	return false;
+}
+
+void FSkyWorthVRController::SetHapticFeedbackValues(int32 ControllerId, int32 Hand, const FHapticFeedbackValues& Values)
+{
+	SetControllerVibrate((EControllerHand)Hand, true, Values.Frequency,Values.Amplitude, 0.04f);
+}
+
+void FSkyWorthVRController::GetHapticFrequencyRange(float& MinFrequency, float& MaxFrequency) const
+{
+	MinFrequency = MaxFrequency = 0.f;
+}
+
+float FSkyWorthVRController::GetHapticAmplitudeScale() const
+{
+	return 1.f;
 }
 
 #undef LOCTEXT_NAMESPACE

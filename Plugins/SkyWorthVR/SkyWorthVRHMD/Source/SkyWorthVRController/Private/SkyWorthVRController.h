@@ -10,7 +10,7 @@
 #include "IInputDevice.h"
 #include "InputCoreTypes.h"
 #include "XRMotionControllerBase.h"
-//#include "IMotionController.h"
+#include "IHapticDevice.h"
 #include "CoreMinimal.h"
 
 //DECLARE_LOG_CATEGORY_EXTERN(LogSkyWorthVRController, Log, All);
@@ -149,83 +149,50 @@ namespace SkyWorthVRControllerKeyNames
 	const FGamepadKeyNames::Type SkyWorthXRController_HMD_Enter("SkyWorthXRController_HMD_Enter");
 	
 }
-
-struct ESkyWorthVRControllerAxis1D
+struct EGSXRControllerKeyCode
 {
 	enum Type
 	{
-		Trigger,
-		Grip,
+		Button_Left_Menu = 300,
+		Button_X = 301,
+		Button_Y = 302,
+		Button_Left_JoyStick = 303,
+		Button_Left_Grip = 304,
+		Button_Left_Trigger = 501,
+		Button_Right_Menu = 305,
+		Button_B = 306,
+		Button_A = 307,
+		Button_Right_JoyStick = 308,
+		Button_Right_Grip = 309,
+		Button_Right_Trigger = 601,
+
+		TotalCount
+	};
+};
+struct ESkyWorthVRControllerTouch
+{
+	enum Type
+	{
+		Button_Left_Menu,
+		Button_X,
+		Button_Y,
+		Button_Left_JoyStick,
+		Button_Left_Grip,
+		Button_Left_Trigger,
+		Button_Right_Menu,
+		Button_B,
+		Button_A,
+		Button_Right_JoyStick,
+		Button_Right_Grip,
+		Button_Right_Trigger,
 
 		TotalCount
 	};
 };
 
-struct ESkyWorthVRControllerAxis2D
+// Must match the enum order of ESkyWorthVRControllerTouch
+const uint32 KTouchMask[30] =
 {
-	enum Type
-	{
-		JoyStick,
-
-		TotalCount
-	};
-};
-
-struct ESkyWorthVRControllerHMDButton
-{
-	enum Type
-	{
-		Button_Enter,
-		/** Max number of controller buttons.  Must be < 256 */
-		TotalCount
-	};
-};
-
-struct ESkyWorthVRControllerButton
-{
-	enum Type
-	{
-		None,
-		One,
-		Two,
-		Three,
-		Four,
-		DpadUp,
-		DpadDown,
-		DpadLeft,
-		DpadRight,
-		Start,
-		Back,
-		PrimaryShoulder,
-		PrimaryIndexTrigger,
-		PrimaryHandTrigger,
-		PrimaryThumbstick,
-		PrimaryThumbstickUp,
-		PrimaryThumbstickDown,
-		PrimaryThumbstickLeft,
-		PrimaryThumbstickRight,
-		SecondaryShoulder,
-		SecondaryIndexTrigger,
-		SecondaryHandTrigger,
-		SecondaryThumbstick,
-		SecondaryThumbstickUp,
-		SecondaryThumbstickDown,
-		SecondaryThumbstickLeft,
-		SecondaryThumbstickRight,
-		Up,
-		Down,
-		Left,
-		Right,
-
-		/** Max number of controller buttons.  Must be < 256 */
-		TotalCount
-	};
-};
-
-// Must match the enum order of ESkyWorthVRControllerButton
-const uint32 KButtonMask[32] =
-{
-	0x00000000,
 	0x00000001,
 	0x00000002,
 	0x00000004,
@@ -258,7 +225,94 @@ const uint32 KButtonMask[32] =
 	0x80000000
 };
 
-class FSkyWorthVRController : public IInputDevice, public FXRMotionControllerBase
+struct ESkyWorthVRControllerAxis1D
+{
+	enum Type
+	{
+		Trigger,
+		Grip,
+
+		TotalCount
+	};
+};
+
+struct ESkyWorthVRControllerAxis2D
+{
+	enum Type
+	{
+		JoyStick,
+
+		TotalCount
+	};
+};
+
+struct ESkyWorthVRControllerHMDButton
+{
+	enum Type
+	{
+		Button_Enter,
+		/** Max number of controller buttons.  Must be < 256 */
+		TotalCount
+	};
+};
+struct ESkyWorthVRControllerButton
+{
+	enum Type
+	{
+		Button_Left_Menu,
+		Button_X,
+		Button_Y,
+		Button_Left_JoyStick,
+		Button_Left_Grip,
+		Button_Left_Trigger,
+		Button_Right_Menu,
+		Button_B,
+		Button_A,
+		Button_Right_JoyStick,
+		Button_Right_Grip,
+		Button_Right_Trigger,
+
+		/** Max number of controller buttons.  Must be < 256 */
+		TotalCount
+	};
+};
+
+// Must match the enum order of ESkyWorthVRControllerButton
+const uint32 KButtonMask[30] =
+{
+	0x00000001,
+	0x00000002,
+	0x00000004,
+	0x00000008,
+	0x00000010,
+	0x00000020,
+	0x00000040,
+	0x00000080,
+	0x00000100,
+	0x00000200,
+	0x00001000,
+	0x00002000,
+	0x00004000,
+	0x00008000,
+	0x00010000,
+	0x00020000,
+	0x00040000,
+	0x00080000,
+	0x00100000,
+	0x00200000,
+	0x00400000,
+	0x00800000,
+	0x01000000,
+	0x02000000,
+	0x04000000,
+	0x08000000,
+	0x10000000,
+	0x20000000,
+	0x40000000,
+	0x80000000
+};
+
+class FSkyWorthVRController : public IInputDevice, public FXRMotionControllerBase, public IHapticDevice
 {
 public:
 
@@ -355,21 +409,21 @@ private:
 		return currentState[ControllerIndex][(int32)DeviceHand].analog1D[(int)axis1D];
 	}
 
-	inline bool GetTouch(const int32 ControllerIndex, const EControllerHand DeviceHand, ESkyWorthVRControllerButton::Type touch) const
+	inline bool GetTouch(const int32 ControllerIndex, const EControllerHand DeviceHand, ESkyWorthVRControllerTouch::Type touch) const
 	{
-		uint32 mask = KButtonMask[static_cast<uint32>(touch)];
+		uint32 mask = KTouchMask[static_cast<uint32>(touch)];
 		return ((currentState[ControllerIndex][(int32)DeviceHand].isTouching & mask) != 0);
 	}
 
-	inline bool GetTouchDown(const int32 ControllerIndex, const EControllerHand DeviceHand, ESkyWorthVRControllerButton::Type touch) const
+	inline bool GetTouchDown(const int32 ControllerIndex, const EControllerHand DeviceHand, ESkyWorthVRControllerTouch::Type touch) const
 	{
-		uint32 mask = KButtonMask[static_cast<uint32>(touch)];
+		uint32 mask = KTouchMask[static_cast<uint32>(touch)];
 		return ((previousTouchState[ControllerIndex][(int32)DeviceHand] & mask) == 0) && ((currentState[ControllerIndex][(int32)DeviceHand].isTouching & mask) != 0);
 	}
 
-	inline bool GetTouchUp(const int32 ControllerIndex, const EControllerHand DeviceHand, ESkyWorthVRControllerButton::Type touch) const
+	inline bool GetTouchUp(const int32 ControllerIndex, const EControllerHand DeviceHand, ESkyWorthVRControllerTouch::Type touch) const
 	{
-		uint32 mask = KButtonMask[static_cast<uint32>(touch)];
+		uint32 mask = KTouchMask[static_cast<uint32>(touch)];
 		return ((previousTouchState[ControllerIndex][(int32)DeviceHand] & mask) != 0) && ((currentState[ControllerIndex][(int32)DeviceHand].isTouching & mask) == 0);
 	}
 	
@@ -393,6 +447,13 @@ public:	// IInputDevice
 	/** IForceFeedbackSystem */
 	virtual void SetChannelValue(int32 ControllerId, FForceFeedbackChannelType ChannelType, float Value);
 	virtual void SetChannelValues(int32 ControllerId, const FForceFeedbackValues &values);
+public: // IHapticDevice Interface
+	
+	IHapticDevice* GetHapticDevice() override { return (IHapticDevice*)this; }
+	virtual void SetHapticFeedbackValues(int32 ControllerId, int32 Hand, const FHapticFeedbackValues& Values) override;
+	virtual void GetHapticFrequencyRange(float& MinFrequency, float& MaxFrequency) const override;
+	virtual float GetHapticAmplitudeScale() const override;
+	// End of IHapticDevice Interface
 
 public: // IMotionController
 
@@ -455,7 +516,7 @@ private:
 
 	/** Mapping of controller buttons and touch */
 	FSkyWorthXRKeyNames::Type Buttons[CONTROLLERS_PER_PLAYER][ESkyWorthVRControllerButton::TotalCount];
-	FSkyWorthXRKeyNames::Type Touches[CONTROLLERS_PER_PLAYER][ESkyWorthVRControllerButton::TotalCount];
+	FSkyWorthXRKeyNames::Type Touches[CONTROLLERS_PER_PLAYER][ESkyWorthVRControllerTouch::TotalCount];
 
 	int32_t ControllerAndHandIndexToDeviceIdMap[CONTROLLER_PAIRS_MAX][CONTROLLERS_PER_PLAYER];
 

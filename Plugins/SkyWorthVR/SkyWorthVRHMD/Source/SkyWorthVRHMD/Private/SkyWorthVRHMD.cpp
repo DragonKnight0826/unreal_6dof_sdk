@@ -34,13 +34,35 @@
 #include "sxrApi.h"
 //#include "SkyWorthVROther/Public/MotionUtilsImple.h"
 
-//#define GL_FOVEATION_ENABLE_BIT_QCOM 0x01
-//#define GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM 0x02
+#ifndef GL_FOVEATION_ENABLE_BIT_QCOM
+	#define GL_FOVEATION_ENABLE_BIT_QCOM 0x01
+#endif
+
+#ifndef GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM
+#define GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM 0x02
+#endif
+
+#ifndef GL_TEXTURE_FOVEATED_FEATURE_BITS_QCOM
 #define GL_TEXTURE_FOVEATED_FEATURE_BITS_QCOM 0x8BFB
+#endif
+
+#ifndef GL_TEXTURE_FOVEATED_FEATURE_QUERY_QCOM
 #define GL_TEXTURE_FOVEATED_FEATURE_QUERY_QCOM 0x8BFD
+#endif 
+
+#ifndef GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM
 #define GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM 0x8BFF
+#endif
+
+#ifndef GL_TEXTURE_FOVEATED_MIN_PIXEL_DENSITY_QCOM
 #define GL_TEXTURE_FOVEATED_MIN_PIXEL_DENSITY_QCOM 0x8BFC
+#endif
+
+#ifndef GL_TEXTURE_FOVEATED_NUM_FOCAL_POINTS_QUERY_QCOM
 #define GL_TEXTURE_FOVEATED_NUM_FOCAL_POINTS_QUERY_QCOM 0x8BFE
+#endif
+
+
 #define GL_CHECK(x) \
     x; \
     { \
@@ -422,18 +444,15 @@ bool FSkyWorthVRHMD::GetCurrentPose(int32 DeviceId, FQuat& OutOrientation, FVect
 			bIsEndGameFrame = false;
 			UpdateSensorData();	
 		}
-		OutOrientation = CurrentFrame_RenderThread.Orientation;
-		OutPosition = CurrentFrame_RenderThread.Position;
+		//OutOrientation = CurrentFrame_RenderThread.Orientation;
+		//OutPosition = CurrentFrame_RenderThread.Position;
 	}else if (IsInGameThread())
 	{
-		OutOrientation = CurrentFrame_GameThread.Orientation;
-		OutPosition = CurrentFrame_GameThread.Position;
-
-		RenderBridge->SwapChain->ReleaseCurrentImage_RHIThread();
+		/*OutOrientation = CurrentFrame_GameThread.Orientation;
+		OutPosition = CurrentFrame_GameThread.Position;*/
 
 		FlushRenderingCommands();
-	}
-
+	}	
 	return true;
 }
 
@@ -1506,12 +1525,12 @@ void FSkyWorthVRHMD::EndFrame_RHIThread()
 	
 	FrameParams.frameOptions = kDisableChromaticCorrection;
 	FrameParams.headPoseState = CurrentFrame_RenderThread.headPoseState;
-	//UE_LOG(LogSVR,Log,TEXT("headPoseState:(%f,%f,%f),(%f,%f,%f,%f)"),FrameParams.headPoseState.pose.position.x,FrameParams.headPoseState.pose.position.y,FrameParams.headPoseState.pose.position.z,
-	//FrameParams.headPoseState.pose.rotation.x,FrameParams.headPoseState.pose.rotation.y,FrameParams.headPoseState.pose.rotation.z,FrameParams.headPoseState.pose.rotation.w);
+	UE_LOG(LogSVR,Log,TEXT("headPoseState:(%f,%f,%f),(%f,%f,%f,%f)"),FrameParams.headPoseState.pose.position.x,FrameParams.headPoseState.pose.position.y,FrameParams.headPoseState.pose.position.z,
+	FrameParams.headPoseState.pose.rotation.x,FrameParams.headPoseState.pose.rotation.y,FrameParams.headPoseState.pose.rotation.z,FrameParams.headPoseState.pose.rotation.w);
 	FrameParams.minVsyncs = 1;
-	//UE_LOG(LogSVR,Log,TEXT("(%s) (Frame %d) SubmitFrame(mRenderPose) => Calling sxrSubmitFrame(Frame %d),imageHandle=%d"), IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), FrameParams.frameIndex, FrameParams.frameIndex,FrameParams.renderLayers[0].imageHandle);
-	//UE_LOG(LogSVR, Log, TEXT("SubmitFrame : frameIndex = %d"), FrameParams.frameIndex);
-	//UE_LOG(LogSVR, Log, TEXT("SubmitFrame : minVsyncs = %d"), FrameParams.minVsyncs);
+	UE_LOG(LogSVR,Log,TEXT("(%s) (Frame %d) SubmitFrame(mRenderPose) => Calling sxrSubmitFrame(Frame %d),imageHandle=%d"), IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), FrameParams.frameIndex, FrameParams.frameIndex,FrameParams.renderLayers[0].imageHandle);
+	UE_LOG(LogSVR, Log, TEXT("SubmitFrame : frameIndex = %d"), FrameParams.frameIndex);
+	UE_LOG(LogSVR, Log, TEXT("SubmitFrame : minVsyncs = %d"), FrameParams.minVsyncs);
 
 	
 	

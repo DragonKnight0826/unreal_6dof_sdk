@@ -444,12 +444,13 @@ bool FSkyWorthVRHMD::GetCurrentPose(int32 DeviceId, FQuat& OutOrientation, FVect
 			bIsEndGameFrame = false;
 			UpdateSensorData();	
 		}
-		//OutOrientation = CurrentFrame_RenderThread.Orientation;
-		//OutPosition = CurrentFrame_RenderThread.Position;
-	}else if (IsInGameThread())
+		OutOrientation = CurrentFrame_RenderThread.Orientation;
+		OutPosition = CurrentFrame_RenderThread.Position;
+	}
+	else if (IsInGameThread())
 	{
-		/*OutOrientation = CurrentFrame_GameThread.Orientation;
-		OutPosition = CurrentFrame_GameThread.Position;*/
+		OutOrientation = CurrentFrame_GameThread.Orientation;
+		OutPosition = CurrentFrame_GameThread.Position;
 
 		FlushRenderingCommands();
 	}	
@@ -458,23 +459,15 @@ bool FSkyWorthVRHMD::GetCurrentPose(int32 DeviceId, FQuat& OutOrientation, FVect
 
 void FSkyWorthVRHMD::UpdateSensorData()
 {
-	float PredictedTime = sxrGetPredictedDisplayTime();
-
-	
-	// sxrprint("(%s) (Frame %d) GetHeadPoseState() => Getting head pose for %0.2f ms", IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), GFrameNumber, PredictedTime);
-	
-	sxrHeadPoseState HeadPoseState = sxrGetPredictedHeadPose(PredictedTime);
-
 	FVector CurrentPosition;
 	FQuat CurrentOrientation;
+	float PredictedTime = sxrGetPredictedDisplayTime();
+	sxrHeadPoseState HeadPoseState = sxrGetPredictedHeadPose(PredictedTime);
 	PoseToOrientationAndPosition(HeadPoseState.pose, CurrentOrientation, CurrentPosition, GetWorldToMetersScale());
 	CurrentFrame_RenderThread.Orientation= LastHmdOrientation = CurrentOrientation;
 	CurrentFrame_RenderThread.Position = LastHmdPosition = CurrentPosition;
 	CurrentFrame_RenderThread.headPoseState = HeadPoseState;
 	CurrentFrame_RenderThread.PredictedDisplayTime = PredictedTime;
-
-	UE_LOG(LogSVR, Log, TEXT("sxr (%s) (Frame %llu) GetHeadPoseState() => Getting head pose for %0.2f ms (%f,%f,%f),(%f,%f,%f,%f)"), IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), GFrameNumber, PredictedTime,
-	HeadPoseState.pose.position.x,HeadPoseState.pose.position.y,HeadPoseState.pose.position.z,HeadPoseState.pose.rotation.x,HeadPoseState.pose.rotation.y,HeadPoseState.pose.rotation.z,HeadPoseState.pose.rotation.w);
 }
 
 #pragma region EyeTracking
@@ -870,15 +863,14 @@ bool FSkyWorthVRHMD::GetHeadPoseState(sxrHeadPoseState& HeadPoseState)
 	//! \brief Calculates a predicted head pose
 	//! \param predictedTimeMs Time ahead of the current time in ms to predict a head pose for
 	//! \return The predicted head pose and relevant pose state information
-	float PredictedTime = sxrGetPredictedDisplayTime();
 
 	// UE_LOG(LogSVR, Error, TEXT("sxr (%s) (Frame %llu) GetHeadPoseState() => Getting head pose for %0.2f ms"), IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), GFrameNumber, PredictedTime);
 	// sxrprint("(%s) (Frame %d) GetHeadPoseState() => Getting head pose for %0.2f ms", IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), GFrameNumber, PredictedTime);
-	
-	HeadPoseState = sxrGetPredictedHeadPose(PredictedTime);
-
 	FVector CurrentPosition;
 	FQuat CurrentOrientation;
+	float PredictedTime = sxrGetPredictedDisplayTime();
+	HeadPoseState = sxrGetPredictedHeadPose(PredictedTime);
+
 	PoseToOrientationAndPosition(HeadPoseState.pose, CurrentOrientation, CurrentPosition, GetWorldToMetersScale());
 	CurHmdOrientation = LastHmdOrientation = BaseOrientation * CurrentOrientation;
 	CurHmdPosition = LastHmdPosition = CurrentPosition;
@@ -1399,7 +1391,7 @@ void FSkyWorthVRHMD::PreRenderFrame_RHIThread()
 	{
 		return;
 	}
-	UpdateSensorData();
+	//UpdateSensorData();
 }
 void FSkyWorthVRHMD::PostRenderFrame_RHIThread()
 {
@@ -1521,7 +1513,6 @@ void FSkyWorthVRHMD::EndFrame_RHIThread()
 		}
 	}
 
-	
 	
 	FrameParams.frameOptions = kDisableChromaticCorrection;
 	FrameParams.headPoseState = CurrentFrame_RenderThread.headPoseState;

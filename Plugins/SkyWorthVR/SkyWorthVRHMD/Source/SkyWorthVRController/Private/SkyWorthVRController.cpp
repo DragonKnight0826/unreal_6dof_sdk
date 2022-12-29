@@ -346,19 +346,16 @@ void FSkyWorthVRController::StartTracking()
 		return;
 	}
 
+
+#if SkyWorthVRCONTROLLER_SUPPORTED_PLATFORMS
+	sxrControllerStartTracking("SkyWorth");
+#endif
+	
 	for (int i = 0; i < CONTROLLER_PAIRS_MAX; i++)
 	{
 		for (int j = 0; j < CONTROLLERS_PER_PLAYER; j++)
 		{
-#if SkyWorthVRCONTROLLER_SUPPORTED_PLATFORMS
-			ControllerAndHandIndexToDeviceIdMap[i][j] = sxrControllerStartTracking(NULL);
-#endif
-
-			if (ControllerAndHandIndexToDeviceIdMap[i][j] > -1)
-			{
-				bIsTracking = true; // one or more == isTracking
-			}
-
+			ControllerAndHandIndexToDeviceIdMap[i][j] = j;
 			FMemory::Memset(&currentState[i][j], 0, sizeof(sxrControllerState));
 			FMemory::Memset(&currentCaps[i][j], 0, sizeof(sxrControllerCaps));
 			previousButtonState[i][j] = 0;
@@ -366,11 +363,14 @@ void FSkyWorthVRController::StartTracking()
 			previousConnectionState[i][j] = kNotInitialized;
 		}
 	}
+
 	UE_LOG(LogSkyWorthVRController, Log, TEXT("FSkyWorthVRController::bIsTracking: %d"), bIsTracking);
 	if (bIsTracking)
 	{
 		UE_LOG(LogSkyWorthVRController, Log, TEXT("FSkyWorthVRController::StartTracking"));
 	}
+
+	bIsTracking = true;
 }
 
 //-----------------------------------------------------------------------------
@@ -395,9 +395,9 @@ void FSkyWorthVRController::StopTracking()
 		}
 	}
 
-	bIsTracking = false;
-
 	UE_LOG(LogSkyWorthVRController, Log, TEXT("FSkyWorthVRController::StopTracking"));
+
+	bIsTracking = false;
 }
 
 //-----------------------------------------------------------------------------
@@ -510,16 +510,6 @@ void FSkyWorthVRController::ProcessControllerButtons()
 						       TEXT("Button down = %s, HandId = %d, ButtonIndex = %d, mask = %X"),
 						       *Buttons[j][ButtonIndex].ToString(), j, ButtonIndex, (1 << ButtonIndex));
 						MessageHandler->OnControllerButtonPressed(Buttons[j][ButtonIndex], 0, false);
-
-						if (Buttons[j][ButtonIndex] == SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_Menu)
-						{
-							ResetStartTimeL = 1.5f;
-						}
-						else if (Buttons[j][ButtonIndex] ==
-							SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_Menu)
-						{
-							ResetStartTimeR = 1.5f;
-						}
 					}
 					else if (GetButtonUp(i, Hand, ButtonType))
 					{
@@ -527,16 +517,6 @@ void FSkyWorthVRController::ProcessControllerButtons()
 						       TEXT("Button up = %s, HandId = %d, ButtonIndex = %d, mask = %X"),
 						       *Buttons[j][ButtonIndex].ToString(), j, ButtonIndex, (1 << ButtonIndex));
 						MessageHandler->OnControllerButtonReleased(Buttons[j][ButtonIndex], 0, false);
-
-						if (Buttons[j][ButtonIndex] == SkyWorthVRControllerKeyNames::SkyWorthXRController_Left_Menu)
-						{
-							ResetStartTimeL = -1.f;
-						}
-						else if (Buttons[j][ButtonIndex] ==
-							SkyWorthVRControllerKeyNames::SkyWorthXRController_Right_Menu)
-						{
-							ResetStartTimeR = -1.f;
-						}
 					}
 				}
 
@@ -658,14 +638,9 @@ bool FSkyWorthVRController::IsAvailable(const int ControllerIndex, const EContro
 #if SkyWorthVRCONTROLLER_SUPPORTED_PLATFORMS
 	if ((ControllerIndex >= 0 || ControllerIndex < CONTROLLER_PAIRS_MAX) && (int)DeviceHand < CONTROLLERS_PER_PLAYER)
 	{
-		if (ControllerAndHandIndexToDeviceIdMap[ControllerIndex][ (int32)DeviceHand] >= 0 /*&& 
-			SC::GSXR_nativeIsControllerConnect(uint32(DeviceHand))*/)
-		{
+		if (currentState[ControllerIndex][(int32)DeviceHand].connectionState == sxrControllerConnectionState::kConnected)
 			return true;
-		}
-		UE_LOG(LogSkyWorthVRController, Error, TEXT("IsAvailable return False! connectionState = %d"), currentState[ControllerIndex][(int32)DeviceHand].connectionState);
 	}
-	UE_LOG(LogSkyWorthVRController, Error, TEXT("IsAvailable return False! ControllerIndex = %d, CONTROLLER_PAIRS_MAX = %d, DeviceHand = %d, CONTROLLERS_PER_PLAYER = %d"), ControllerIndex, CONTROLLER_PAIRS_MAX, (int)DeviceHand, CONTROLLERS_PER_PLAYER);
 #endif
 	return false;
 }
@@ -796,26 +771,7 @@ float FSkyWorthVRController::GetWorldToMetersScale() const
 //-----------------------------------------------------------------------------
 void FSkyWorthVRController::Tick(float DeltaTime)
 {
-	if (ResetStartTimeL > 0.f)
-	{
-		ResetStartTimeL -= DeltaTime;
-
-		if (ResetStartTimeL <= 0.f)
-		{
-			UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
-			ResetStartTimeL = -1.f;
-		}
-	}
-	if (ResetStartTimeR > 0.f)
-	{
-		ResetStartTimeR -= DeltaTime;
-
-		if (ResetStartTimeR <= 0.f)
-		{
-			UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
-			ResetStartTimeL = -1.f;
-		}
-	}
+	
 }
 
 //-----------------------------------------------------------------------------

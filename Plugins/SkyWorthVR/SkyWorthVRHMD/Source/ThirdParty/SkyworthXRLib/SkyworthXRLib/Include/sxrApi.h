@@ -928,6 +928,8 @@ SXRP_EXPORT SxrResult svrStopCamera();
 //! \brief Stop Camera
 //! \param data 1bit:LR 2bit:Open 3bit:time 8bit:frequency1 12bit:amplitude1
 SXRP_EXPORT void sxrSetControllerVibrate(int data);
+
+SXRP_EXPORT float sxrGetFloorZ();
 #ifdef __cplusplus
 }
 #endif

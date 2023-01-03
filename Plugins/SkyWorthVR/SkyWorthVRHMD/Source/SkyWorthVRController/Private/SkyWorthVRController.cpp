@@ -20,6 +20,7 @@
 #include "HeadMountedDisplay/Public/HeadMountedDisplayFunctionLibrary.h"
 #include "ApplicationCore/Public/GenericPlatform/IInputInterface.h"
 #include "Kismet/GameplayStatics.h"
+#include "../SkyWorthVRHMD/Private/SkyWorthVRHMD.h"
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*		_____  ______          _____    __  __ ______
 		|  __ \|  ____|   /\   |  __ \  |  \/  |  ____|
@@ -78,7 +79,7 @@ FSkyWorthVRController::FSkyWorthVRController(const TSharedRef<FGenericApplicatio
 	  MessageHandler(InMessageHandler)
 {
 	UE_LOG(LogSkyWorthVRController, Log, TEXT("SkyWorthVRController Created"));
-
+	
 	// Register the motion controller! This is the secret sauce of how to get Motion Controllers working natively.
 	// You must MANUALLY call IModularFeatures::Get().RegisterModularFeature(GetModularFeatureName(), this) in your implementation!
 	// This allows motion controllers to be both piggy-backed off HMD devices which support them, as well as standing alone.
@@ -435,6 +436,8 @@ void FSkyWorthVRController::PollController()
 			}
 
 			currentState[i][j] = sxrControllerGetState(ControllerAndHandIndexToDeviceIdMap[i][j], 0);
+
+			currentState[i][j].position.y = currentState[i][j].position.y - (((FSkyWorthVRHMD::GetSkyWorthHMD()->GetTrackingOrigin() == EHMDTrackingOrigin::Type::Floor) ? sxrGetFloorZ() : 0.f));
 
 #endif
 			/*UE_LOG(LogSkyWorthVRController, Log,

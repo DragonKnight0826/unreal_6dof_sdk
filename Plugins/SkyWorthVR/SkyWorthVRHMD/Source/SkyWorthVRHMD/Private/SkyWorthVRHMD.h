@@ -98,7 +98,7 @@ public:
 	virtual void DrawDistortionMesh_RenderThread(struct FRenderingCompositePassContext& Context, const FIntPoint& TextureSize) override;
 #endif
 	virtual void UpdateScreenSettings(const FViewport* InViewport) override {}
-
+	
 
 	void DrawDebug(class UCanvas* Canvas, class APlayerController*);
 	void DrawDebugTrackingCameraFrustum(UWorld* World, const FRotator& ViewRotation, const FVector& ViewLocation);
@@ -119,6 +119,8 @@ public:
 	virtual void PostRenderViewFamily_RenderThread(FRHICommandListImmediate& RHICmdList, FSceneViewFamily& InViewFamily) override;
 	virtual void PostRenderView_RenderThread(FRHICommandListImmediate& RHICmdList, FSceneView& InView) override {}
 
+	virtual void SetTrackingOrigin(EHMDTrackingOrigin::Type NewOrigin) override;
+	virtual EHMDTrackingOrigin::Type GetTrackingOrigin() const override;
 #if ENGINE_MINOR_VERSION < 27 && ENGINE_MAJOR_VERSION < 5
 	virtual bool IsActiveThisFrame(class FViewport* InViewport) const override;
 #else
@@ -621,6 +623,7 @@ public:
 	bool bIsEndGameFrame;
 	class USXR_Settings* sxrSetting;
 	class UMotionUtilsImple* m_MotionUtilsImple;
+	EHMDTrackingOrigin::Type TrackingOrigin;
 };
 
 //bool InRenderThread()

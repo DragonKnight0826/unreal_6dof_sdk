@@ -41,8 +41,9 @@ namespace UnrealBuildTool.Rules
 					"Slate",
 					"SlateCore",
 					"SkyworthXRLib",
-					"OpenVR"
-				}
+					"OpenVR",
+                    "SkyWorthVRHMD"
+                }
 				);
 
             PrivateIncludePaths.AddRange(

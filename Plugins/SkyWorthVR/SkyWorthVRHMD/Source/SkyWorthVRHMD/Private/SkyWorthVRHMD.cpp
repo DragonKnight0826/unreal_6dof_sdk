@@ -854,18 +854,6 @@ void FSkyWorthVRHMD::OnBeginRendering_RenderThread(FRHICommandListImmediate& RHI
 //-----------------------------------------------------------------------------
 bool FSkyWorthVRHMD::GetHeadPoseState(sxrHeadPoseState& HeadPoseState)
 {
-	// Can only update the pose if vr has been started
-	// if (!pSkyWorthVRBridge->bStartRendering)
-	// {
-	// 	return false;
-	// }
-
-	//! \brief Calculates a predicted head pose
-	//! \param predictedTimeMs Time ahead of the current time in ms to predict a head pose for
-	//! \return The predicted head pose and relevant pose state information
-
-	// UE_LOG(LogSVR, Error, TEXT("sxr (%s) (Frame %llu) GetHeadPoseState() => Getting head pose for %0.2f ms"), IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), GFrameNumber, PredictedTime);
-	// sxrprint("(%s) (Frame %d) GetHeadPoseState() => Getting head pose for %0.2f ms", IsInRenderingThread() ? TEXT("Render") : TEXT("Game"), GFrameNumber, PredictedTime);
 	FVector CurrentPosition;
 	FQuat CurrentOrientation;
 	float PredictedTime = sxrGetPredictedDisplayTime();
@@ -1891,12 +1879,9 @@ void FSkyWorthVRHMD::PoseToOrientationAndPosition(const sxrHeadPose& Pose, FQuat
     if (bStartRendering)
     {
 		OutCurrentOrientation = FQuat(-Pose.rotation.z, Pose.rotation.x, Pose.rotation.y, Pose.rotation.w);
-		// OutCurrentOrientation = FQuat(0,0,0,1);
-		// OutCurrentOrientation = BaseOrientation.Inverse() * OutCurrentOrientation;
-		// OutCurrentOrientation.Normalize();	
 		OutCurrentPosition = FVector(Pose.position.z * WorldToMetersScale, -Pose.position.x * WorldToMetersScale, -Pose.position.y * WorldToMetersScale);
-		// OutCurrentPosition = FVector(0,0,0);
-		// OutCurrentPosition = BaseOrientation.Inverse().RotateVector(OutCurrentPosition);
+		OutCurrentPosition.Z = OutCurrentPosition.Z + (((TrackingOrigin == EHMDTrackingOrigin::Type::Floor) ? sxrGetFloorZ() : 0.f) * WorldToMetersScale);
+		UE_LOG(LogSVR, Log, TEXT(" HeadTestZ: IsFloor %d, Z %f"), TrackingOrigin == EHMDTrackingOrigin::Type::Floor, sxrGetFloorZ());
     }
     else
     {
@@ -2086,7 +2071,16 @@ FXRRenderBridge* FSkyWorthVRHMD::GetActiveRenderBridge_GameThread(bool bUseSepar
 	return RenderBridge;
 }
 
+void FSkyWorthVRHMD::SetTrackingOrigin(EHMDTrackingOrigin::Type NewOrigin)
+{
+	TrackingOrigin = NewOrigin;
+	OnTrackingOriginChanged();
+}
 
+EHMDTrackingOrigin::Type FSkyWorthVRHMD::GetTrackingOrigin() const
+{
+	return TrackingOrigin;
+}
 #if 0 // webhelper stuff
 //-----------------------------------------------------------------------------
 void FSkyWorthVRHMD::StartWebHelper()
